@@ -1,0 +1,23 @@
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+
+<input type="button" value="主人是誰？" onclick = "this.value ='是我呀，我就是主人'" />
+<input type="button" value="主人是誰？" />
+<script language="javascript" type="text/javascript">
+
+var btn2 = document.getElementsByTagName("input")[1];
+btn2.onclick = f;
+function f(){
+    this.value = "我回來了";
+}
+</script>
+</body>
+
+</html>

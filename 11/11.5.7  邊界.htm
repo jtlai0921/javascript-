@@ -1,0 +1,33 @@
+<script language="javascript" type="text/javascript">
+
+//如果比對純文字行中最後一個單字，則可以使用如下方法實現。
+var s = "how are you";
+var r = /(?:\w+)$/;
+var a = s.match(r); 	//傳回陣列["you"]
+
+//如果比對純文字行中開頭一個單字，則可以使用如下方法實現。
+var s = "how are you";
+var r = /^(?:\w+)/;
+var a = s.match(r); 	//傳回陣列["how"]
+
+//如果比對純文字行中每一個單字，則可以使用如下方法實現。
+var s = "how are you";
+var r = /(?:\w+)/g;
+var a = s.match(r); 	//傳回陣列["how", "are" , "you"]
+
+//如果使用下面方法，也會比對每個單字，但是它也會把單字之間的空格作為一個單字進行比對。
+var r = /\b(?:.+?)\b/g;
+var a = s.match(r); 	//傳回陣列["how", "" , "are" ,, "" ,  "you"]
+
+var r = /\b(\S+?)\b/g; 	//比對非邊界區域的字符
+var a = s.match(r); 	//傳回陣列["how", "are" , "you"]
+
+var s = "javascript";
+var r = /^javascript$/;	//在比對模式中增加行邊界
+var b = r.test(s); 	//傳回true
+
+
+var r = /\sjavascript\s/;
+
+
+</script>

@@ -1,0 +1,12 @@
+<script language="javascript" type="text/javascript">
+
+var o = new Object()	//建立對象，並把物件參考儲存在變量o中
+o.x = new Object()	//建立對象，並把物件參考儲存在物件o的屬性中
+o.x.a = 1; 	//聲明物件x的屬性a，並給予值
+o.x.b ={	//建立對象，並把物件參考儲存在物件x的屬性b中
+    c : true,
+    d : false
+}
+alert( o.x.b.c ) 	//存取內部對象的屬性值，傳回true
+
+</script>

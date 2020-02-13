@@ -1,0 +1,17 @@
+<script language="javascript" type="text/javascript">
+
+var s = "張三56分，李四74分，王五92分，趙六84分";	//定義字串直接量
+var a = s.match( /\d+/g ), sum = 0; 	//比對出所有分值，輸出為陣列
+for( var i= 0 ; i<a.length ; i++){	//檢查陣列，求總分
+    sum += parseFloat(a[i]); 	//把元素值轉換為數值後遞加
+};
+var avg = sum / a.length; 	//求平均分
+function f(){
+    var n = parseFloat(arguments[1]); 	//把比對的分數轉換為數值，第一個子表達式
+    return n + "分" + " ( " + (( n > avg ) ? ( "超出平均分" + ( n - avg ) ) : ( "低於平均分" + ( avg - n ) )) + "分 ) ";	//設計替換純文字的內容
+}
+var s1 = s.replace( /(\d+)分/g, f ); 	//執行比對、替換操作
+alert( s1 ); 	//傳回字串"張三56 分(低於平均分20.5 分)，李四74分(低於平均分2. 5分)，王五92分( 超出平均分15 .5分 )， 趙六84分 ( 超出平均分7. 5分)"
+
+
+</script>

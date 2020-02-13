@@ -1,0 +1,26 @@
+<script language="javascript" type="text/javascript">
+
+
+//測試function敘述定義的空函數執行效率
+var a = new Date();	//定義目前時間物件實例
+var x = a.getTime();	//獲得目前時間的毫秒數
+for(var i=0;i<100000;i++){	//定義的循環結構體
+    function(){	//使用function敘述定義的空函數
+        ;
+    }
+}
+var b = new Date();	//定義目前時間物件實例
+var y = b.getTime();	//獲得目前時間的毫秒數
+alert(y-x); 	//傳回62，不同環境和瀏覽器會存在差異
+//測試Function建構函數定義的空函數執行效率
+var a = new Date();	//定義目前時間物件實例
+var x = a.getTime();	//獲得目前時間的毫秒數
+for(var i=0;i<100000;i++){	//定義的循環結構體
+    new Function();	//使用Function建構函數定義的空函數
+}
+var b = new Date();	//定義目前時間物件實例
+var y = b.getTime();	//獲得目前時間的毫秒數
+alert(y-x); 	//傳回2390，不同環境和瀏覽器會存在差異
+
+
+</script>

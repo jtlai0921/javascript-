@@ -1,0 +1,38 @@
+<script language="javascript" type="text/javascript">
+
+var s = "ggle gogle google gooogle goooogle gooooogle goooooogle gooooooogle goooooooogle"
+
+//如果僅比對單字ggle和gogle，則可以這樣設計：
+var r = /go?gle/g; 	//比對前一項字符o0次或1次
+var a = s.match(r); 	//傳回陣列["ggle", "gogle"]
+
+var r = /go{0,1}gle/g; 	//比對前一項字符o0次或1次
+var a = s.match(r); 	//傳回陣列["ggle", "gogle"]
+
+//如果僅比對第4個單字gooogle，則可以這樣設計：
+var r = /go{3}gle/g; 	//比對前一項字符o重複顯示3次
+var a = s.match(r); 	//傳回陣列["gooogle"]
+
+var r = /gooogle/g; 	//比對字符gooogle
+var a = s.match(r); 	//傳回陣列["gooogle"]
+
+//如果希望比對第4個到第6個之間的單字，則可以這樣設計：
+var r = /go{3,5}gle/g; 	//比對第4個到第6個之間的單字
+var a = s.match(r); 	//傳回陣列["ggle", "gogle"]
+
+//如果希望比對所有單字，則可以這樣設計：
+var r = /go*gle/g; 	//比對所有的單字
+var a = s.match(r); 	//傳回陣列["ggle", "gogle", "google", "gooogle", "goooogle", "gooooogle", "goooooogle", "goooooooogle", "gooooooooogle"]
+
+var r = /go{0,}gle/g; 	//比對所有的單字
+var a = s.match(r); 	//傳回陣列["ggle", "gogle", "google", "gooogle", "goooogle", "gooooogle", "goooooogle", "goooooooogle", "gooooooooogle"]
+{0,}指定前一項字符o可以出現0次，或者任意多次。當{}中第2個參數值為空，則表示任意值的意思。
+
+//如果希望比對包含字符o的所有單字，則可以這樣設計：
+var r = /go+gle/g; 	//比對的單字中字符o至少出現一次
+var a = s.match(r); 	//傳回陣列["gogle", "google", "gooogle", "goooogle", "gooooogle", "goooooogle", "goooooooogle", "gooooooooogle"]
+
+var r = /go{1,}gle/g; 	//比對的單字中字符o至少出現一次
+var a = s.match(r); 	//傳回陣列["gogle", "google", "gooogle", "goooogle", "gooooogle", "goooooogle", "goooooooogle", "gooooooooogle"]
+
+</script>

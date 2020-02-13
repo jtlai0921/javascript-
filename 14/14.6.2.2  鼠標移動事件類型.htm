@@ -1,0 +1,53 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div id="box" ></div>
+<script language="javascript" type="text/javascript">
+//初始化拖放物件
+var box = document.getElementById("box");	//獲得頁面中被拖放元素的參考指標
+box.style.position = "absolute";	//絕對定位
+box.style.width = "160px";	//定義寬度
+box.style.height = "120px";	//定義高度
+box.style.backgroundColor = "red";	//定義背景色
+//初始化變量，標準化事件物件
+var mx, my, ox, oy; 	//定義備用變量
+function e(event){ 	//定義事件物件標準化函數
+   if( ! event){ 	//兼容IE瀏覽器
+      event = window.event;
+      event.target = event.srcElement;
+      event.layerX = event.offsetX;
+      event.layerY = event.offsetY;
+   }
+   event.mx = event.pageX || event.clientX + document.body.scrollLeft; 	//計算鼠標指標的x軸距離
+   event.my = event.pageY || event.clientY + document.body.scrollTop; 	//計算鼠標指標的y軸距離
+   return event; 	//傳回標準化的事件物件
+}
+//定義鼠標事件處理函數
+document.onmousedown = function(event){ 	//按下鼠標時，初始化處理
+   event = e(event); 	//獲得標準事件物件
+   o = event.target; 	//獲得目前拖放的元素
+   ox = parseInt(o.offsetLeft); 	//拖放元素的x軸坐標
+   oy = parseInt(o.offsetTop); 	//拖放元素的y軸坐標
+   mx = event.mx; 	//按下鼠標指標的x軸坐標
+   my = event.my; 	//按下鼠標指標的y軸坐標
+   document.onmousemove = move; 	//註冊鼠標移動事件處理函數
+   document.onmouseup = stop; 	//註冊鬆開鼠標事件處理函數
+}
+function move(event){ 	//鼠標移動處理函數
+   event = e(event);
+   o.style.left = ox + event.mx - mx  + "px";	//定義拖動元素的x軸距離
+   o.style.top = oy + event.my - my + "px";	//定義拖動元素的y軸距離
+}
+function stop(event){ 	//鬆開鼠標處理函數
+   event = e(event);
+   ox = parseInt(o.offsetLeft); 	//記錄拖放元素的x軸坐標
+   oy = parseInt(o.offsetTop); 	//記錄拖放元素的y軸坐標
+   mx = event.mx ; 	//記錄鼠標指標的x軸坐標
+   my = event.my ; 	//記錄鼠標指標的y軸坐標
+   o = document.onmousemove = document.onmouseup = null; 	//釋放所有操作物件
+}
+</script>
+</body>
+</html>

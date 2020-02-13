@@ -1,0 +1,18 @@
+<script language="javascript" type="text/javascript">
+
+
+(function(){	//定義封裝的獨立作用域
+    var jQuery = window.jQuery = window.$ = function( selector, context ){ };
+})()	//直接呼叫函數
+var jQuery = 1;
+var $ = 2;
+
+
+var jQuery = 1;
+(function(){
+    jQuery = window.jQuery = window.$ = function(){};
+})()
+alert(jQuery); 	//結果讀取了函數內部封裝的程式碼
+
+
+</script>

@@ -1,0 +1,17 @@
+<script language="javascript" type="text/javascript">
+
+//封裝刪除所有子節點的方法
+//參數：e表示預刪除所有子節點的父節點
+function empty(e){
+    while(e.firstChild){
+        e.removeChild(e.firstChild);
+    }
+}
+
+
+</script>
+<div id="red">
+    <h1>紅盒子</h1>
+</div>
+<div id="blue">藍盒子</div>
+<button id="ok">刪除</button>

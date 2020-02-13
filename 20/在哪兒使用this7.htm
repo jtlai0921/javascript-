@@ -1,0 +1,42 @@
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+
+<input type="button" value="Button" />
+<script language="javascript" type="text/javascript">
+
+var button = document.getElementsByTagName("input")[0];
+var o ={};
+o.f = function()
+{
+    if(this == o) alert("this = o");
+    if(this == window) alert("this = window");
+    if(this == button) alert("this = button");
+
+}
+
+
+if(window.attachEvent)
+{
+    button.attachEvent("onclick", function(){
+        o.f.call(o);
+    });
+}
+else
+{
+    button.addEventListener("click", function(){
+        o.f.call(o);
+    }, true);
+}
+
+
+</script>
+</body>
+
+</html>

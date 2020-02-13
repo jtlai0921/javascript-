@@ -1,0 +1,27 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<p>鼠標事件</p>
+<input type="text" id ="text" />
+<script language="javascript" type="text/javascript">
+var  p1 = document.getElementsByTagName("p")[0]; 	//獲得段落純文字的參考指標
+var  t = document.getElementById("text");	//獲得純文字框的參考指標
+function f(){	//事件偵測函數
+    var event = event || window.event; 	//標準化事件物件
+    t.value = (event.type); 	//獲得目前事件類別型
+}
+p1.onmouseover = f; 	//註冊鼠標經過時事件處理函數
+p1.onmouseout = f; 	//註冊鼠標移開時事件處理函數
+p1.onmousedown = f; 	//註冊鼠標按下時事件處理函數
+p1.onmouseup = f; 	//註冊鼠標鬆開時事件處理函數
+p1.onmousemove = f; 	//註冊鼠標移動時事件處理函數
+p1.onclick = f; 	//註冊鼠標單擊時事件處理函數
+p1.ondblclick = f; 	//註冊鼠標雙擊時事件處理函數
+</script>
+
+
+</body>
+</html>

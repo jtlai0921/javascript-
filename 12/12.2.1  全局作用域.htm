@@ -1,0 +1,21 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<script language="javascript" type="text/javascript">
+
+
+var a = "window.a";	//全局變量
+function f(){	//全局函數
+    alert(a);
+}
+alert(window.a); 	//參考Window對象的屬性a，傳回字串"window.a"
+window.f();	//呼叫Windwo對象的方法f()，傳回字串"window.a"
+
+
+</script>
+
+</body>
+</html>

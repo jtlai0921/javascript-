@@ -1,0 +1,17 @@
+<script language="javascript" type="text/javascript">
+
+var s = "http://www.css8.cn/index.html";	//比對字串
+var a = s.match( /(\.).*(\.).*(\.)/ ); 	//執行一次比對檢索
+alert( a.length ); 	//傳回4，說明傳回的是一個包含4個元素的陣列
+alert( a[0] ); 	//傳回字串".css8.cn/index."
+alert( a[1] ); 	//傳回第1個字符.（點號），由第1個子表達式比對並儲存
+alert( a[2] ); 	//傳回第2個字符.（點號），由第2個子表達式比對並儲存
+alert( a[3] ); 	//傳回第3個字符.（點號），由第3個子表達式比對並儲存
+
+
+alert( a.index ); 	//傳回值10，說明第1個點號字符的起始下標位置
+alert( a.input ); 	//傳回被比對字串"http://www.css8.cn/index.html"
+
+
+
+</script>

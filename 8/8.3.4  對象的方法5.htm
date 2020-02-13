@@ -1,0 +1,15 @@
+<script language="javascript" type="text/javascript">
+
+function f(){	//定義方法
+    return this.x + this.y;
+}
+function MyClass(x,y){ 	//自定義類別
+    this.x= x;
+    this.y = y;
+    this.add = f; 	//把方法封裝在類別中，這樣每個範例都擁有了該方法
+}
+var o = new MyClass(10,20); 	//實例化類別，並初始化參數值
+alert(o.add());	//呼叫方法，傳回值30
+
+
+</script>

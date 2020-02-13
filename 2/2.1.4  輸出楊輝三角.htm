@@ -1,0 +1,47 @@
+<script language="javascript" type="text/javascript">
+
+function print(v){	//輸出函數
+    //如果傳遞值為輸出的數字，則包含在一個<span>標籤中，以方便CSS控制
+    if(typeof v == "number"){ 
+        var w = 40; 	//預設<span>標籤寬度
+        if(n > 30) w = (n - 30) + 40; 	//根據冪數的增大，適當調整<span>標籤的寬度
+        var s = '<span style="padding:4px 2px;display:inline-block;text-align:center;width:'+ w +'px;">' + v + '</span>';
+        document.write(s); 	//在頁面中輸出字串
+    }
+    else{	//如果參數值為字串，說明是輸出其他字串
+        document.write(v); 	//則呼叫document對象的write()方法直接輸出
+    }
+}
+
+
+//輸入接口，用來接收使用者設置冪數
+var n = prompt("請輸入冪數：", 9); 	//預設值為9
+n = n - 0;	//把輸入值轉換為數值類別型
+
+var t1 = new Date();
+
+var a1 = [1, 1], a2 = [1, 1]; 	//生命並初始化陣列
+print('<div style="text-align:center;">'); 	//輸出一個包含框
+print(1); 	//輸出第一行中的數字
+print("<br />");
+for(var i = 2; i <= n; i ++ ){ 	//從第三行開始，檢查每一行
+    print(1); 	//輸出每一行中第一個數字
+    for(var j = 1; j < i - 1 ; j ++ ){ 	//從第2個數字開始，檢查每一行
+        a2[j] = a1[j - 1] + a1[j];
+        print(a2[j]); 	//輸出每一行中中間的數字
+    }
+    a2[j] = 1; 	//補上最後一個陣列元素的值
+    for(var k = 0; k <= j; k ++ ) {	//把上一行陣列的值傳遞給下一行陣列
+        a1[k] = a2[k];
+    }
+    print(1); 	//輸出每一行中最後一個數字
+    print("<br />");	//輸出換行符
+}
+print("</div>");	//輸出包含框的封閉標籤
+
+
+var t2 = new Date();
+print("<p style='text-align:center;'>耗時為（毫秒）：" + ( t2 - t1) + "</p>" );
+
+
+</script>

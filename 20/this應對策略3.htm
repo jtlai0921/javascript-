@@ -1,0 +1,38 @@
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+
+
+
+<script language="javascript" type="text/javascript">
+
+
+var o = {
+    name : "this = o",
+    b : function(){
+        return o;
+    }
+}
+var o1 = {
+    name : "this = o1",
+    b : o.b  
+}
+
+var a = o1.b();
+alert(a.name);
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

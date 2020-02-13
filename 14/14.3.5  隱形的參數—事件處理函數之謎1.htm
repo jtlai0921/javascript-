@@ -1,0 +1,17 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<button id="btn">按    鈕</button>
+<script language="javascript" type="text/javascript">
+document.getElementById("btn").onclick = function(event){
+    event = event || window.event;	//兼容FF和IE瀏覽器的event參數模式
+    var src = event.srcElement || event.target;	//捕捉目前事件的對象句柄
+    alert(src.innerHTML);	//顯示目前物件所包含的HTML純文字資訊
+}
+</script>
+
+</body>
+</html>

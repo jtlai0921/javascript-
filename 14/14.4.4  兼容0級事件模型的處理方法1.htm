@@ -1,0 +1,22 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<button id="btn1" onclick='alert("0級事件模型")'>按 鈕 1</button>
+<script language="javascript" type="text/javascript">
+
+var btn1 = document.getElementById("btn1");
+btn1.addEventListener("click", function(){
+    alert("2級事件模型");
+}, false);
+btn1.onclick = function(){
+    alert("0級事件模型")
+}
+
+
+</script>
+
+</body>
+</html>

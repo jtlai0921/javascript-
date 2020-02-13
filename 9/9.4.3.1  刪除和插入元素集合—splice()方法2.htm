@@ -1,0 +1,11 @@
+<script language="javascript" type="text/javascript">
+
+var a = [1,2,3,4,5]; 	//定義陣列
+var b = a.splice(2); 	//從第3個元素開始執行刪除
+alert(b); 	//被刪除的子陣列是[1, 2]
+
+var b = a.splice(2,0); 	//不執行刪除操作
+alert(b.constructor == Array); 	//傳回true，說明是一個空陣列
+
+
+</script>

@@ -1,0 +1,18 @@
+<script language="javascript" type="text/javascript">
+
+function f( a, b ){ 	//比較函數
+    var a = a.toLowerCase; 	//轉換為小寫形式
+    var b = b.toLowerCase; 	//轉換為小寫形式
+    if( a < b ){ 	//如果a的解碼小於b，則換位操作
+        return  1;
+    }
+    else{	//否則，保持原位不動
+        return -1;
+    }
+}
+var a = ["aB", "Ab", "Ba", "bA"];	//定義陣列
+a.sort( f ); 	//執行排序
+alert( a ); 	//傳回陣列["aB", "Ab", "Ba", "bA"]
+
+
+</script>

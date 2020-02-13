@@ -1,0 +1,38 @@
+<html>
+
+<head>
+
+<title></title>
+<script language="javascript" type="text/javascript">
+
+
+
+function p(x,y,z){
+    this.x = x;
+    this.y = y;
+    this.z = z;
+}
+p.prototype.del = function(){
+    for(var i in this){
+        delete this[i];
+    }
+}
+p.prototype = new p(1,2,3);
+var p1 = new p(10,20,30);
+alert(p1.x);
+alert(p1.y);
+alert(p1.z);
+p1.del();
+alert(p1.x);
+alert(p1.y);
+alert(p1.z);
+
+
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

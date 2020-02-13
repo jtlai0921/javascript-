@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+<style type="text/css">
+div {
+    width:200px;
+    height:100px;
+    border:solid 1px red;   
+    padding:50px;
+}
+#wrap {
+    position:relative;
+    border-width:20px; 
+}
+
+</style>
+
+<div id="wrap">
+    <div id="sub">
+        <div id="box"></div>
+    </div>
+</div>
+
+
+<script language="javascript" type="text/javascript">
+
+
+var box = document.getElementById("box");
+
+//var o = getW(box);
+
+alert(box.offsetLeft);
+
+//alert(o.x);
+
+
+//獲得指定元素距離視窗左上角偏移坐標
+//參數：e表示獲得位置的元素
+//傳回值：傳回物件直接量，其中屬性x表示x軸偏移距離，屬性y表示y軸偏移距離
+function getW(e){
+    var x = y = 0; 	//初始化臨時變量
+    while(e.offsetParent){ 	//如果存在offsetParent指代的元素，則獲得它的偏移坐標
+        x += e.offsetLeft; 	//累計總體x軸偏移距離
+        y += e.offsetTop; 	//累計總體y軸偏移距離
+        e = e.offsetParent; 	//把目前元素的offsetParent屬性值傳遞給循環條件表達式
+    }
+    return {	//檢查到body元素後，將停止循環，把疊加的值給予值給物件直接量，並傳回該物件
+        "x" : x, 
+        "y" : y
+    };
+}
+
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+<script language="javascript" type="text/javascript">
+
+var p1 = new Point();
+var o = p1.constructor.constructor;
+alert(o); 	//傳回Function
+
+var o = Object.constructor;
+alert(o ); 	//傳回Function
+
+
+var o = Function.constructor;
+alert(o == Function); 	//傳回true
+
+alert(Function instanceof Object ); 	//傳回true，說明Function對象是Object對象的實例
+
+alert(Object instanceof Function); 	//傳回true，說明Object對象也是Function對象的實例
+
+</script>

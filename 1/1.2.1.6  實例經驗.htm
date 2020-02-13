@@ -1,0 +1,23 @@
+<script language="javascript" type="text/javascript">
+
+Function.prototype.make = function(n, f){
+    this.prototype[n] = f;
+    return this; 	//傳回物件自身
+}
+var Box = function(){}
+//連環產生對象的方法set()、get()和add()
+Box.make("set", function(x){ 	//產生傳入方法
+    this.x = x;
+}).make("get", function(){	//產生傳出方法
+    return this.x
+}).make("add", function(){	//產生參數加倍方法
+    return this.x + this.x;
+})
+
+var box = new Box();	//建立實例物件
+box.set(10); 	//呼叫方法set()，傳入值
+alert(box.get());	//呼叫方法get()，獲得傳入值
+alert(box.add());	//呼叫方法add()，獲得參數值的倍數
+
+
+</script>

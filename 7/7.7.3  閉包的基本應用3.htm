@@ -1,0 +1,15 @@
+<script language="javascript" type="text/javascript">
+
+function f( x ){ 	//定義普通函數
+    var temp = x;
+    return function( x ){ 	//傳回閉包
+        temp += x;
+        alert( temp );
+    }
+}
+var a = f( 50 ) 	//產生第一個閉包
+var b = f( 100 ) 	//產生第二一個閉包
+a( 5 ) 	//傳回55
+b( 10 ) 	//傳回110
+
+</script>

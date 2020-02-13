@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5" />
+<title></title>
+</head>
+<body>
+<script language="javascript" type="text/javascript">
+
+
+
+// 採用迭代實現的歸並排序算法
+function mergeSort( items )
+{
+    if ( items.length == 1 )
+    {
+        return items;
+
+    }
+    var work = [];
+    for ( var i = 0,  len = items.length; i < len;
+    i ++ )
+    {
+        work.push( [items[i]] );
+
+    }
+    work.push( [] );
+    // in case of odd number of items
+    for ( var lim = len; lim > 1; lim = ( lim + 1 ) / 2 )
+    {
+        for ( var j = 0,      k = 0; k < lim; j ++ , k += 2 )
+        {
+            work[j] = merge( work[k], work[k + 1] );
+
+        }
+        work[j] = []; // in case of odd number of items
+    }
+    return work[0];
+}
+
+
+
+</script>
+</body>
+</html>

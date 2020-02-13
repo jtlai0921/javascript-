@@ -1,0 +1,36 @@
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+<script language="javascript" type="text/javascript">
+
+
+
+
+function f(x){
+    this.x = x;
+    alert(arguments[2]);
+    return this.x * this.x;
+}
+
+function Class(){}
+Class.prototype.f = function(x){
+    arguments[0] = arguments[0] * arguments[0]
+    return f.apply(this,arguments);
+}
+
+var a = new Class();
+alert(a.f(5,6,7));
+alert(a.x);
+
+
+
+</script>
+</body>
+
+</html>

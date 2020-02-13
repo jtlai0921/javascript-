@@ -1,0 +1,33 @@
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+
+<script language="javascript" type="text/javascript">
+
+var o = {
+    name : "物件o",
+    f : function(){
+        return this;
+    }
+}
+o.o1 = {
+    name : "物件o1",
+    me : o.f
+}
+
+var who = o.o1.me();
+alert(who.name);
+var who = o.f();
+alert(who.name);
+
+
+</script>
+</body>
+
+</html>

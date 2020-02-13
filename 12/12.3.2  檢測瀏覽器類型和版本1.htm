@@ -1,0 +1,25 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<script language="javascript" type="text/javascript">
+
+//獲得IE瀏覽器的版本號
+//傳回數值，顯示IE的主版本號
+function getIEVer(){
+    var ua = navigator.userAgent;	//獲得使用者端資訊
+    var b = ua.indexOf("MSIE ");	//檢測特殊字串"MSIE "的位置
+    if(b < 0){
+        return 0;
+    }
+    return parseFloat(ua.substring(b + 5, ua.indexOf(";", b)));	//截取版本號字串，並轉換為數值
+}
+
+alert(getIEVer());	//傳回數值7
+
+</script>
+
+</body>
+</html>

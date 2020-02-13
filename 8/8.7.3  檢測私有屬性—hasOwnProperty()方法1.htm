@@ -1,0 +1,9 @@
+<script language="javascript" type="text/javascript">
+
+var d = Date;
+alert(d.hasOwnProperty("toString"));	//傳回false，說明toString()方法不是Date對象的私有屬性
+var d = Date.prototype;
+alert(d.hasOwnProperty("toString"));	//傳回true，說明toString()方法是Date. prototype對象的私有屬性
+
+
+</script>

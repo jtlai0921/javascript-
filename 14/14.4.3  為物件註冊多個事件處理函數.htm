@@ -1,0 +1,19 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<p id="p1">為物件註冊多個事件</p>
+<script language="javascript" type="text/javascript">
+var p1 = document.getElementById("p1");	// 捕捉段落元素的句柄
+p1.addEventListener("mouseover", function(){
+    this.style.background = 'blue';
+} , true); 	// 為段落元素註冊第1個事件處理函數
+p1.addEventListener("mouseout", function(){
+    this.style.background = 'red';
+}, true);	// 為段落元素註冊第2個事件處理函數
+</script>
+
+</body>
+</html>

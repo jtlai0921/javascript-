@@ -1,0 +1,18 @@
+<script language="javascript" type="text/javascript">
+
+var s = "javascript";
+var i = s.indexOf("a",-10);
+alert(i); 	//傳回值為1，即字串中第2個字符
+indexOf()方法只傳回尋找到的第一個子字串的起始下標值，如果沒有找到將傳回-1。例如：
+var s = "http://www.css8.cn/";
+var a = s.indexOf( "www" ); 	//傳回值為7，即第1個字符w的下標位置
+
+var s = "http://www.css8.cn/";
+var b = s.indexOf( "." ); 	//傳回值為10，即第1個字符.的下標位置
+var e = s.indexOf( ".", b + 1 ); 	//傳回值為15，即第2個字符.的下標位置
+
+
+var s = "http://www.css8.cn/index.html";
+var n = s.lastIndexOf( "." ); 	//傳回值為24，即第3個字符.的下標位置
+
+</script>

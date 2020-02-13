@@ -1,0 +1,16 @@
+<script language="javascript" type="text/javascript">
+
+var s = "abc";	//字串，值類別型資料
+var o = new String(s); 	//字串對象，被裝箱後的字串
+function f(v){ 	//運算函數
+    v.toString = function(){	//修改參數的方法toString()
+        return 123;
+    };
+}
+f(s); 	//傳入值
+alert(s); 	//傳回字串"abc"，說明運算沒有對原資料造成影響
+f(o); 	//傳入參考
+alert(o); 	//傳回數值123，說明運算已經影響到原資料的內部結構
+
+
+</script>

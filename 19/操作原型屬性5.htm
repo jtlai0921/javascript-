@@ -1,0 +1,33 @@
+<html>
+
+<head>
+
+<title></title>
+<script language="javascript" type="text/javascript">
+
+function p(x){
+    this.x = x;
+}
+p.prototype.backup = function(){
+    for(var i in this){
+        p.prototype[i] = this[i];
+    }
+}
+
+var p1 = new p(1);
+p1.backup();
+p1.x =10;
+alert(p1.x)
+p1 = p.prototype;
+alert(p1.x)
+
+
+
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

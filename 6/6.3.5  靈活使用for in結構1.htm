@@ -1,0 +1,28 @@
+<script language="javascript" type="text/javascript">
+
+
+Object.a = 1; 	// 為內部Object物件定義屬性a
+Object.b =true; 	// 為內部Object物件定義屬性b
+for(var i = 0 in Object) 	// 檢查Object物件
+{
+    alert(i);
+    alert(Object[i]);
+}
+
+
+Array.prototype.x = "x";	// 自定義陣列對象的繼承屬性
+var a = [1,2,3]; 	// 定義陣列對象，並給予值
+a.y = "y";	// 定義陣列對象的額外屬性
+for(var i in a) 	// 檢查陣列物件a
+{
+    alert(i + ":" + a[i]);
+}
+
+
+for(var i = 0; i < a.length ; i ++ )
+{
+    alert(i + ":" + a[i]);
+}
+
+
+</script>

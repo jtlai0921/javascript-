@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5" />
+<title></title>
+</head>
+<body>
+<script language="javascript" type="text/javascript">
+
+Array.prototype.each = function(f){
+    if(this.length){
+        var a = f(this.slice(0,1))
+        var b = this.slice(1);
+        var c = [a].concat(b.each(f))
+        return c;
+    }
+    else
+    {
+        return [];
+    }
+}
+var a = [1,2,3,4];
+var f = function(x){
+    return x*x;
+}
+alert(a.each(f));
+
+
+
+
+
+</script>
+</body>
+</html>

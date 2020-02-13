@@ -1,0 +1,38 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script language="javascript" type="text/javascript">
+
+
+
+var o = function( x, y )
+{
+    return ( "var a = " + x + ";" + x + " = " + y + ";" + y + " = a;" );
+}
+;
+var o1 = function(){
+    var f1 = function( x )
+    {
+        alert( "f1(" + x + ")" );
+    };
+    var f2 = function( x )
+    {
+        alert( "f2(" + x + ")" );
+    };
+    eval(o( "f1", "f2" ));
+    return [f1,f2];
+
+}
+var o1 = o1();
+o1[0]( 1 );
+o1[1]( 2 );
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<script language="javascript" type="text/javascript">
+
+
+var fromUnicode = String.prototype.fromUnicode = function(){	//對Unicode解碼進行解碼操作
+   var _this = arguments[0] || this; 	//判斷是否存在參數，如果存在則使用靜態方法呼叫參數值，否則作為字串對象的方法來處理目前字串物件
+   function f(){	//定義替換純文字函數
+      return String.fromCharCode(arguments[1]); 	//把第一個子表達式值（unicode解碼）轉換為字符
+   }
+   return _this.replace(/&#(\d*);/gmi, f); 	//使用replace()比對並替換unicode解碼為字符
+};
+
+
+var s = "javascript中國";	//定義字串直接量
+s = s.toUnicode();	//對字串進行Unicode解碼
+alert(s); 	//傳回字串"&#106;&#97;&#118;&#97;&#115;&#99;&#114;&#105;&#112;&#116;中國"
+s = s.fromUnicode();	//對被解碼的字串進行解碼
+alert(s); 	//傳回字串"javascript中國"
+
+
+
+</script>

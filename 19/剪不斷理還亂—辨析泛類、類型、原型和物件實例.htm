@@ -1,0 +1,38 @@
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+<script language="javascript" type="text/javascript">
+
+function Class(type){
+    this.type = type;
+}
+var instance1 = new Class("instance1");
+var instance2 = new Class("instance2");
+
+alert(instance1 instanceof Class);
+alert(instance2 instanceof Class);
+
+alert(instance1 instanceof Object);
+alert(instance2 instanceof Object);
+
+alert(instance1 instanceof Function);
+alert(instance2 instanceof Function);
+
+alert( Class instanceof Object );
+alert(Class instanceof Function);
+
+alert(Object instanceof Function);
+alert(Function instanceof Object);
+
+
+
+</script>
+</body>
+
+</html>

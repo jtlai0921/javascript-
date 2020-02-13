@@ -1,0 +1,32 @@
+<html>
+
+<head>
+
+<title></title>
+<script language="javascript" type="text/javascript">
+
+
+
+function O(x){
+    return function(){
+        this.x = x;
+        this.get = function(){
+            alert(this.x);
+        }
+    }   
+}
+
+var o = new O(1);
+var f = new o();
+f.get();
+
+
+
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

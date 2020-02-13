@@ -1,0 +1,31 @@
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+
+
+<div></div>
+<script language="javascript" type="text/javascript">
+
+var getE = document.getElementsByTagName;
+if( !window.ActiveXObject){
+    var getE = function(){
+        return  document.getElementsByTagName.apply(document, arguments);
+    }
+}
+var e = getE("div")[0];
+e.innerHTML = "Hello World"
+
+
+</script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+<script language="javascript" type="text/javascript">
+
+function isEmail(){
+    if(arguments.length>1) throw new Error("只能夠傳遞一個參數");	//檢測參數個數
+    //定義正則表達式
+    var regexp = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/; 
+    if (arguments[0].search(regexp)!= -1) 	//比對實參的值
+        return true;	//如果比對則傳回true
+    else
+        return false; 	//如果不比對則傳回false
+}
+var email = "zhuyinhong@css8.cn";	//聲明並初始化電子郵件地址字串
+alert(isEmail(email)); 	//傳回true
+
+
+
+</script>

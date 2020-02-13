@@ -1,0 +1,28 @@
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+
+<script language="javascript" type="text/javascript">
+
+function f()
+{
+    alert(this.x + this.y);
+}
+var o = {
+    x : 1,
+    y : 2
+}
+
+f.call(o);
+
+
+</script>
+</body>
+
+</html>

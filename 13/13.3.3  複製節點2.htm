@@ -1,0 +1,12 @@
+<script language="javascript" type="text/javascript">
+window.onload = function() {
+    var p = document.createElement("p");	//建立一個p元素
+    var h1 = document.createElement("h1");	//建立一個h1元素
+    var txt = document.createTextNode("Hello World");//建立一個純文字節點，純文字內容為"Hello World"
+    p.appendChild(txt); 	//把純文字節點增加到段落中
+    h1.appendChild(p); 	//把段落元素增加到標題元素中
+    document.body.appendChild(h1);	//把標題元素增加到body元素中
+        var new_h1 = h1.cloneNode(true); //複製標題元素及其所有子節點
+        document.body.appendChild(new_h1); //把複製的新標題元素增加到文件中
+}
+</script>

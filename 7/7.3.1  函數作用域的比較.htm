@@ -1,0 +1,16 @@
+<script language="javascript" type="text/javascript">
+
+
+var n = 1; 	//全局變量，作用域為目前文件
+function f(){
+    var n = 2; 	//局部變量，作用域僅限於函數體內
+    function e(){	//使用function敘述定義的函數結構體
+        return n; 	//檢測變量n到底傳回什麼值
+    }
+    return e; 	//傳回函數結構
+}
+alert(f()());	//傳回2，呼叫函數f的傳回函數e
+
+
+
+</script>

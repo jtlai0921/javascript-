@@ -1,0 +1,22 @@
+<script language="javascript" type="text/javascript">
+
+// 輸出字串到網頁中
+// 參數v表示要輸出顯示的值
+function print(v){
+
+    // 如果參數值為數字，則嵌入到<span>標籤中輸出
+    if(typeof v == "number"){
+        var w = 40;
+        if(n > 30) w = (n - 30) + 40;
+        var s = '<span style="padding:4px 2px;display:inline-block;text-align:center;width:'+ w +'px;">' + v + '</span>';
+        document.write(s);
+    }
+
+    // 如果參數值不為數字，則直接輸出
+    else{
+        document.write(v);
+    }
+}
+
+
+</script>

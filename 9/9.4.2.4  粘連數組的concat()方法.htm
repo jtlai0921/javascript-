@@ -1,0 +1,15 @@
+<script language="javascript" type="text/javascript">
+
+var a = [1,2,3,4,5]; 	//定義陣列
+var b = a.concat(6,7,8); 	//為陣列a連接3個元素
+alert(b); 	//傳回[1,2,3,4,5,6,7,8]
+
+
+var b = a.concat([1,2,3],[4,5]); 	//連接陣列
+alert(b.length); 	//傳回10，說明參數陣列被打散了
+
+
+var b = a.concat([[1,2],3],[4,5]); 	//連接陣列
+alert(b.length); 	//傳回9，說明陣列[1,2]沒有被打散
+
+</script>

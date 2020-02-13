@@ -1,0 +1,21 @@
+<script language="javascript" type="text/javascript">
+
+var o = {	// 定義物件結構
+    a:1, 	// 定義對象的屬性a
+    b:function(){}	// 定義對象的方法b
+}
+alert("a" in o); 	// 傳回true
+alert("b" in o); 	// 傳回true 
+alert("c" in o); 	// 傳回false 
+alert("valueOf" in o); 	// 傳回true，繼承JavaScript為所有Object物件定義的方法
+alert("constructor" in o); 	// 傳回true，繼承JavaScript為所有Object物件定義的屬性
+
+
+var a = new Array();	// 定義變量a為建構函數Array的一個物件實例
+alert(a instanceof Array); 	// 傳回true
+alert(a instanceof Object); 	// 傳回true，所有對象都是Object類別的實例
+alert(a instanceof Function); 	// 傳回false
+
+
+
+</script>

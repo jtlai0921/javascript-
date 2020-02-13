@@ -1,0 +1,16 @@
+<script language="javascript" type="text/javascript">
+
+//擴充parentNode指標的功能，實現一次能夠操縱多個父元素
+//參數：e表示目前節點，n表示要操縱的父元素級數
+//傳回值：傳回指定層級的父元素
+function parent(e, n){
+    var n = n || 1;	//如果沒有指定第2個參數值，則表示獲得上一級父元素
+    for(var i = 0; i < n; i ++ ) {	//逐層檢查父元素
+        if(e.nodeType == 9) break; 	//如果到了根節點，則傳回根元素
+        if(e != null) e = e.parentNode;	//獲得上一級父元素
+    }
+    return e;
+}
+
+
+</script>

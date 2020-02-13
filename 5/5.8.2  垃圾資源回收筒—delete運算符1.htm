@@ -1,0 +1,12 @@
+<script language="javascript" type="text/javascript">
+
+a = 1; 		// 初始化變量a，沒有使用var敘述聲明
+alert(delete a); 	// 傳回true，說明刪除成功
+var b = 1; 	// 使用var敘述聲明並初始化變量
+alert(delete b); 	// 傳回false，說明不允許刪除
+alert(delete Object.constructor); 	// 傳回true，說明部分內部成員可以被刪除
+alert(delete Object.valueOf());	// 傳回錯誤，說明某些內部成員不可以被刪除
+
+
+
+</script>

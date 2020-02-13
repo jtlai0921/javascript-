@@ -1,0 +1,32 @@
+<script language="javascript" type="text/javascript">
+
+var a ={	// 定義物件a
+   x : 1,
+};
+alert(a.x); 	// 傳回1。讀取物件屬性a的值
+a.x = 2; 	// 重新定義物件屬性a的值
+alert(a.x); 	// 傳回2。再次讀取物件屬性a的值
+
+
+var b = "x";	// 把屬性x的標誌符名作為字串儲存在變量b中
+var a ={	// 定義物件a
+   x : 1	// 定義屬性x
+};
+alert(a[b]); 	// 傳回1。透過變量間接獲得物件a的屬性x的值
+alert(a.b); 	// 傳回undefined。點運算符無法識別這種變量參考法
+
+
+var a = ["x",true,{}]; 	// 定義陣列
+alert(a[1]); 	// 傳回true
+alert(a["1"]);	// 傳回true
+
+
+var a = { 	// 定義物件
+    "true":1, 	// 定義屬性"true"。為了避免與系統標誌符衝突，這裡加了引號，以表示它是一個字串
+    "false":0	// 定義屬性"false"。為了避免與系統標誌符衝突，這裡加了引號，以表示它是一個字串
+}
+alert(a[true]); 	// 傳回1。此時中括號運算符會先把布爾值true轉換為字串"true"，而不是數值1
+alert(a[false]); 	// 傳回0。此時中括號運算符會先把布爾值false轉換為字串"false"，而不是數值0
+
+
+</script>

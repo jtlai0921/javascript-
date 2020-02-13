@@ -1,0 +1,26 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<p id="p">IE事件註冊</p>
+<script language="javascript" type="text/javascript">
+var p = document.getElementById("p");
+p.attachEvent("onclick",f1);
+p.attachEvent("onclick",f2);
+function f1(){
+    alert("事件1");
+}
+function f2(){
+    alert("事件2");
+}
+
+
+p.detachEvent("onclick",f1);
+p.detachEvent("onclick",f2);
+
+</script>
+
+</body>
+</html>

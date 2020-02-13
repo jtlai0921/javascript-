@@ -1,0 +1,17 @@
+<script language="javascript" type="text/javascript">
+
+var r = new RegExp("a");	//建構最簡單的正則表達式
+
+var s = "javascript!=JAVA";	//定義字串直接量
+var a = s.match(r); 	//呼叫正則表達式執行比對操作，傳回比對的陣列
+alert(a); 	//傳回陣列[a]
+alert(a.index); 	//傳回值為1
+
+var r = new RegExp("a","gi");	//設置比對模式為全局比對，且不區分大小寫
+
+var s = "javascript!=JAVA";	//字串直接量
+var a = s.match(r); 	//比對尋找
+alert(a); 	//傳回陣列["a","a","A","A"]
+
+
+</script>

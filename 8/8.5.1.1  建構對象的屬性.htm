@@ -1,0 +1,14 @@
+<script language="javascript" type="text/javascript">
+
+function Point(x,y){ 	//建構物件
+    this.x = x;
+    this.y = y;
+}
+Point.name = "類別屬性"	//建構對象的屬性
+var p1 = new Point(100,200); 	//實例化物件
+var p2 = new Point(300,400); 	//實例化物件
+alert(Point.name); 	//直接讀取建構對象的屬性
+alert(p1.name); 	//但是不能夠透過實例物件來讀取建構對象的屬性
+
+
+</script>

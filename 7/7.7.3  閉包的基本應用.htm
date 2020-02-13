@@ -1,0 +1,14 @@
+<script language="javascript" type="text/javascript">
+
+function f(){ 	//定義普通函數f
+    var a = 1; 	//定義局部變量a，初始值為1
+    var b = function(){	//定義一個閉包，並給予值給局部變量b
+        return a; 	//傳回函數參數x
+    }
+    a++; 	//動態更新函數內局部變量a的值
+    return b; 	//傳回閉包結構
+}
+var c = f(); 	//呼叫函數
+alert(c());	//傳回2。而不是傳回1 
+
+</script>

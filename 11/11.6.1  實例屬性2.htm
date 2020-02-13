@@ -1,0 +1,10 @@
+<script language="javascript" type="text/javascript">
+
+var s = "0123456789";
+var r = /\d/g; 	//比對單一數字
+r.lastIndex = 5; 	//指定比對起始位置為5，即從第6個字符開始比對
+var a = r.exec(s); 	//執行比對
+alert(a); 	//傳回比對數字為5
+
+
+</script>

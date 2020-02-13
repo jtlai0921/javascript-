@@ -1,0 +1,63 @@
+<html>
+
+<head>
+
+<title></title>
+<script language="javascript" type="text/javascript">
+
+function extend(Sub,Sup){
+    var F = function(){};
+    F.prototype = Sup.prototype;
+    Sub.prototype = new F();
+    Sub.prototype.constructor = Sub;
+    Sub.sup = Sup.prototype;
+    if(Sup.prototype.constructor == Object.prototype.constructor){
+        Sup.prototype.constructor =Sup
+    }
+    
+}
+
+
+
+function A(x){
+    this.x = x;
+    this.get = function(){
+        return this.x;
+    }  
+}
+A.prototype.add = function(){
+    return this.x + this.x;
+} 
+A.prototype.mul = function(){
+    return this.x * this.x;
+}
+
+function B(x){
+    A.call(this,x);
+}
+
+
+extend(B,A);
+
+B.prototype.add = function(){
+    return this.x + "" + this.x
+}
+B.prototype.add = function(){
+    return B.sup.add.call(this);
+}
+
+var f = new B(5);
+alert(f.get())
+alert(f.add())
+alert(f.mul())
+
+
+
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+<script language="javascript" type="text/javascript">
+
+
+
+function f(x){
+    this.x = x;
+    return this.x * this.x;
+}
+var o1 ={
+    f : function(x){
+        return f.apply(this, arguments);
+    }
+}
+
+alert(o1.x)
+alert(o1.f(5))
+
+
+
+</script>
+</body>
+
+</html>

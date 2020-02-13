@@ -1,0 +1,24 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<script language="javascript" type="text/javascript">
+
+function o(url){ 	//視窗居中處理函數
+    var w = screen.availWidth/2; 	//獲得客戶端屏幕的寬度一半
+    var h = screen.availHeight/2; 	//獲得客戶端屏幕的高度一半
+    var t = (screen.availHeight - h)/2; 	//計算居中顯示時頂部坐標
+    var l = (screen.availWidth - w)/2; 	//計算居中顯示時左側坐標
+    var p = "top=" + t + ",left=" + l + ",width=" + w + ",height=" +h; 	//設計坐標參數字串
+    var win = window.open(url,"url",p); 	//開啟指定的視窗，並傳遞參數
+    win.focus();	//獲得視窗焦點
+}
+o("http://www.css8.cn/");	//呼叫該函數
+
+
+</script>
+
+</body>
+</html>

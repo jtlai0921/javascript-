@@ -1,0 +1,10 @@
+<script language="javascript" type="text/javascript">
+
+var a = [1,2,3,4,5]; 	//定義陣列
+for(var i in a){ 	//檢查陣列
+    var t = a.pop();	//先出，把出去的元素值暫時儲存
+    a.unshift(t*10); 	//先進，把出去的元素值放大10倍，再進入
+}
+alert(a); 	//傳回[10,20,30,40,50]
+
+</script>

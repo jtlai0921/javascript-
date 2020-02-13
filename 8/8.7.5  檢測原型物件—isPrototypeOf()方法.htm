@@ -1,0 +1,13 @@
+<script language="javascript" type="text/javascript">
+
+var f = function(){}	//定義函數
+f.prototype = {	//函數的原型物件
+    a : 1,
+    b : function(){
+        return 2;
+    }
+}
+alert(f.prototype.a); 	//讀取函數的原型對象的屬性a，傳回1
+alert(f.prototype.b());	//讀取函數的原型對象的屬性b，傳回2
+
+</script>

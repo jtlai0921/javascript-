@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>檢查文件-計算節點數</title>
+<script language="javascript" type="text/javascript">
+function count (n){ 	//定義文件元素統計函數
+    var num = 0; 	//初始化變量
+    if(n.nodeType == 1)	//檢查是否為元素節點
+    num ++ ;	//如果是則計數器加1
+    var son = n.childNodes; 	//獲得所有子節點
+    for(var i = 0; i < son.length; i ++ ){ 	//循環統一每個子元素
+        num += count (son[i]);	//遞歸操作
+    }
+    return num; 	//傳回統計值
+}
+window.onload = function(){	//定義文件載入完畢時事件處理函數
+    alert("目前文件包含 " + count(document) + " 個元素");	//計算元素的總個數
+}
+</script>
+</head>
+<body>
+<h1>標準DOM</h1>
+<p>這是一份簡單的<strong>文件物件模型</strong></p>
+<ul>
+    <li>D表示文件，DOM的物質基礎</li>
+    <li>O表示對象，DOM的思想基礎</li>
+    <li>M表示模型，DOM的方法基礎</li>
+</ul>
+</body>
+</html>

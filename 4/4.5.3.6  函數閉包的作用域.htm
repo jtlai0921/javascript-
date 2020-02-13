@@ -1,0 +1,19 @@
+<script language="javascript" type="text/javascript">
+
+var a = 1; 	//全局變量
+var b = 2; 	//全局變量
+function f(){
+    var a = 3; 	//局部變量
+    function f(){	//閉包涵數
+        alert(a); 	//讀取變量a的值，傳回3
+        var b; 	//聲明局部變量b
+        alert(b); 	//讀取變量b的值，傳回undefined
+    }
+    return f	//傳回閉包涵數
+}
+var c = f();	//呼叫函數，傳回閉包涵數
+c();	//呼叫閉包涵數
+
+
+
+</script>

@@ -1,0 +1,22 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<input type="text" />
+<input type="text" />
+<script language="javascript" type="text/javascript">
+var  o = document.getElementsByTagName("input");	//獲得輸入表單元素集合
+for(var i=0;i<o.length;i++){	//檢查所有表單元素
+    o[i].onfocus  = function(){	//註冊focus事件處理函數
+        this.style.borderStyle = "outset";
+    }
+    o[i].onblur  = function(){	//註冊blur事件處理函數
+        this.style.borderStyle = "inset";
+    }
+}
+</script>
+
+</body>
+</html>

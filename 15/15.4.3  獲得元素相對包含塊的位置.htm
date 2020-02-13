@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+
+<title></title>
+<style type="text/css">
+div {
+    width:200px;
+    height:100px;
+    border:solid 1px red;
+    padding:50px;
+    position:absolute;
+    left:50px;
+    top:50px;
+}
+
+
+</style>
+</head>
+
+<body>
+
+
+<div id="wrap">
+    <div id="sub">
+        <div id="box"></div>
+    </div>
+</div>
+
+
+<script language="javascript" type="text/javascript">
+
+
+var box = document.getElementById("box");
+
+var o = getB(box);
+
+alert(o.x);
+
+
+//獲得指定元素距離包含塊元素左上角的偏移坐標
+//參數：e表示獲得位置的元素
+//傳回值：傳回物件直接量，其中屬性x表示x軸偏移距離，屬性y表示y軸偏移距離
+function getB(e){
+    return {
+        "x" : (parseInt(getStyle(e, "left")) || 0) ,
+        "y" : (parseInt(getStyle(e, "top")) || 0) 
+    };
+}
+
+
+function getStyle(e, n)
+{
+    if(e.style[n])
+    {
+        return e.style[n];
+    }
+    else if(e.currentStyle)
+    {
+        return e.currentStyle[n];
+    }
+    else if(document.defaultView && document.defaultView.getComputedStyle)
+    {
+        n = n.replace(/([A-Z])/g, "-$1");
+        n = n.toLowerCase();
+        var s = document.defaultView.getComputedStyle(e, null);
+        if(s) return s.getPropertyValue(n);
+    }
+    else
+    return null;
+}
+
+</script>
+
+</body>
+
+</html>

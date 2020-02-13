@@ -1,0 +1,11 @@
+<script language="javascript" type="text/javascript">
+
+//特殊運算數的怪異運算結果
+var n = 5; 	// 定義並初始化任意一個數值
+alert(NaN / n); 	// 傳回NaN。如果某個運算數是NaN，結果都是NaN
+alert(Infinity / n); 	// 傳回Infinity。Infinity被任意數字除，結果都是Infinity或-Infinity，符號由第二個運算數的符號決定
+alert(Infinity / Infinity); 	// 傳回NaN
+alert(n / 0); 	// 傳回Infinity。0除一個非無窮大的數字，結果是Infinity或-Infinity，符號由第二個運算數的符號決定
+alert(n / -0); 	// 傳回-Infinity。參考上一行註釋說明
+
+</script>

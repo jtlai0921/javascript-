@@ -1,0 +1,36 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+
+<h2>標題</h2>
+<p>段落純文字</p>
+<script language="javascript" type="text/javascript">
+
+var o = document.getElementsByTagName("body")[0].childNodes;
+for(var i = 0; i < o.length; i ++ ){
+    o[i].onmouseover = function(i){ 	//為每個元素註冊鼠標移過時事件延遲處理函數
+        return function(){
+            f(o[i])
+        }
+    } (i);
+    o[i].onmouseout = function(i) {	//為每個元素註冊鼠標移出時清除延遲處理函數
+        return function(){
+            clearTimeout(o[i].out); 	//呼叫clearTimeout()方法，清除已註冊的延遲處理函數
+        }
+    } (i);
+}
+function f(o){
+    //為了防止混淆多個註冊的延遲處理函數，分別把不同元素的延遲處理函數的參考儲存在該元素對象的out屬性中
+    o.out = setTimeout(function(){
+        alert(o.tagName);
+    } , 500);
+}
+
+</script>
+
+
+</body>
+</html>

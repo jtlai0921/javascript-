@@ -1,0 +1,10 @@
+<script language="javascript" type="text/javascript">
+
+var i = 1;
+function f(){
+   alert(i++);
+   return arguments.callee; 	//傳回函數自身
+}
+f()()()()()()()();	//連續呼叫函數自身8次，則出現8次提示交談視窗
+
+</script>

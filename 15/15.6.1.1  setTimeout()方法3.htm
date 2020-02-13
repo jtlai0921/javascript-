@@ -1,0 +1,29 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<input type="text" />
+<script language="javascript" type="text/javascript">
+var t = document.getElementsByTagName("input")[0];
+var i = 1;
+function f(){
+    var out = setTimeout(	//定義延遲執行的方法
+    function(){	//延遲執行函數
+        t.value = i ++ ; 	//遞加數字
+        f();	//呼叫包含setTimeout()方法的函數
+    }, 1000); 	//設置每秒執行一次呼叫
+    if(i > 10){ 	//如果超過10次，則清除執行，並出現提示資訊
+        clearTimeout(out);
+        alert("10秒鐘已到");
+    }
+}
+f();	//呼叫函數
+</script>
+
+
+
+
+</body>
+</html>

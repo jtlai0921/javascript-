@@ -1,0 +1,11 @@
+<script language="javascript" type="text/javascript">
+
+function f(){	//定義函數
+    return f.x++;	//傳回函數f的屬性x的遞增值
+}
+f.x = 0; 	//定義函數的屬性x，並初始化為0
+for( var i = 1; i < 10; i ++ ){
+    alert( f() );
+}
+
+</script>

@@ -1,0 +1,28 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<button id="btn1">按 鈕 1</button>
+<button id="btn2">按 鈕 2</button>
+<script language="javascript" type="text/javascript">
+var btn = document.getElementsByTagName("button");
+var f = function(){
+    alert(this.innerHTML);
+}
+for(var i = 0; i < btn.length; i ++ ){ 
+    btn[i].addEventListener("click", function(){	//綁定事件
+        alert(this.innerHTML);
+    }, true);
+}
+for(var i = 0; i < btn.length; i ++ ){
+    btn[i].removeEventListener("click", function(){	//銷毀事件
+        alert(this.innerHTML);
+    }, true);
+}
+</script>
+
+
+</body>
+</html>

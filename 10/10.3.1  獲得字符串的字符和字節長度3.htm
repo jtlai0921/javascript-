@@ -1,0 +1,13 @@
+<script language="javascript" type="text/javascript">
+
+String.prototype.lengthB = function(){
+    var s = this.replace( /[^\x00-\xff]/g, "**" );
+    return s.length;
+}
+
+
+var s = "String物件長度";
+// 定義字串直接量
+alert(s.lengthB())	// 傳回14
+
+</script>

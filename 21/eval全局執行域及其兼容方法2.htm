@@ -1,0 +1,32 @@
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+<script language="javascript" type="text/javascript">
+
+var n = 1;
+function f()
+{
+    var n = 2;
+    if(window.execScript)
+    {
+        window.execScript("n=3");
+    }
+    else
+    {
+        window.eval("n=3");
+    }
+    alert(n);
+}
+f();
+alert(n);
+
+</script>
+</body>
+
+</html>

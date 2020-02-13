@@ -1,0 +1,30 @@
+<script language="javascript" type="text/javascript">
+
+
+var toCode = function(str){ 	//盞﹃
+    var key = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";	//﹚竡盞芲36ダ㎝计
+    var l = key.length; 	//莉眔盞芲
+    var a = key.split("");	//р盞芲﹃锣传才皚
+    var s = "", b, b1, b2, b3; 	//﹚竡羬跑秖
+    for(var i = 0; i < str.length; i ++ ){ 	//浪琩﹃
+        b = str.charCodeAt(i); 	//だ猂–才莉眔Unicode秆絏
+        b1 = b % l; ; 	//―Unicode秆絏緇计
+        b = (b - b1) / l; ; 	//―程计
+        b2 = b % l; ; 	//―程计緇计
+        b = (b - b2) / l; ; 	//―程计
+        b3 = b % l; ; 	//―程计緇计
+        s += a[b3] + a[b2] + a[b1]; ; 	//沮硂ㄇ緇计琈甮盞芲い癸莱夹才
+    }
+    return s; ; 	//肚硂ㄇ琈甮才
+}
+
+
+
+var s = "javascriptい瓣";	//﹃钡秖
+s = toCode(s); 	//盞﹃
+alert(s); 	//肚﹃"02Y02P03A02 P03702R03602X034038FFXH6L"
+s = fromCode(s); 	//秆盞砆盞﹃
+alert(s); 	//肚﹃"javascriptい瓣"
+
+
+</script>

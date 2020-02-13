@@ -1,0 +1,13 @@
+<script language="javascript" type="text/javascript">
+
+function f(){
+    f.x=1; 	//在函數體內定義屬性
+    alert(f.x) 	//傳回1，在函數體內呼叫
+    alert(f.y) 	//傳回2，在函數體內呼叫
+}
+f.y=2; 	//在函數體外定義屬性
+alert(f.x) 	//傳回undefined，在函數體外呼叫無效
+alert(f.y) 	//傳回2，在函數體外呼叫有效
+
+
+</script>

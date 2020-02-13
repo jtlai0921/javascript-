@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>與客戶互動頁面</title>
+<script language="javascript" type="text/javascript">
+function request(){
+    parent.frames[1].location.href = "隱藏框架_serve.htm";  
+}
+window.onload = function(){
+    var b = document.getElementsByTagName("input")[0];
+    b.onclick = request;
+}
+</script>
+</head>
+<body>
+<h1>與客戶互動頁面</h1>
+<input name="submit" type="button" id="submit" value="向服務器發出請求" />
+</body>
+</html>

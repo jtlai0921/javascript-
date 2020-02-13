@@ -1,0 +1,25 @@
+<script language="javascript" type="text/javascript">
+
+//把數字轉換為字串
+var a = 123456;
+a = a + "";
+alert(typeof a);	//傳回類別型為string
+//把布爾值轉換為字串，傳回字串"true"或"false"
+var a = true;
+a = a + "";
+alert(a); 	//傳回字串"true"
+//把陣列轉換為字串，傳回陣列元素列表，以逗號分隔
+var a = [1,2,3];
+a = a + "";
+alert(a); 	//傳回字串"1,2,3"
+
+//把函數轉換為字串，傳回函數結構的程式碼字串
+var a = function(){
+    return 1;
+};
+a = a + "";
+alert(a); 	//傳回字串"var a = function(){ return 1;}"
+
+
+
+</script>

@@ -1,0 +1,27 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<div>
+    <div>
+        <div>盒子</div>
+    </div>
+</div>
+<script language="javascript" type="text/javascript">
+var div = document.getElementsByTagName("div");	//獲得三個嵌套的div元素
+for(var i=0;i<div.length;i++){	//檢查嵌套的div元素
+    div[i].onmouseover = function(e){ 	//註冊移過事件處理函數
+        this.style.border = "solid blue";
+    }
+    div[i].onmouseout = function(){	//註冊移出事件處理函數
+        this.style.border = "solid red";
+    }
+}
+</script>
+
+
+
+</body>
+</html>

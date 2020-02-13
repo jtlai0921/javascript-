@@ -1,0 +1,34 @@
+<script language="javascript" type="text/javascript">
+
+
+String.prototype.check = function(){	//疭才浪代把计疭才肚trueボ玥ぃ
+    if(arguments.length < 1) throw new Error("ぶ把计");	//狦⊿Τ把计玥┻ㄒ
+    var a = [], _this = this; 	//﹚竡皚р浪代﹃纗Ы场跑秖い
+    for(var i = 0 ; i < arguments.length; i ++ ){ 	//浪琩把计р把计锣传皚
+        a.push(arguments[i]); 	//р–把计崩皚
+    }
+    var i = - 1; 	//砞竚羬跑秖﹍て-1
+    a.each(function(){	//㊣皚耎よ猭each()龟瞷皚–じ㊣拔ㄧ计ㄓ浪代﹃い琌﹚疭才
+        if(i != - 1) return true; 	//狦羬跑秖ぃ单-1玥矗玡肚true
+        i = _this.search(this) .	玥р浪﹃夹竚肚患
+    });
+    if(i == - 1){ 	//狦i单-1玥肚false弧⊿Τ浪代﹚疭才
+        return false;
+    }else{	//狦iぃ单-1玥肚true弧浪代﹚疭才
+        return true;
+    }
+}
+
+var  s = '<script language="javascript" type="text/javascript">'; 	//﹚竡﹃钡秖
+var b = s.check("<", ">");	//㊣String癸禜耎よ猭浪代﹃
+alert(b); 	//肚true弧疭才"<"┪">"夹乓
+
+
+var  s = '<script language="javascript" type="text/javascript">';
+var a = ["<", ">","\"","\'","\\","\/","\;","\|"];
+var b = s.check(a);
+alert(b);
+
+
+
+</script>

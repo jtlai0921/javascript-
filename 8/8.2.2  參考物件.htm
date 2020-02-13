@@ -1,0 +1,13 @@
+<script language="javascript" type="text/javascript">
+
+o = {	//建立對象，並參考該物件給變量o
+    x:1,
+    y:true
+}
+o1 = o; 	//複製變量o
+alert(delete o); 	//刪除變量o，傳回值為true，說明刪除成功
+alert(o1.x); 	//再次讀取物件內資料，顯示為1，說明物件依然存在
+alert(o.x); 	//利用o來讀取物件內的資料，提示沒有定義物件
+
+
+</script>

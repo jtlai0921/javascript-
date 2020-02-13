@@ -1,0 +1,39 @@
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+
+
+
+<script language="javascript" type="text/javascript">
+
+
+function Base(){
+    var _this = this;
+    this.m = function(){
+        return _this;
+    };
+    this.name = "Base";
+}
+function F(){
+    this.name = "F";
+}
+F.prototype = new Base();
+var f = new F();
+var n = f.m();
+alert(n.name);
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

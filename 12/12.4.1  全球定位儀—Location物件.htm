@@ -1,0 +1,33 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<script language="javascript" type="text/javascript">
+
+var queryString = function(){	//莉眔URL琩高﹃把计硄ノㄧ计
+    var q = location.search.substring(1); 	//莉眔琩高﹃"id=123&name= location"场だ
+    var a = q.split("&");	//&才腹р琩高﹃糀秨皚
+    var o = {};	//﹚竡羬ン
+    for( var i = 0; i <a.length; i++){	//浪琩皚
+        var n = a[i].indexOf("=");	//莉眔–把计い单腹夹竚
+        if(n == -1) continue; 	//狦⊿Τ祇瞷玥铬Ω碻吏膥尿巨
+        var v1 = a[i].substring(0, n); 	//篒单腹玡把计嘿
+        var v2 = a[i].substring(n+1); 	//篒单腹把计
+        o[v1] = unescape(v2); 	///癸Α纗ンい
+    }
+    return o; 	//肚ン
+}
+
+
+var f1 = queryString();	//㊣琩高﹃ㄧ计
+for(var i in f1){ 	//浪琩肚癸禜莉眔–把计のㄤ
+    alert(i + "=" + f1[i]);
+}
+
+
+</script>
+
+</body>
+</html>

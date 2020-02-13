@@ -1,0 +1,26 @@
+<script language="javascript" type="text/javascript">
+
+function f(){
+    this.a = " a ";	//屬於物件f所有
+    alert( this.a + this.b + this.c + this.d ); 	//傳回a undefined undefined undefined
+    var x = new e();	//實例化物件e
+    function e(){
+        this.b = " b ";	//屬於物件e所有
+        alert( this.a + this.b + this.c + this.d ); 	//傳回undefined b undefined undefined
+        var x = new g();	//實例化物件g
+        function g(){
+            this.c = " c ";	//屬於物件g所有
+            alert( this.a + this.b + this.c + this.d ); //傳回NaN c undefined
+            var x = new h();	//實例化物件h
+            function h(){
+                this.d = " d ";	//屬於物件h所有
+                alert( this.a + this.b + this.c + this.d );//傳回NaN d
+            }
+        }
+    }
+}
+var x = new f();	//實例化物件f
+
+
+
+</script>

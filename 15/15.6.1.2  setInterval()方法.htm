@@ -1,0 +1,23 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<input type="text" />
+<script language="javascript" type="text/javascript">
+var t = document.getElementsByTagName("input")[0];
+var i = 1;
+var out = setInterval(f, 1000); 	//定義週期性執行的函數
+function f(){
+    t.value = i ++ ;
+    if(i > 10){ 	//如果重複執行10次
+        clearTimeout(out); 	//則清除週期性呼叫函數
+        alert("10秒鐘已到");
+    }
+}
+</script>
+
+
+</body>
+</html>

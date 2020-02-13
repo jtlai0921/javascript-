@@ -1,0 +1,27 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<script language="javascript" type="text/javascript">
+
+var user = prompt("請輸入您的使用者名稱：");
+if( ! ! user){	//把輸入的資訊轉換為布爾值
+    var ok = confirm("您輸入的使用者名稱為：\n" + user + "\n請確認。");	//輸入資訊確認
+    if(ok){
+        alert("歡迎您：\n" + user );
+    }
+    else{	//重新輸入資訊
+        user = prompt("請重新輸入您的使用者名稱：");
+        alert("歡迎您：\n" + user );
+    }
+}
+else {	//提示輸入資訊
+    user = prompt("請輸入您的使用者名稱：");
+}
+
+</script>
+
+</body>
+</html>

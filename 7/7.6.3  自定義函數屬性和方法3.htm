@@ -1,0 +1,18 @@
+<script language="javascript" type="text/javascript">
+
+function f(){
+    f.x=function(x){ 	//ㄧ计砰ず﹚竡ㄧ计よ猭x()
+        return x
+    };
+    alert(f.x(4)); 	//肚4ㄧ计砰ず㊣ㄧ计よ猭x()
+    alert(f.y(4)); 	//肚16ㄧ计砰ず㊣ㄧ计よ猭y()
+}
+f.y=function(y){ 	//ㄧ计砰﹚竡ㄧ计よ猭y()
+    return y*y;
+};
+f();	//㊣ㄧ计f
+alert(f.x(4)); 	//肚4ㄧ计砰㊣ㄧ计よ猭x()
+alert(f.y(4)); 	//肚16ㄧ计砰㊣ㄧ计よ猭y()
+
+
+</script>

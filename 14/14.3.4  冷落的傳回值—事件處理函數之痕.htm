@@ -1,0 +1,25 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<form id="form1" name="form1" method="post" action="http://www.css8.cn/" onsubmit="if(this.elements[0].value.length==0) return false;">
+        姓名：<input id="user" name="user" type="text" />
+    <input type="submit" name="btn" id="btn" value="傳送" />
+</form>
+<script language="javascript" type="text/javascript">
+
+var a = document.getElementsByTagName("a");
+for(var i = 0; i < a.length; i ++ ){
+   a[i].onmouseover = function(){
+      window.status = "";	//清除狀態欄的資訊
+      return true; 	//傳回值為true，禁止顯示超鏈接的URL資訊
+   }
+}
+
+
+</script>
+
+</body>
+</html>

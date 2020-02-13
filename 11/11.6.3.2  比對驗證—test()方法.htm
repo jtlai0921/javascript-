@@ -1,0 +1,20 @@
+<script language="javascript" type="text/javascript">
+
+var s = "javascript";
+var r = /\w/g; 	//比對字符
+var b = r.test(s); 	//傳回true
+
+var r = /javascript/g;
+var b = r.test(s); 	//傳回true
+
+var r = /\d/g; 	//比對數字
+var b = r.test(s); 	//傳回false
+
+
+var s = "javascript";	//測試使用的字串直接量
+var r = /\w/g; 	//比對模式
+while(r.test(s)){ 	//循環執行比對驗證，如果傳回true，則連續執行驗證
+    alert(RegExp.lastMatch +  "\n" +  r.lastIndex); //利用靜態屬性和實例屬性，顯示目前比對資訊
+}
+
+</script>

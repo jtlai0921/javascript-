@@ -1,0 +1,11 @@
+<p id="p1">段落純文字1</p>
+<p id="p2">段落純文字2</p>
+<p id="p3">段落純文字3</p>
+<p id="p4">段落純文字4</p>
+<p id="p5">段落純文字5</p>
+<script language="javascript" type="text/javascript">
+var p = document.getElementsByTagName("p");	//獲得p元素的所有參考指標
+for(var i=0;i<p.length;i++){	//檢查p資料集合
+    p[i].setAttribute("class","red");//為每個獲得的p元素定義一個class屬性，並設置屬性值為red。
+}
+</script>

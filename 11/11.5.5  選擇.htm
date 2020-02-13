@@ -1,0 +1,21 @@
+<script language="javascript" type="text/javascript">
+
+var s1 = "abc";
+var s2 = "123";
+var r1 = /\w+/;
+var r2 = /\d+/;
+var b1 = r1.test(s1);
+var b2 = r2.test(s2);
+alert(b1); 	//傳回true
+alert(b2); 	//傳回true
+
+
+var s1 = "abc";
+var s2 = "123";
+var r = /[(\w+)(\d+)]/;	//字符範圍類別正則表達式
+var b1 = r.test(s1); 	//傳回true
+var b2 = r.test(s2); 	//傳回true
+
+
+
+</script>

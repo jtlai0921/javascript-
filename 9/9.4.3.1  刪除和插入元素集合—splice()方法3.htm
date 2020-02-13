@@ -1,0 +1,13 @@
+<script language="javascript" type="text/javascript">
+
+var a = [1,2,3,4,5]; 	//定義陣列
+var b = a.splice(6,2,2,3); 	//起始值大於length屬性值
+alert(a); 	//傳回[1, 2, 3, 4, 5, 2, 3]
+
+
+var a = [1,2,3,4,5]; 	//定義陣列
+var b = a.splice(-2,-2,2,3); 	//第1、2個參數都為負值
+alert(a); 	//傳回[1, 2, 3, 2, 3, 4, 5]
+
+
+</script>

@@ -1,0 +1,9 @@
+<div id="box">盒子</div>
+<script language="javascript" type="text/javascript">
+var box = document.getElementById("box");	//獲得指定盒子的參考指標
+var info = "nodeName：" + box.nodeName; 	//獲得該節點的名稱
+info += "\rnodeType：" + box.nodeType; 	//獲得該節點的類別型
+info += "\rparentNode：" + box.parentNode.nodeName; 	//獲得該節點的父節點名稱
+info += "\rchildNodes：" + box.childNodes[0].nodeName; 	//獲得該節點的子節點名稱
+alert(info); 	//顯示提示資訊
+</script>

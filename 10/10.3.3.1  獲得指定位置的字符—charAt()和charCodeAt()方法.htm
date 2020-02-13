@@ -1,0 +1,19 @@
+<script language="javascript" type="text/javascript">
+
+String.prototype.toArray = function(){	//把字串轉換為陣列
+    var l = this.length, a = [];	//獲得目前字串長度，並定義空陣列
+    if( l ){ 	//如果存在則執行循環操作
+        for( var i = 0; i < l; i ++ ){ 	//檢查字串，間接列舉每個字符
+            a.push( this.charAt( i ) ); 	//把每個字符按順序裝入陣列
+        }
+    }
+    return a; 	//傳回陣列
+}
+
+
+var s = "abcdefghijklmn".toArray();	//把字串轉換為陣列
+for(var i in s){ 	//檢查被轉換的字串，並列舉每個字符
+    alert(s[i]);
+}
+
+</script>

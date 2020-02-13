@@ -1,0 +1,20 @@
+<script language="javascript" type="text/javascript">
+
+
+var s = "中";
+var b = s.charCodeAt(0);	// 傳回值20013
+
+
+b1 = b % 36;	// 傳回值33，求餘數
+b = (b - b1) / 36;	// 傳回值555，求倍數
+b2 = b % 36;	// 傳回值15，求餘數
+b = (b - b2) / 36;	// 傳回值15，求倍數
+b3 = b % 36;	// 傳回值15，求餘數
+
+var m = b3 * 36 * 36 + b2 * 36 + b1; 	// 傳回值20013，反求字符"中"的解碼值
+
+var key = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+
+
+</script>

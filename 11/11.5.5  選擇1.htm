@@ -1,0 +1,21 @@
+<script language="javascript" type="text/javascript">
+
+var r = /a|b/;	//選擇單一字符，比對a或b
+var r = /\w*|\d+/; 	//選擇重複類別，比對任意字符，或者比對任意數字
+var r = /a|\d+/;	//選擇字符或重複類別，比對字符a，或者比對任意數字
+var r = /\w*?|\d{1,}?/; 	//選擇惰性比對
+var r = /a|\d{1,}?/; 	//選擇字符或惰性模式
+var r = /[abc]|[def]/; 	//選擇字符範圍類別
+var r = /a|[cde]/; 	//選擇字符或者字符範圍類別
+var r = /(abc)|(cdf)/; 	//選擇子表達式
+
+
+var s1 = "abc";
+var s2 = "123";
+var r = /\w+|\d+/;	//選擇重複字符類別
+var b1 = r.test(s1); 	//傳回true
+var b2 = r.test(s2); 	//傳回true
+
+
+
+</script>

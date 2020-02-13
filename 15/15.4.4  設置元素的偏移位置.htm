@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+
+<title></title>
+<style type="text/css">
+div {
+    width:200px;
+    height:100px;
+    border:solid 1px red;   
+    padding:50px;
+}
+#wrap {
+    position:relative;
+    border-width:20px; 
+}
+
+body {
+    margin:20px;
+    padding:0;
+}
+
+
+</style>
+</head>
+
+<body>
+
+
+<div id="wrap">
+    <div id="sub">
+        <div id="box"></div>
+    </div>
+</div>
+
+
+<script language="javascript" type="text/javascript">
+
+
+var box = document.getElementById("box");
+
+setP(box,{x:200,y:200});
+
+
+//設置元素的偏移位置，即相對於上級定位元素為參照物件定位元素的位置 
+//參數：e表示設置位置的元素，o表示一個對象，物件包含的屬性x代表x軸距離，屬性y代表y軸距離，不用附帶單位，預設以像素為單位
+//傳回值：無
+function setP(e,o){
+    (e.style.position) || (e.style.position = "absolute");	//如果元素靜態顯示，則對其進行絕對定位
+    e.style.left = o.x + "px";	//設置x軸的距離
+    e.style.top = o.y + "px";	//設置y軸的距離
+}
+
+
+function getP(e)
+{
+    var x = y = 0;
+    while(e.offsetParent)
+    {
+        x += e.offsetLeft;
+        y += e.offsetTop;
+        e = e.offsetParent;
+    }
+    return {
+        "x" : x, 
+        "y" : y
+    };
+}
+
+</script>
+
+</body>
+
+</html>

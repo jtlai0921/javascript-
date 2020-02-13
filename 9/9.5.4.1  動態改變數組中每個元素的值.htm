@@ -1,0 +1,20 @@
+<script language="javascript" type="text/javascript">
+
+Array.prototype._edit = Array.prototype.edit || ( Array.prototype.edit = function(){	//陣列元素批處理方法
+    var b = arguments, a = [];	//獲得參數，並定義一個臨時陣列
+    this.each( function(){	//呼叫迭代器，檢查所有元素
+        a.push( b[0].call( b[1], this ) ); 	//呼叫參數函數，把目前元素作為參數傳遞，執行傳回值儲存在臨時陣列中
+    });
+    return a; 	//傳回臨時陣列
+});
+Object.prototype.edit = Array.prototype._edit;
+
+var a = [1, 2, 3, 4] ; 	//定義陣列直接量
+var f = function( x ){ 	//定義一個元素處理函數，該函數將把每個元素取平方值
+    return x * x;
+}
+var b = a.edit( f ); 	//呼叫陣列元素編輯方法edit()，並傳遞將要執行的函數
+alert( b ); 	//傳回[1, 4, 9, 16]
+
+
+</script>

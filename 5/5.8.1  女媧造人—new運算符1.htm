@@ -1,0 +1,24 @@
+<script language="javascript" type="text/javascript">
+
+var a = function(){	// 自定義類別a的資料結構
+    this.x = 1; 	// 類別成員x
+    this.y = 2; 	// 類別成員y
+};
+var b = new a; 	// 建立自定義類別a的對象實例
+alert(b.x); 	// 傳回1，呼叫對象的成員
+
+var a = function(){	// 自定義類別a的資料結構
+    this.x = 1; 	// 定義類別成員x
+    this.y = 2; 	// 定義類別成員y
+};
+var b =  a; 	// 透過給予值運算符複製自定義類別的資料結構
+alert(b.x); 	// 傳回undefined
+
+var a ={		// 自定義物件a資料結構
+   x : 1, 	// 定義物件成員
+   y : 2		// 定義物件成員
+};
+var b = a; 	// 直接複製物件資料結構
+alert(b.x); 	// 傳回1，呼叫對象的成員
+
+</script>

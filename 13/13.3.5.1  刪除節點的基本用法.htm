@@ -1,0 +1,15 @@
+<script language="javascript" type="text/javascript">
+window.onload = function() {	//定義當頁面完成初始化後執行的腳本函數
+    var ok = document.getElementById("ok");//獲得按鈕元素的參考指標
+    ok.onclick = function(){	//為按鈕註冊一個鼠標單擊事件處理函數
+        var red = document.getElementById("red");	//獲得紅色盒子的參考指標
+        var h1 = document.getElementsByTagName("h1")[0]; //獲得標題元素的參考指標
+        red.removeChild(h1); 	//移出紅盒子包含的標題元素
+    }
+}
+</script>
+<div id="red">
+    <h1>紅盒子</h1>
+</div>
+<div id="blue">藍盒子</div>
+<button id="ok">刪除</button>

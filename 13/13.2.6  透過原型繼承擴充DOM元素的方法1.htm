@@ -1,0 +1,40 @@
+<script language="javascript" type="text/javascript">
+
+var DOMElement ={
+    extend : function(name, fn){
+        //增加名稱為name的方法fn
+        if( ! document.all)//除了ie而外的瀏覽器都能夠存取到HTMLElement這個類別
+            eval("HTMLElement.prototype." + name + " = fn");
+        else{
+            //IE中不能存取HTMLElement這個類別
+            //為了達到同樣的目的，必須重新定義下面幾個函數
+            //document.createElement
+            //document.getElementById
+            //document.getElementsByTagName
+            //這幾個函數都是獲得HTML元素的方法
+            //修改這些方法，使得透過這些方法獲得的每個元素擁有名稱為name的方法fn
+            var _createElement = document.createElement;
+            document.createElement = function(tag){
+                var _elem = _createElement(tag);
+                eval("_elem." + name + " = fn");	//_elem[name] = fn; 也可以達到同樣的目的
+                return _elem;
+            }
+            var _getElementById = document.getElementById;
+            document.getElementById = function(id){
+                var _elem = _getElementById(id);
+                eval("_elem." + name + " = fn");
+                return _elem;
+            }
+            var _getElementsByTagName = document.getElementsByTagName;
+            document.getElementsByTagName = function(tag){
+                var _arr = _getElementsByTagName(tag);
+                for(var _elem = 0; _elem < _arr.length; _elem ++ )
+                eval("_arr[_elem]." + name + " = fn");
+                return _arr;
+            }
+        }
+    }
+};
+
+
+</script>

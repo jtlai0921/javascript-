@@ -1,0 +1,18 @@
+<script language="javascript" type="text/javascript">
+
+HTMLElement.prototype.pre = function(){	//擴充原型方法
+    var e = this.previousSibling;
+    while (e && e.nodeType != 1){
+        e = e.previousSibling;
+    }
+    return e;
+}
+
+window.onload = function(){
+    var e = document.getElementsByTagName("div")[0];
+    e = e.pre();
+    alert(e.nodeName);
+}
+
+
+</script>

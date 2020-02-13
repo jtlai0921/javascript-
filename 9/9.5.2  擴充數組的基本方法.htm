@@ -1,0 +1,18 @@
+<script language="javascript" type="text/javascript">
+
+Array.prototype.hello = function(){	//定義Array對象的原型方法
+    alert("Hello,world");
+}
+
+var a = [1,2,3]; 	//定義陣列直接量
+a.hello();	//呼叫陣列的原型方法，提示"Hello,world"
+
+
+Array.prototype._m = Array.prototype.m ||
+( Array.prototype.m = function(){
+    //擴充方法的實際程式碼
+});
+Object.prototype.m = Array.prototype._m
+
+
+</script>

@@ -1,0 +1,17 @@
+<html>
+<head>
+<title></title>
+</head>
+<body onload="f1()">
+<script language="javascript" type="text/javascript">
+window.onload = f2;
+function f1(){
+    alert('<body onload="f1()">');
+}
+function f2(){
+    alert('window.onload = f2;');
+}
+</script>
+
+</body>
+</html>

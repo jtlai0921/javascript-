@@ -1,0 +1,15 @@
+<script language="javascript" type="text/javascript">
+
+function f(){	//定義函數類別結構
+    this.a ="a";	//定義成員a並給予值，a為屬性
+    this.b = function(){	//定義成員b並給予值，b為方法
+        alert("b");
+    }
+}
+function e(){	//定義函數
+    f.call(this); 	//在函數體內動態呼叫函數f，this指代函數e
+    alert(a); 	//顯示變量a的值
+}
+e()	//傳回字串a
+
+</script>

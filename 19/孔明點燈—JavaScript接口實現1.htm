@@ -1,0 +1,56 @@
+<html>
+
+<head>
+
+<title></title>
+<script language="javascript" type="text/javascript">
+
+/*
+interface Base{
+    function set(string);
+    function get();
+}
+*/
+
+function Neddy(){
+    this.name = undefined;
+    this.base = ["set"];
+    interface(this);
+}
+Neddy.prototype.set = function(name){
+    this.name = name;
+}
+
+
+function interface(o){
+    if(!implements(o,"set","get")){
+        throw new Error("類別沒有實現接口約定");
+    }
+}
+function implements(o){
+    for(var i = 1;i<arguments.length;i++){
+        var p = arguments[i];
+        var b = false;
+        for(var j=0;j<o.base.length;j++){
+            if(o.base[j] == p) b = true;
+        }
+        if(!b) return false;
+    }
+    return true;
+}
+
+
+var neddy = new Neddy();
+neddy.set("Ghost");
+neddy.get();
+
+
+
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

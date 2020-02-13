@@ -1,0 +1,30 @@
+<script language="javascript" type="text/javascript">
+
+//如果比對任意ASCII字符，則可以這樣設計：
+var r = /[\u0000-\u00ff]/g;
+
+//如果比對任意雙字節的中文字，則可以這樣設計：
+var r = /[^\u0000-\u00ff]/g;
+
+var r = /[\u0030-\u0039]/g;
+
+var r = /[\u0041-\u004A]/g;
+
+var r = /[\u0061-\u007A]/g;
+
+//也可以在字符類別中混合使用簡單字符、範圍和反義等類別型：
+var s = "abcdez";	//字串直接量
+var r = /[abce-z]/g; 	//字符類別包含字符a、b、c，以及從e到z之間的任意字符
+var a = s.match(r); 	//傳回陣列["a","b","c","e","z"]
+
+var r = /[0-9 ]/g;
+
+var r = /[a-zA-Z0-9]/g;
+
+//還可以在一個正則表達式中設計多個字符類別，從而設計更靈活的比對。
+var s = "abc4 abd6 abe3 abf1 abg7";	//字串直接量
+var r = /ab[c-g][1-7]/g; 	//比對第1、2個字符為ab，第3個字符為從c到g，第4個字符為1到7的任意數字
+var a = s.match(r); 	//傳回陣列["abc4"," abd6"," abe3"," abf1"," abg7"]
+
+
+</script>

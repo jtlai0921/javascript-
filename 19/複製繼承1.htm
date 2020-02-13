@@ -1,0 +1,43 @@
+<html>
+
+<head>
+
+<title></title>
+<script language="javascript" type="text/javascript">
+
+
+Function.prototype.extend = function(o){
+    for(var i in o){
+        this.constructor.prototype[i] = o[i];
+    }
+}
+
+function F(x,y){
+    this.x = x;
+    this.y = y;
+    this.add = function(){
+        return this.x + this.y;
+    }
+}
+F.prototype.mul = function(){
+    return this.x * this.y;
+}
+
+
+var o = function(){}
+o.extend(new F(2,3));
+
+
+alert(o.x);
+alert(o.y);
+alert(o.add());
+alert(o.mul());
+
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

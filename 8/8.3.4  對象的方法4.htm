@@ -1,0 +1,14 @@
+<script language="javascript" type="text/javascript">
+
+function f(){	//定義方法
+    return this.x + this.y;
+}
+function MyClass(x,y){ 	//自定義類別
+    this.x= x;
+    this.y = y;
+}
+var o = new MyClass(10,20); 	//實例化類別，並初始化參數值
+o.add = f; 	//為實例物件綁定方法
+alert(o.add());	//呼叫方法，傳回值30
+
+</script>

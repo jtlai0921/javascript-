@@ -1,0 +1,45 @@
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+<script language="javascript" type="text/javascript">
+
+
+
+function Base(){}
+
+var a = new Base();
+Base.prototype.x = 1;
+var b = new Base();
+
+
+function Other(){}
+var o = new Other();
+Other.prototype.x = 3;
+
+Base.prototype = o;
+Base.prototype.constructor = Base;
+
+var c = new Base();
+
+alert(a.x);
+alert(b.x);
+alert(c.x);
+
+alert(a instanceof Base); 
+alert(b instanceof Base); 
+alert(c instanceof Base); 
+
+alert(a.constructor);
+alert(b.constructor);
+alert(c.constructor);
+
+</script>
+</body>
+
+</html>

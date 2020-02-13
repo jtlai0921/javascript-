@@ -1,0 +1,21 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<span href="http://www.baidu.com/">百度</span>
+<script language="javascript" type="text/javascript">
+var r = document.getElementsByTagName("input")[1];
+var old = r.onclick; 	//儲存預設的事件處理函數
+r.onclick = function(){
+    alert("Hi"); 
+    old();	//呼叫預設行為
+}
+
+</script>
+
+</body>
+</html>
+
+

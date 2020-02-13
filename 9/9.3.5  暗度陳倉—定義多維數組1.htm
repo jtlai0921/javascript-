@@ -1,0 +1,14 @@
+<script language="javascript" type="text/javascript">
+
+var a = []	//二維陣列
+for( var i = 0 ; i < 10; i ++ ){ 	//行循環
+    var b = [];	//輔助陣列
+    for( var j = 0 ; j < 10; j ++ ){ 	//列循環
+        b[j] = i * 10 + j + 1; 	//定義陣列b的元素值
+    }
+    a[i] = b; 	//把陣列b給予值給陣列a
+}
+alert( a ); 	//傳回1~100的二維數列
+
+
+</script>

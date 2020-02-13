@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body style="width:2000px;height:2000px;border:solid 1px red;">
+
+
+<textarea id="t" cols="15" rows="4"  style="position:fixed;left:50px;top:50px;"></textarea>
+
+<script language="javascript" type="text/javascript">
+
+var t = document.getElementById("t");
+
+
+window.onscroll = function(){
+    t.value = getPS().x + " " + getPS().y;
+
+}
+
+
+//獲得頁面滾動條的位置
+//參數：無
+//傳回值：傳回滾動條的位置，其中屬性x表示x軸偏移距離，屬性y表示y軸偏移距離
+function getPS(){
+    var h = document.documentElement; 	//獲得頁面參考指標
+    var x = self.pageXOffset || 	//兼容早期瀏覽器
+            (h && h.scrollLeft) ||	//兼容標準瀏覽器
+            document.body.scrollLeft; 	//兼容IE怪異模式
+    var y = self.pageYOffset || 	//兼容早期瀏覽器
+            (h && h.scrollTop) ||	//兼容標準瀏覽器
+            document.body.scrollTop; 	//兼容IE怪異模式
+    return {
+        x : x, 
+        y : y
+    };
+}
+
+</script>
+
+</body>
+
+</html>

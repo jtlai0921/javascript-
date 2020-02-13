@@ -1,0 +1,44 @@
+<html>
+
+<head>
+
+<title></title>
+<script language="javascript" type="text/javascript">
+
+/*
+interface Base{
+    function saying(boolean);
+    function set(string);
+    function get();
+}
+*/
+
+function Neddy(){
+    this.name = undefined;
+}
+Neddy.prototype.saying = function(b){
+    if(b) alert( "我是人" );
+    else alert( "我是鬼" );
+}
+Neddy.prototype.set = function(name){
+    this.name = name;
+}
+Neddy.prototype.get = function(){
+    alert(this.name);
+}
+
+var neddy = new Neddy();
+neddy.saying();
+neddy.set("Ghost");
+neddy.get();
+
+
+
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

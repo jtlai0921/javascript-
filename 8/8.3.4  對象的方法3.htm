@@ -1,0 +1,14 @@
+<script language="javascript" type="text/javascript">
+
+var o = {	
+    x:function(){	//定義對象的方法
+        alert(this.y); 	//存取目前對象的屬性y的值
+    }
+}
+o.x();	//傳回undefined，此時this指向物件o
+var f = o; 	//複製物件o為f
+f.y = 2; 	//為物件f'單獨定義屬性y，給予值為2
+f.x();	//傳回2，此時this指向物件f
+
+
+</script>

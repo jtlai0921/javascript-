@@ -1,0 +1,25 @@
+<script language="javascript" type="text/javascript">
+
+Array.prototype._filter = Array.prototype.filter || ( Array.prototype.filter = function(){//過濾陣列元素方法
+    var b = arguments, a = [];
+    this.each( function(){	//檢查陣列
+        if( b[0].call( b[1], this ) ) 	//如果執行參數函數時，傳回值為true， 
+        a.push( this ); 	//則把該元素儲存到臨時陣列中
+    });
+    return a; 	//最後傳回這個臨時陣列元素
+});
+Object.prototype.filter = Array.prototype._filter;
+
+
+var a = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+var f = function( x ){
+    if( x > 4 ) return true;
+}
+
+
+var b = a.filter( f ); 	//呼叫陣列元素過濾方法
+alert( b ); 	//傳回[5, 6, 7, 8, 9]
+
+
+
+</script>

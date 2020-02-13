@@ -1,0 +1,10 @@
+<script language="javascript" type="text/javascript">
+
+function f( a, b ){ 	//比較函數，如果a小於b，則a、b位置不動，反之換位
+    return ( a < b );
+}
+var a = ["aB", "Ab", "Ba", "bA"];
+a.sort( f ); 	//根據比較函數進行排序
+alert( a ); 	//傳回陣列["Ab","Ba","aB","bA"]
+
+</script>

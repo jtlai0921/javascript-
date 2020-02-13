@@ -1,0 +1,19 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<select>
+    <option value="http://www.baidu.com/">百度</option>
+     <option value="http://www.google.cn/">Google</option>
+</select>
+<script language="javascript" type="text/javascript">
+var a = document.getElementsByTagName("select")[0];
+a.onchange = function(){
+   window.open(this.value,""); 	//根據下拉列表框的目前值開啟指定的網址
+}
+</script>
+
+</body>
+</html>

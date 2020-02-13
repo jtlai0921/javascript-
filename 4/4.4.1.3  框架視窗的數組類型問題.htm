@@ -1,0 +1,11 @@
+<script language="javascript" type="text/javascript">
+
+var iframe = document.createElement("iframe");	//建立一個浮動框架
+document.body.appendChild(iframe); 	//在文件中插入該框架
+var A = window.frames[0].Array; 	//獲得該浮動框架視窗包含的Arrray建構函數
+var a = new A();	//利用該浮動框架的Array建構函數初建一個陣列物件
+alert(a.constructor == Array); 	//傳回false
+alert(a.constructor); 	//傳回Array對象的字串提示
+
+
+</script>

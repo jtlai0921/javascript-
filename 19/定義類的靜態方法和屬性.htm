@@ -1,0 +1,60 @@
+<html>
+
+<head>
+
+<title></title>
+<script language="javascript" type="text/javascript">
+
+var F = (function(){
+    var _a = 1;
+    this.a = _a;
+    this.get1 =function(){
+        return _a;
+    };
+    this.set1 = function(x){
+        _a = x;
+    };
+    return function(){
+       this.get2 =function(){
+           return _a;
+       };
+       this.set2 = function(x){
+           _a = x;
+        };
+    } 
+})();
+F.get3 =function(){
+    return get1();
+};
+F.set3 = function(x){
+     set1(x);
+}
+F.a = a;
+
+
+
+
+
+alert(F.get3());
+alert(F.a);
+F.set3(2);
+alert(F.get3());
+
+
+
+var a = new F()
+alert(a.get2());
+
+
+
+
+
+
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

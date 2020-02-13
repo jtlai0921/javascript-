@@ -1,0 +1,12 @@
+<script language="javascript" type="text/javascript">
+
+var a = new RegExp("\\b\\w","gi");	//建構正則表達式物件
+var b = new RegExp(a); 	//對正則表達式物件進行再封裝
+var c = RegExp(a); 	//傳回正則表達式直接量
+alert(a.constructor == RegExp); 	//傳回true
+alert(b.constructor == RegExp); 	//傳回true
+alert(c.constructor == RegExp); 	//傳回true
+
+
+
+</script>

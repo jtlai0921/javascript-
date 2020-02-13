@@ -1,0 +1,18 @@
+<script language="javascript" type="text/javascript">
+
+function avg(){//―キА计
+    var num = 0, l = 0; 	//羘﹍て羬跑秖
+    for(var i = 0; i < arguments.length; i ++ ){ 	//浪琩┮Τ龟把
+        if(typeof arguments[i] != "number")	//狦把计ぃ琌计
+            continue; 	//玥┛菠赣把计
+        num += arguments[i]; 	//璸衡把计计ぇ㎝
+        l ++ ; 	//璸衡把籔㎝笲衡把计计
+    }
+    num /= l; 	//―キА
+    return num; 	//キА
+}
+alert(avg(1, 2, 3, 4)); 	//肚2.5
+alert(avg(1, 2, "3", 4)); 	//肚2.3333333333333335
+
+
+</script>

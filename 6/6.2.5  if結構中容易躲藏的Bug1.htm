@@ -1,0 +1,30 @@
+<script language="javascript" type="text/javascript">
+
+
+if(1 == a){ 	// 預防給予值運算的好方法
+    alert(a);
+}
+
+
+var a=2; 	// 聲明變量並給予值
+if(1 == a); 	// 誤在條件表達式後附加分號
+{
+    alert(a); 	// 但是依然能夠被執行的複句
+}
+
+
+var a=2; 	// 聲明變量並給予值
+if(1 == a)
+    ; 	// 條件成立時將執行空敘述
+{
+    alert(a); 	// 獨立於條件結構的復合敘述
+}
+
+
+var a=2; 	// 聲明變量並給予值
+if(1 == a){ 	// 就不會再增加分號表示一行結束了
+    alert(a); 
+}
+
+
+</script>

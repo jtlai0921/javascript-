@@ -1,0 +1,47 @@
+<html>
+
+<head>
+
+<title></title>
+<script language="javascript" type="text/javascript">
+
+
+
+
+function A(){
+    this.m = function(){
+        alert("A");
+    }
+}
+
+function B(){
+    var m = this.m;
+    this.m = function(){
+        m.call(this);
+        alert("B");
+    };
+}
+B.prototype = new A();
+B.prototype.constructor = B;
+
+
+var b = new B();
+b.m();
+
+
+
+
+
+
+
+
+
+
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

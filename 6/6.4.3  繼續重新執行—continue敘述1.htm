@@ -1,0 +1,14 @@
+<script language="javascript" type="text/javascript">
+
+
+var a = [1, "d", 2, "a", "b", "c", 3, 4] 	// 定義並初始化陣列a
+var b = [], j = 0; 	// 定義陣列b和變量j
+for(var i in a){ 	// 檢查陣列a
+    if(typeof a[i] == "string")	// 如果元素資料類別型為字串，則傳回繼續下一次迭代
+        continue;
+    b[j ++ ] = a[i]; 	// 把非字串類別型的元素值給予值給陣列b
+}
+alert(b); 	// 傳回1,2,3,4
+
+
+</script>

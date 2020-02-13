@@ -1,0 +1,14 @@
+<script language="javascript" type="text/javascript">
+
+function Point(x,y){ 	//自定義資料類別型
+    this.x = x;
+    this.y = y;
+}
+Point.prototype.valueOf = function(){	//自定義Point資料類別型的valueOf ()方法
+    return "(" + this.x + "," + this.y + ")";
+}
+var p = new Point(26,68);
+alert(p.valueOf());	//傳回目前對象的值"(26,68)"
+alert(Object.prototype.valueOf.apply(p)); 	//預設傳回值為"[object Object]"
+
+</script>

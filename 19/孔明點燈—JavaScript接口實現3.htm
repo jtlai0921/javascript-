@@ -1,0 +1,113 @@
+<html>
+
+<head>
+
+<title></title>
+<script language="javascript" type="text/javascript">
+/*
+interface Base{
+function set( string );
+function get();
+}
+ */
+
+
+function Interface( name, methods )
+{
+    if( arguments.length != 2 )
+    {
+        throw new Error( "該接口實例包含" + arguments.length + "個參數, 但標準接口約定2個參數." );
+    }
+    this.name = name;
+    this.methods = [];
+    if( methods.length < 1 )
+    {
+        throw new Error( "接口實例的第二個參數是空的." );
+    }
+    for( var i = 0; i < methods.length; i ++ )
+    {
+        if( typeof methods[i][0] !== 'string' )
+        {
+            throw new Error( "接口約定的第一個參數應為字串." );
+        }
+        if( methods[i][1] && typeof methods[i][1] !== 'number' )
+        {
+            throw new Error( "接口約定的第二個參數應為數值." );
+        }
+        if( methods[i].length == 1 )
+        {
+            methods[i][1] = 0;
+        }
+
+        this.methods.push( methods[i] );
+    }
+}
+
+Interface.implements = function( o )
+{
+
+    if( arguments.length < 2 )
+    {
+        throw new Error( "接口約定類別應包含至少2個參數." );
+    }
+
+    for( var i = 1 ; i < arguments.length; i ++ )
+    {
+        var interface = arguments[i];
+        if( interface.constructor !== Interface )
+        {
+            throw new Error( "從第2個以上的參數必須為接口實例." );
+        }
+        for( var j = 0; j < interface.methods.length;
+        j ++ )
+        {
+            var method = interface.methods[j][0];
+            if( ! o[method] || typeof o[method] !== 'function' || o[method].length != interface.methods[j][1] )
+            {
+                throw new Error( "該實現類別沒能履行" + interface.name + "接口方法" + method + "約定。" );
+            }
+        }
+    }
+}
+
+var Get = new Interface( "Get", [["get", 0]] );
+var Set = new Interface( "Set", [["set", 1]] );
+var Saying = new Interface( "Saying", [["saying", 1]] );
+var Base = new Interface( "Base", [["get", 0], ["set", 1]] );
+var Base1 = new Interface( "Base1", [["set", 1], ["get", 0]] );
+var Base2 = new Interface( "Base2", [["get", 0],["set", 1],["saying", 1]] );
+
+
+function Neddy()
+{
+    this.name = "";
+    Interface.implements( this, Base,Get,Set );
+}
+Neddy.prototype.get = function()
+{
+    return this.name;
+}
+
+Neddy.prototype.set = function( name )
+{
+    this.name = name;
+}
+
+
+
+
+var neddy = new Neddy();
+neddy.set( "Testing..." );
+alert( neddy.get() );
+
+
+
+
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

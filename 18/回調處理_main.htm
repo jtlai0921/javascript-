@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>與客戶互動頁面</title>
+<script language="javascript" type="text/javascript">
+
+function request()
+{
+    var user = document.getElementById("user");
+    var pass = document.getElementById("pass");
+    var s = "user=" + user.value + "&pass=" + pass.value;
+    parent.frames[1].location.href = "回調處理_serve.htm?" + s;
+}
+function callback(b, n)
+{
+    if(b && n)
+    {
+        var e = document.getElementsByTagName("body")[0];
+        e.innerHTML = "<h1>" + n + "</h1><p>您好，歡迎登入站點</p>";
+    }
+    else
+    {
+        alert("你輸入的使用者名稱或密碼有誤，請重新輸入");
+        var user = parent.frames[0].document.getElementById("user");
+        var pass = parent.frames[0].document.getElementById("pass");
+        user.value = "";
+        pass.value = "";
+    }
+}
+window.onload = function()
+{
+    var b = document.getElementById("submit");
+    b.onclick = request;
+}
+</script>
+</head>
+<body>
+<h1>使用者登入</h1>
+使用者名稱：<input name="" id="user" type="text"><br />
+密　碼：<input name="" id="pass"  type="password"><br />
+<input name="submit" type="button" id="submit" value="傳送" />
+</body>
+</html>

@@ -1,0 +1,30 @@
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+<script language="javascript" type="text/javascript">
+
+Object.prototype.name = "超類別的原型屬性";
+function Me(){
+    this.saying =function(){
+        return "父類別的方法"
+    };
+}
+function Sub(){
+}
+Sub.prototype = new Me();
+//var m = new Sub();
+//alert(m.name);
+//alert(m.saying());
+Sub.prototype.constructor = Sub;
+alert(Sub.prototype.constructor);
+
+</script>
+</body>
+
+</html>

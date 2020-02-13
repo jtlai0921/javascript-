@@ -1,0 +1,17 @@
+<script language="javascript" type="text/javascript">
+
+//所謂正前向聲明
+var s = "a:123 b=345";
+var r = /\w*(?==)/;	//使用正前向聲明，指定執行比對必須滿足的條件
+var a = s.match(r); 	//傳回陣列["b"]
+
+//所謂反前向聲明
+var s = "a:123 b=345";
+var r = /\w*(?!=)/;	//使用反前向聲明，指定執行比對不必滿足的條件
+var a = s.match(r); 	//傳回陣列["a"]
+
+
+alert(RegExp.$1); 	//傳回""
+
+
+</script>

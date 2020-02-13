@@ -1,0 +1,14 @@
+<script language="javascript" type="text/javascript">
+
+function f( x ){ 	//定義普通函數f
+    var a = x; 	//把參數儲存在函數內局部變量中
+    var b = function(){	//定義一個閉包，並給予值給局部變量b
+        return x; 	//傳回函數參數x
+    }
+    return b; 	//傳回閉包結構
+}
+var c = f( 1 ); 	//呼叫函數，並傳遞給它一個值
+alert(c());	//傳回1。呼叫閉包涵數
+
+
+</script>

@@ -1,0 +1,14 @@
+<script language="javascript" type="text/javascript">
+
+var r = /(abcdef-?){5}/;	//連續比對5次子表達式
+var r = /(abcdef-?){1,5}/;	//最多比對5次子表達式
+var r = /(abcdef-?){0,}/; 	//比對任意次子表達式
+var r = /(abcdef-?)?/;	//最多比對一次子表達式
+var r = /(abcdef-?)+/;	//最小比對一次子表達式
+
+
+var s = "<html>< html><html >< html ></html>< /html></ html>< / html >";
+var r = /<([\/\s]*?)html(\s)*?>/g;
+var a = s.match(r); 	//傳回陣列["<html >","< html >","< html  >","<  html  >","</html >","<  /html >","< / html >","<  / html  >"]
+
+</script>

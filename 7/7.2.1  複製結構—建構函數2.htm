@@ -1,0 +1,12 @@
+<script language="javascript" type="text/javascript">
+
+function F(){	//建構函數
+    this.x = 1; 	//定義屬性x
+    return { y : 2 };	//傳回物件直接量
+}
+var f = new F();	//實例化建構函數
+alert(f.x);	//沒有找到x屬性值
+alert(f.y); 	//傳回2
+
+
+</script>

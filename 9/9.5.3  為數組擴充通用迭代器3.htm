@@ -1,0 +1,29 @@
+<script language="javascript" type="text/javascript">
+
+Array.prototype.each = function( f ){ 	//錯誤的陣列迭代器
+    try{
+        if( this.length > 0 && f.constructor == Function ){
+            for( var i in this ){ 	//使用for/in結構檢查陣列成員
+                var e = this[i];
+                if( e && e.constructor == Array ){
+                    e.each( f );
+                }else{
+                    f.apply( e, [e] );
+                }
+            }
+            this.i = null;
+        }
+    }
+    catch( w ){ }
+    return this
+}
+
+
+var a = [1, [2, [3, 4]]]
+var f = function( x ){
+    alert( x );
+}
+a.each( f ); 	//呼叫迭代器，為每個元素執行一次函數傳遞
+
+
+</script>

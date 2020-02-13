@@ -1,0 +1,25 @@
+<script language="javascript" type="text/javascript">
+
+// 定義函數物件結構
+function house(o){
+    switch(o){	// 定義多條件結構體
+        case "bigBedroom" :
+            return "父母住大臥";
+            break;
+        case "smallBedroom" :
+            return "兒女睡小臥";
+            break;
+        case "diningRoom" :
+            return "在餐廳就餐";
+            break;
+        case "livingRoom" :
+            return "在客廳會客";
+            break;
+        case "toilet" :
+            return "洗漱方便在衛生間";
+    }
+};
+alert(house("smallBedroom"));	/ 呼叫函數
+
+
+</script>

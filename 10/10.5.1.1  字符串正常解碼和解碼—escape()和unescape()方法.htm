@@ -1,0 +1,20 @@
+<script language="javascript" type="text/javascript">
+
+
+var s = "javascript中國";
+s = escape(s);
+alert(s); 	//傳回字串"javascript%u4E2D%u56FD"
+
+var s = "javascript中國";
+s = escape(s); 	//Unicode解碼
+alert(s); 	//傳回字串"javascript%u4E2D%u56FD"
+s = unescape(s); 	//Unicode解碼
+alert(s); 	//傳回字串"javascript中國"
+
+
+var s = escape('alert("javascript中國");'); 	//解碼腳本
+var s = unescape( s); 	//解碼腳本
+eval(s); 	//執行被解碼的腳本
+
+
+</script>

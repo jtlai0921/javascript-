@@ -1,0 +1,8 @@
+<script language="javascript" type="text/javascript">
+
+var o = new Date();	//物件實例
+alert(o.toString());	//傳回目前時間的UTC字串
+alert(o.valueOf());	//傳回目前距離1970年1月1日午夜(GMT時間)之間的毫秒數
+alert(Object.prototype.valueOf.apply(o)); 	//Object物件預設傳回目前時間的UTC字串
+
+</script>

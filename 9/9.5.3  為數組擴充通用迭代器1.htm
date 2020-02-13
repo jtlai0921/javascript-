@@ -1,0 +1,16 @@
+<script language="javascript" type="text/javascript">
+
+var a = [1, 2, 3]; 	//定義陣列直接量
+var f = function( x ){ 	//實現對每個元素執行平方計算
+    return x*x;
+}
+var _a = []	//定義臨時中轉陣列
+for( var i in a ){ 	//檢查陣列
+   var i = f.apply(a[i], [a[i]] ); 	//在每個元素上呼叫平方計算的函數，並傳回計算結果
+   _a.push(i); 	//把計算的結果暫時儲存在一個臨時陣列中
+}
+a = _a; 	//使用臨時陣列覆蓋原陣列
+alert(a); 	//傳回[1, 4, 9]
+
+
+</script>

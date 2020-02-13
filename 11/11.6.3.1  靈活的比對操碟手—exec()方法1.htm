@@ -1,0 +1,9 @@
+<script language="javascript" type="text/javascript">
+
+var s = "javascript";	//測試使用的字串直接量
+var r = /\w/g; 	//比對模式
+while((a = r.exec(s)) != null){ 	//循環執行比對操作
+    alert(a[0] + "\n" + a.index  + "\n" +  r.lastIndex); 	//顯示每次比對操作是傳回的結果陣列資訊
+}
+
+</script>

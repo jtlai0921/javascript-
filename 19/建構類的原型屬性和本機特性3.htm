@@ -1,0 +1,36 @@
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+<script language="javascript" type="text/javascript">
+
+
+
+function f(){
+}
+f.prototype.a = 1;
+f.prototype.b = function(){
+    return f.prototype.a;
+}
+
+var e =new f();
+var g =new f();
+alert(e.a);
+alert(g.a);
+e.prototype.a = 2;
+alert(e.a);
+alert(g.a);
+
+alert(g.b());
+
+
+
+</script>
+</body>
+
+</html>

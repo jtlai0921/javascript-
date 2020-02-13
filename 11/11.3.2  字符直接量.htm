@@ -1,0 +1,22 @@
+<script language="javascript" type="text/javascript">
+
+//如果使用ASCII解碼表示，則必須指定一個兩位的十六進位值，並在前面增加"\x"前綴。例如：
+var r = /\x61/;	//以ASCII解碼比對字母a
+
+var s = "javascript";
+var a = s.match(r); 	//即比對第1個字符a
+
+var r = /\141/;	//141是字母a的ASCII解碼的八進位值
+var s = "javascript";
+var a = s.match(r); 	//即比對第1個字符a
+
+
+//如果使用Unicode解碼表示，則必須指定一個四位的十六進位值，並在前面增加"\u"前綴。例如：
+var r = /\u0061/;	//以Unicode解碼比對字母a
+var s = "javascript";	//字串直接量
+var a = s.match(r); 	//即比對第1個字符a
+
+var r = new RegExp("\\u0061");
+
+
+</script>

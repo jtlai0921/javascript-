@@ -1,0 +1,33 @@
+<script language="javascript" type="text/javascript">
+
+alert(null === undefined) 	// 傳回false
+alert(0 === "0")	// 傳回false
+alert(0 === false) 	// 傳回false
+
+var a = {};
+var b = a;
+alert(a === b) ; 	// 傳回true
+
+var a = {};
+var b = {};
+alert(a === b) ; 	// 傳回false
+
+var a = new String("abcd") 	// 定義字串"abcd"物件
+var b = new String("abcd") 	// 定義字串"abcd"物件
+alert(a === b); 	// 傳回false
+alert(a == b); 	// 傳回false
+
+
+var a = "1" + 1; 
+var b = "11" ; 
+alert(a === b); 	// 傳回true
+
+var a = 1;
+var b = 2;
+alert((a > b || a == b) == (a >= b)) 	// 傳回true，此時似乎相等
+
+var a = null;
+var b = undefined;
+alert((a > b || a == b) == (a >= b)) 	// 傳回false，表達式的值並非相等
+
+</script>

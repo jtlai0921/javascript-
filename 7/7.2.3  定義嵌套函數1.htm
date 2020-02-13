@@ -1,0 +1,14 @@
+<script language="javascript" type="text/javascript">
+
+
+function f(x, y){
+    function e(a, b){
+        return a * b;
+    }
+    return e(3, 6) + y; 	//內層函數參與表達式運算有效
+    alert(e(3, 6)); 	//無效的呼叫
+}
+alert(f(3, 6)); 	//呼叫外層函數
+
+
+</script>

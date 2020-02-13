@@ -1,0 +1,29 @@
+<script language="javascript" type="text/javascript">
+
+//特殊運算數的怪異運算結果
+var n = 5; 	// 定義並初始化任意一個數值
+alert(NaN - n);	// 傳回NaN。NaN與任意運算數相減，結果都是NaN
+alert(Infinity - n); 	// 傳回Infinity。Infinity與任意運算數相減，結果都是Infinity
+alert(Infinity - Infinity); 	// 傳回NaN。Infinity與Infinity相減，結果是NaN
+alert(( - Infinity) - ( - Infinity)); 	// 傳回NaN。負Infinity相減，結果是NaN
+alert(( - Infinity) - Infinity); 	// 傳回-Infinity。正負Infinity相減，結果是-Infinity
+
+//有趣的0蛋
+alert( 0 - 0); 	// 傳回0
+alert( - 0 - 0); 	// 傳回-0
+alert( ( - 0) - ( - 0)); 	// 傳回0
+
+//在減法運算中，有一個運算數不是數字，則傳回值為NaN；如果數字為字串，則把它轉換為數值之後，再進行運算。例如：
+alert(2 - "1");	// 傳回1
+alert(2 - "a");	// 傳回NaN
+
+//利用減法運算實現快速、高效的資料類別型轉換
+alert(parseFloat("100aaa"));	// 傳回100
+alert(parseFloat("aaa100"));	// 傳回NaN
+alert("100aaa" - 0); 	// 傳回NaN
+alert("100" - 0); 	// 傳回100
+
+
+
+
+</script>

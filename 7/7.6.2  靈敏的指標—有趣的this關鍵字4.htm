@@ -1,0 +1,12 @@
+<script language="javascript" type="text/javascript">
+
+alert(isNaN(NaN)); 	//傳回true
+function f() {
+    this.isNaN = function() {
+        return false;
+    };
+}
+f();
+alert(isNaN(NaN)); 	//傳回false
+
+</script>

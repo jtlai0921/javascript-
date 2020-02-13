@@ -1,0 +1,13 @@
+<script language="javascript" type="text/javascript">
+
+var a;
+a = 1; 	// 變量初始化
+b = a++;	// b等於1，變量a先把值1給予值給變量b，然後再遞加為2
+c = ++a; 	// c等於3，變量a先遞加為3後，再把值3給予值給變量c
+d = a++;	// d等於3，變量a先把值3給予值給變量d，然後再遞加為4
+e = ++a; 	// e等於5，變量a先遞加為5後，再把值5給予值給變量e
+alert(b+c-d-e); 	// 傳回-4
+
+a = (b++)+(++c)-(d++)-(++e);
+
+</script>

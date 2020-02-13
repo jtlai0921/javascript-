@@ -1,0 +1,16 @@
+<script language="javascript" type="text/javascript">
+
+var s = "javascript is not java";
+var r = /a/gi; 	//正則表達式直接量
+r.exec(s); 	//第1次執行比對
+alert(r.lastIndex); 	//傳回值為2
+r.exec(s); 	//第2次執行比對
+alert(r.lastIndex); 	//傳回值為4
+r.exec(s); 	//第3次執行比對
+alert(r.lastIndex); 	//傳回值為20
+r.exec(s); 	//第4次執行比對
+alert(r.lastIndex); 	//傳回值為22
+r.exec(s); 	//第5次執行比對
+alert(r.lastIndex); 	//傳回值為0
+
+</script>

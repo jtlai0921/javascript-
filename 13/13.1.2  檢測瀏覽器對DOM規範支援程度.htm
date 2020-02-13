@@ -1,0 +1,18 @@
+<script language="javascript" type="text/javascript">
+
+var dom = "HTML";	//指定DOM模塊
+var ver = "1.0";	//指定DOM級別
+if(document.implementation){ 	//如果瀏覽器支援implementation對象，則進行測試
+    if(document.implementation.hasFeature(dom, ver)){ 	//檢測指定DOM模塊以及版本的支援情況
+        alert("支援:\n" + dom + " " + ver);
+    }
+    else{
+        alert("不支援:\n" + dom + " " + ver);
+    }
+}
+else{
+    alert("不支援:\nDOMImplementtation物件");
+}
+
+
+</script>

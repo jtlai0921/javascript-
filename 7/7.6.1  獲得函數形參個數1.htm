@@ -1,0 +1,13 @@
+<script language="javascript" type="text/javascript">
+
+function check( a ){ 	//﹚竡浪代ㄧ计龟把籔把琌璓ㄧ计
+    if( a.length != a.callee.length ) 	//狦龟把籔把length妮┦ぃ玥┻岿粇
+    throw new Error( "把计ぃ璓" );
+}
+function f( a, b, c, d ){ 	//﹚竡炊硄莱ノㄧ计
+    check( arguments ); 	//㊣ㄧ计check
+    return ( a + b + c + d ) / 3; 	//肚ㄧ计
+}
+alert( f( 3, 4 ) ); 	//┻ㄒ㊣ㄧ计f肚患ㄢ把计
+
+</script>

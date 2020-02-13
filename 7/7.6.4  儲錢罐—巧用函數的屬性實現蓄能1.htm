@@ -1,0 +1,11 @@
+<script language="javascript" type="text/javascript">
+
+var x = 0; 	//定義全局變量並給予值為0
+function f(){	//定義函數
+    return x++;	//希望每次呼叫函數時能夠傳回不同的值
+}
+for( var i = 1; i < 10; i ++ ){ 	//循環結構中反覆呼叫函數f
+    alert( f() ); 	//每次傳回的值都不同
+}
+
+</script>

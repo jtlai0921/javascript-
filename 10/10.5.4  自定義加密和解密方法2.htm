@@ -1,0 +1,32 @@
+<script language="javascript" type="text/javascript">
+
+
+var fromCode = function(str){ 	//解密toCode()方法加密的字串
+    var key = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";	//定義密鑰，36個字母和數字
+    var l = key.length; 	//獲得密鑰的長度
+    var b, b1, b2, b3, d = 0, s; 	//定義臨時變量
+    s = new Array(Math.floor(str.length / 3)) 	//計算加密字串可能包含的字符數，並定義陣列
+    b = s.length; 	//獲得陣列的長度
+    for(var i = 0; i < b; i ++ ){ 	//以陣列的長度為循環次數，檢查加密字串
+        b1 = key.indexOf(str.charAt(d)) 	//截取週期內第1個字符，並計算它在密鑰中的下標值
+        d ++ ;
+        b2 = key.indexOf(str.charAt(d)) 	//截取週期內第2個字符，並計算它在密鑰中的下標值
+        d ++ ;
+        b3 = key.indexOf(str.charAt(d)) 	//截取週期內第3個字符，並計算它在密鑰中的下標值
+        d ++ ;
+        s[i] = b1 * l * l + b2 * l + b3 	//利用上面下標值（約數值），反算被加密字符的Unicode解碼值
+    }
+    b = eval("String.fromCharCode(" + s.join(',') + ")");	//最後呼叫fromCharCode()方法算出對應的字串
+    return b;	//傳回被解密的字串
+}
+
+
+var s = "javascript中國";	//字串直接量
+s = toCode(s); 	//加密字串
+alert(s); 	//傳回字串"02Y02P03A02 P03702R03602X034038FFXH6L"
+s = fromCode(s); 	//解密被加密的字串
+alert(s); 	//傳回字串"javascript中國"
+
+
+
+</script>

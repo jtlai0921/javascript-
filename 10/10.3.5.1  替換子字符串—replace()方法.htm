@@ -1,0 +1,21 @@
+<script language="javascript" type="text/javascript">
+
+var s = "http://www.css8.cn/index.html";
+var b = s.replace( /html/, "htm" ); 	//р﹃html蠢传htm
+alert( b ); 	//肚﹃"http://www.css8.cn/index.htm"
+
+var b = s.replace("html", "htm" ); 	//р﹃html蠢传htm
+
+var s = "http://www.css8.cn/index.html";
+function f( x ){ 	//蠢传ゅㄧ计
+    return x.substring( x.lastIndexOf(".")+1, x.length - 1 ) 	//莉眔耎场だ﹃
+}
+var b = s.replace( /(html)/, f(s)); 	//㊣ㄧ计﹚蠢传ゅ巨
+alert( b ); 	//肚﹃"http://www.css8.cn/index.htm"
+
+
+var s = "javascript";
+var b = s.replace( /(java)(script)/, "$2-$1");	//ユ传竚
+alert( b ); 	//肚﹃"script-java"
+
+</script>

@@ -1,0 +1,12 @@
+<script language="javascript" type="text/javascript">
+
+function F(name){ 	//使用函數建立類別
+    this.name = name;
+    this.saying = function(){
+        alert(this.name);
+    }
+}
+var f = new F("css8");	//建立物件實例
+f.saying();	//傳回字串"css8"
+
+</script>

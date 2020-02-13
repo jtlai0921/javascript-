@@ -1,0 +1,9 @@
+<script language="javascript" type="text/javascript">
+window.onload = function() {
+    var p = document.createElement("p");	//建立段落節點
+    var txt = document.createTextNode("盒模型");//建立純文字節點，純文字內容為"盒模型"
+    p.appendChild(txt); 	//把純文字節點增加到段落節點中
+    document.getElementById("box").appendChild(p); //獲得id為box的元素，把段落節點增加進來
+}
+</script>
+<div id="box"></div>

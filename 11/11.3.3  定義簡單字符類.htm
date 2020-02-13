@@ -1,0 +1,20 @@
+<script language="javascript" type="text/javascript">
+
+var r = /[abc]/gi; 	//定義字符類別
+var s = "javascript";	//字串直接量
+var a = s.match(r); 	//傳回陣列["a", "a", "c"]
+
+
+var s = "abc abd abe abf abg";
+
+var r = /ab[cdefg]/g; 	//透過簡單的字符類別實現比對多個單字
+var a = s.match(r); 	//傳回陣列["abc" , abd" , abe" , abf" , "abg"]
+
+
+var s = "abc abd abe abf abg";
+var r = /ab[\u0063\u0064\u0065\u0066\u0067]/g; 	//透過字符的Unicode十六進位值來表示
+var a = s.match(r); 	//傳回陣列["abc" , abd" , abe" , abf" , "abg"]
+
+
+
+</script>

@@ -1,0 +1,27 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<input type="text" id="a" value="請隨意選擇字串" />
+<input type="text" id="b" />
+<script language="javascript" type="text/javascript">
+var a = document.getElementsByTagName("input")[0]; 	//獲得第一個純文字框的參考指標
+var b = document.getElementsByTagName("input")[1]; 	//獲得第二個純文字框的參考指標
+a.onselect = function(){	//為第一個純文字框綁定select事件處理函數
+    if (document.selection){ 	//兼容IE
+        o = document.selection.createRange();	//建立一個選擇區域
+        if(o.text.length > 0) 	//如果選擇區域記憶體在純文字
+        b.value = o.text; 	//則把該區域內的純文字給予值給第二個純文字框
+    }else{	//兼容DOM
+        p1 = a.selectionStart; 	//獲得純文字框中選擇的初始位置
+        p2 = a.selectionEnd; 	//獲得純文字框中選擇的結束位置
+        b.value = a.value.substring(p1, p2); 	//截取純文字框中被選取的純文字字串，然後給予值給第二個純文字框
+    }
+}
+</script>
+
+
+</body>
+</html>

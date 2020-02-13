@@ -1,0 +1,11 @@
+<script language="javascript" type="text/javascript">
+
+alert(typeof Global); 	//存取Global對象的類別型，傳回undefined
+var o = new Global; 	//傳回未定義對象的編譯錯誤
+
+var s = "alert('Hello,World!')"; 	//定義字串
+Global.eval(s); 	//呼叫Global對象的方法eval()執行字串錯誤
+eval(s); 	//直接呼叫全局函數eval()有效
+
+
+</script>

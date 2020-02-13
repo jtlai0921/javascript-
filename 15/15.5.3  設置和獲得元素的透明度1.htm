@@ -1,0 +1,62 @@
+<html>
+<head>
+<style type="text/css">
+div{
+    width:200px;
+    height:200px;
+    border:solid 1px red;
+    background:red;
+}
+</style>
+<title></title>
+</head>
+<body>
+
+
+<div></div>
+
+<script language="javascript" type="text/javascript">
+
+var d = document.getElementsByTagName("div")[0];
+setOpacity(d, 50);
+var a = getOpacity(d);
+alert(a);
+
+
+
+//砞竚じ硓
+//把计eボ璶箇砞竚じnボ计絛瞅1~100狦菠玥箇砞100ぃ硓陪ボじ
+//肚礚
+function setOpacity(e, n){
+    var n = parseFloat(n); 	//р材2把计锣传疊翴计
+    if(n && (n>100) || !n) n=100; 	//狦材2把计100┪ぃ赣把计玥砞竚ㄤ100
+    if(n && (n<0))  n =0; 	//狦材2把计0玥砞竚ㄤ0
+    if (e.filters){ 	//甧IE聅凝竟
+        e.style.filter = "alpha(opacity=" + n + ")";
+    }
+    else{	//甧DOM夹非
+        e.style.opacity = n / 100;
+    }
+}
+
+
+//莉眔じ硓
+//把计eボ璶箇砞竚じ
+//肚じ硓絛瞅1~100ぇ丁
+function getOpacity(e){
+    var r;
+    if ( ! e.filters){
+        if (e.style.opacity) return parseFloat(e.style.opacity) * 100;
+    }
+    try{
+        return e.filters.item('alpha').opacity
+    }
+    catch(o){
+        return 100;
+    }
+}
+
+</script>
+
+</body>
+</html>

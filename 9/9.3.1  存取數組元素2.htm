@@ -1,0 +1,13 @@
+<script language="javascript" type="text/javascript">
+
+var a = [1, 2, 3]; 	//聲明陣列直接量
+alert( a[true] ); 	//傳回undefined，說明a不是指向陣列a，而是指向物件a
+var a = {	//聲明物件直接量
+    "true" : 1	//屬性true的值為1
+}
+alert( a[true] ); 	//傳回值為1，說明a確實是指向物件a，並讀取屬性名為true的值
+
+alert(a["0"]);	//傳回1，讀取物件a中名稱為0的屬性值
+
+
+</script>

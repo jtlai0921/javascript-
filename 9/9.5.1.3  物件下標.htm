@@ -1,0 +1,20 @@
+<script language="javascript" type="text/javascript">
+
+var a = [];	//陣列直接量
+var b = function(){	//函數直接量
+    return 2;
+}
+a[b] = 1; 	//把物件作為陣列下標
+alert( a.length ); 	//傳回長度為0
+alert( a[b] ); 	//傳回1
+
+
+var s =b.toString();	//獲得對象的字串
+alert( a[s] ); 	//利用純文字下標讀取元素的值
+
+
+a[b()] = 1; 	//在下標處呼叫函數，則傳回值為2
+alert( a[2] ); 	//所以可以使用2來讀取該元素值
+
+
+</script>

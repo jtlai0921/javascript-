@@ -1,0 +1,13 @@
+<script language="javascript" type="text/javascript">
+
+var a ={	// 定義物件a
+   x : 1
+};
+var b ={	// 定義物件b
+   y : a
+};
+alert(delete(b.y)); 	// 刪除物件b中y屬性對物件a的參考
+alert(a.x); 	// 傳回1。但是原參考物件a並沒有被刪除
+
+
+</script>

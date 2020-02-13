@@ -1,0 +1,40 @@
+<html>
+
+<head>
+
+<title></title>
+<script language="javascript" type="text/javascript">
+
+
+
+
+Function.prototype.a = function(){
+    alert( "Function" );
+}
+Object.prototype.a = function(){
+    alert( "Object" );
+}
+function f(){
+    this.a = "a";
+}
+f.prototype = {
+    w : function(){
+        alert( "w" );
+    }
+}
+alert( f instanceof Function );
+alert( f.prototype instanceof Object );
+alert( Function instanceof Object );
+alert( Function.prototype instanceof Object );
+alert( Object instanceof Function );
+alert( Object.prototype instanceof Function );
+
+
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

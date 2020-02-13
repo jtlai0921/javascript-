@@ -1,0 +1,69 @@
+<html>
+
+<head>
+
+<title>載入XML資料</title>
+
+</head>
+
+<body>
+<script language="javascript" type="text/javascript">
+
+function xmlDom()
+{
+    var a = [
+    "MSXML2.DOMDocument.5.0",
+    "MSXML2.DOMDocument.4.0",
+    "MSXML2.DOMDocument.3.0",
+    "MSXML2.DOMDocument",
+    "Microsoft.XmlDom"
+    ]
+    for(var i = 0 ; i < a.length; i ++ )
+    {
+        try
+        {
+            var o = new ActiveXObject(a[i]);
+            return o;
+        }
+        catch(e)
+        {
+        }
+    }
+    throw new Error("瀏覽器不支援MSXML元件");
+}
+
+function callback(o)
+{
+    return function()
+    {
+        if(o.readyState == 4)
+        {           
+            //document.write(o);
+        }
+    }
+}
+
+
+var o = xmlDom();
+o.async = true;
+o.onreadystatechange = callback(o);
+o.load("產品1.xml");
+document.write(o.xml);
+
+if(o.parseError != 0){
+    var e = o.parseError;
+    alert("發生了錯誤，描述如下:\n" +
+            "錯誤類別型：" + e.errorCode + "\n" +
+            "錯誤行號：" + e.line + "\n" +
+            "行內位置：" + e.linepos + "\n" +
+            "錯誤原因：" + e.reason + "\n");
+}
+
+
+
+
+
+</script>
+</body>
+
+</html>

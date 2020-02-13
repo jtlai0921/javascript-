@@ -1,0 +1,10 @@
+<script language="javascript" type="text/javascript">
+
+document.writeln(escape("碼"));	//傳回%u7801 
+document.writeln("\u7801");	//傳回"碼"字
+document.writeln(encodeURI("碼"));	//傳回%E7%A0%81
+document.writeln(decodeURI("%E7%A0%81"));		//傳回"碼"字
+document.writeln("碼".charCodeAt(0));	//傳回30723
+document.writeln(String.fromCharCode("30721"));	//傳回"碼"字
+
+</script>

@@ -1,0 +1,45 @@
+<html>
+
+<head>
+
+<title></title>
+<script language="javascript" type="text/javascript">
+
+
+
+
+function a(x){
+    this.x = x;
+}
+a.prototype.x = 0;
+
+function b(x){
+    this.x = x;
+}
+b.prototype = new a(1);
+
+function c(x){
+    this.x = x;
+}
+c.prototype = new b(2);
+
+var d = new c(3);
+alert(d.x);
+delete d.x;
+alert(d.x);
+delete c.prototype.x;
+alert(d.x);
+delete b.prototype.x;
+alert(d.x);
+delete a.prototype.x;
+alert(d.x);
+
+
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

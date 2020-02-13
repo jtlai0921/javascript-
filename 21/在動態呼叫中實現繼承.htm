@@ -1,0 +1,39 @@
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+
+
+<script language="javascript" type="text/javascript">
+
+function Animal(){
+    this.name = "動物類別";
+    this.saying = function(){
+        return this.name;
+    };
+}
+function Cat(){
+    this.name = "貓科類別";
+}
+var animal = new Animal();
+var cat = new Cat();
+
+alert(animal.saying());
+
+cat.saying = function(){
+    return animal.saying.apply(cat,arguments);
+}
+alert(cat.saying());
+
+
+</script>
+
+
+</body>
+
+</html>

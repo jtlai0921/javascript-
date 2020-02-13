@@ -1,0 +1,16 @@
+<script language="javascript" type="text/javascript">
+
+var s ="<h1>title<h1><p>text<p>";
+var r = /((<\/?\w+>).*\2)/g;
+var a = s.match(r); 	//傳回陣列["<h1>title<h1>" , "<p>text<p>"]
+
+
+var s ="<h1>title</h1><p>text</p>";
+var r = /((<\/?\w+>).*\2)/g;
+var a = s.match(r); 	//傳回null
+
+
+var r = /((<\/?\w+>).*((<\/?\w+>))/g;
+var a = s.match(r); 	//傳回陣列["<h1>title</h1>" , "<p>text</p>"]
+
+</script>

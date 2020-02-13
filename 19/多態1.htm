@@ -1,0 +1,52 @@
+<html>
+
+<head>
+
+<title></title>
+<script language="javascript" type="text/javascript">
+
+
+function A(){
+    this.get = function(){
+        alert("A");
+    }
+}
+function B(){
+    this.get = function(){
+        alert("B");
+    }
+}
+B.prototype = new A();
+function C(){
+    this.get = function(){
+        alert("C");
+    }
+}
+C.prototype = new A();
+
+function F(x){
+    this.x =x;
+}
+F.prototype.get = function(){
+    if(this.x instanceof A)
+        this.x.get()
+}
+
+var b = new B();
+var c = new C();
+
+var f1 =new F(b);
+var f2 =new F(c);
+
+f1.get();
+f2.get();
+
+
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

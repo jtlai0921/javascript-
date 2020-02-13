@@ -1,0 +1,25 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+</head>
+<body>
+
+<style type="text/css">
+#box { color:green; }
+.red { color:red; }
+.blue { color:blue; }
+</style>
+<p>在樣式表中增加樣式操作</p>
+<script language="javascript" type="text/javascript">
+var styleSheets = document.styleSheets[0];			//獲得樣式表參考指標
+var index = styleSheets.length; 					//獲得樣式表中包含樣式的個數
+if(styleSheets.insertRule){ 						//判斷瀏覽器是否支援insertRule()方法
+	   //使用insertRule()方法在文件內部樣式表中增加一個p標籤選擇符的樣式，設置段落背景色為紅色，字體顏色為白色，補白為一個字體大小。插入位置在樣式表的末尾，
+   styleSheets.insertRule("p{background-color:red;color:#fff;padding:1em;}", index);
+}else{										//如果哦瀏覽器不支援insertRule()方法
+   styleSheets.addRule("P", "background-color:red;color:#fff;padding:1em;", index);
+}
+</script>
+
+
+</body>
+</html>

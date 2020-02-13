@@ -1,0 +1,27 @@
+<script language="javascript" type="text/javascript">
+
+//第一波函數
+function f(){	//函數1，使用function敘述聲明函數
+    return 1;
+}
+alert(f());	//傳回值為4，說明第1個函數被第4個函數覆蓋
+var f = new Function("return 2");	//函數2，使用建構函數定義函數
+alert(f());	//傳回值為2，說明第4個函數被第2個函數覆蓋
+var f = function(){	//函數3，使用函數直接量定義函數
+    return 3;
+}
+alert(f());	//傳回值為3，說明第2個函數被第3個函數覆蓋
+//第二波函數
+function f(){	//函數4，使用function敘述聲明函數
+    return 4;
+}
+alert(f());	//傳回值為3，說明第4個函數被第3個函數覆蓋
+var f = new Function("return 5");	//函數5，使用建構函數定義函數
+alert(f());	//傳回值為5，說明第3個函數被第5個函數覆蓋
+var f = function(){	//函數6，使用函數直接量定義函數
+    return 6;
+}
+alert(f());	//傳回值為6，說明第5個函數被第6個函數覆蓋
+
+
+</script>

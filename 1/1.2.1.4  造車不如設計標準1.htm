@@ -1,0 +1,24 @@
+<script language="javascript" type="text/javascript">
+
+//為Function物件定義原型方法
+//定義一個製造方法的引擎
+Function.prototype.make = function(n, f){
+    this.prototype[n] = f;
+}
+//定義類別
+var Box = function(){}
+//為類別製造方法
+Box.make("set", function(x){ 	//產生傳入方法
+    this.x = x;
+})
+Box.make("get", function(){	//產生傳出方法
+    return this.x
+})
+
+//建立類別的實例物件
+var box = new Box();	//類別的物件
+box.set(10); 	//傳入值
+var a = box.get();	//讀取值
+alert(a); 	//傳回10
+
+</script>

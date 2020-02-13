@@ -1,0 +1,15 @@
+<script language="javascript" type="text/javascript">
+
+function max(){	//刪除物件o的
+    var m = Number.NEGATIVE_INFINITY; 	//聲明一個負無窮大的數值
+    for( var i = 0; i < arguments.length; i ++ ){ 	//檢查函數所有的實參
+        if( arguments[i] > m ) 	//如果實參值大於變量m，
+        m = arguments[i]; 	//則把該實參值給予值給m
+    }
+    return m; 	//傳回最大值
+}
+var a = [23, 45, 2, 46, 62, 45, 56, 63]; 	//聲明並初始化陣列
+var m = max.apply( Object, a ); 	//把函數max綁定為Object對象的方法，並動態呼叫
+alert( m ); 	//傳回63
+
+</script>

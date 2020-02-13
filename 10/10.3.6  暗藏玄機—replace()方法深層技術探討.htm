@@ -1,0 +1,11 @@
+<script language="javascript" type="text/javascript">
+
+var s = 'script language = "javascript" type= " text / javascript"'; 	//定義字串
+var f = function($1){ 	//定義替換純文字函數，參數為第一個子表達式比對純文字
+    return $1.substring( 0, 1 ).toUpperCase() + $1.substring( 1 ); 	//把比對純文字的首字母轉換為大寫
+}
+var a = s.replace( /(\b\w+\b)/g, f ); 	//比對純文字並進行替換
+alert( a ); 	//傳回字串Script Language = "Javascript" Type = " Text /Javascript"
+
+
+</script>

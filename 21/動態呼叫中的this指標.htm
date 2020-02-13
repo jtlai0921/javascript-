@@ -1,0 +1,36 @@
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+<script language="javascript" type="text/javascript">
+
+
+
+function f(){
+    alert(this == window);
+}
+var o = {
+    f : function(){
+        alert(this == window);
+    }
+}
+f.apply(null);
+f.call(undefined);
+f.call();
+o.f.apply(null);
+o.f.call(undefined);
+o.f.call();
+
+
+
+
+
+</script>
+</body>
+
+</html>

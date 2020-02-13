@@ -1,0 +1,58 @@
+<html>
+<head>
+</head>
+<body>
+
+<script language="javascript" type="text/javascript">
+//獲得指定元素的樣式屬性值
+//參數：e表示實際的元素，n表示要獲得元素的腳本樣式的屬性名，如"width"、"borderColor"
+//傳回值：傳回該元素e的樣式屬性n的值
+function getStyle(e,n){
+    if(e.style[n]){ 	//如果在style物件中存在，說明已顯式定義，則傳回這個值
+        return e.style[n];
+    }
+    else if(e.currentStyle){ 	//否則，如果是IE瀏覽器，則利用它的私有方法讀取目前值
+        return e.currentStyle[n];
+    }
+    //如果是支援DOM標準的瀏覽器，則利用DOM定義的方法讀取樣式屬性值
+    else if(document.defaultView && document.defaultView.getComputedStyle){
+        n = n.replace(/([A-Z])/g,"-$1");	//轉換參數的屬性名
+        n = n.toLowerCase();
+        var s = document.defaultView.getComputedStyle(e,null); 	//獲得目前元素的樣式屬性物件
+        if(s) 	//如果目前元素的樣式屬性物件存在
+            return s.getPropertyValue(n); 	//則獲得屬性值
+    }
+    else	//如果都不支援，則傳回null
+        return null;
+}
+
+</script>
+
+<div style="width:200px;">
+    <div style="width:50%;">
+        <div style="width:50%;">
+            <div style="width:50%;">
+                <div id="div" style="border-style:solid;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script language="javascript" type="text/javascript">
+
+var div1 = document.getElementsByTagName("div")[0]; 	//獲得最外層元素的參考指標
+var w1 = parseInt(getStyle(div1, "width"));	//獲得寬度值，並轉換為數值
+var div2 = document.getElementsByTagName("div")[1]; 	//獲得第2層元素的參考指標
+var w2 = parseInt(getStyle(div2, "width"))/100; 	//獲得寬度值，並轉換為小數值
+var div3 = document.getElementsByTagName("div")[2];
+var w3 = parseInt(getStyle(div3, "width"))/100;
+var div4 = document.getElementsByTagName("div")[3];
+var w4 = parseInt(getStyle(div4, "width"))/100;
+var w = w1*w2*w3*w4; 	//傳回數值25
+
+</script>
+
+
+</body>
+</html>

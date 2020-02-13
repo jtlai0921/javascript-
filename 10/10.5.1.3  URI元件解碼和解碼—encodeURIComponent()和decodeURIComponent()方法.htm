@@ -1,0 +1,23 @@
+<script language="javascript" type="text/javascript">
+
+
+var s = "http://www.css8.cn/navi/search.asp?keyword=URI";
+a = encodeURI(s);
+document.write(a);
+document.write("<br />");
+b = encodeURIComponent(s);
+document.write(b);
+
+
+http://www.css8.cn/navi/search.asp?keyword=URI
+http%3A%2F%2Fwww.css8.cn%2Fnavi%2Fsearch.asp%3Fkeyword%3DURI
+
+
+//相反，對於encodeURIComponent()方法解碼的結果進行解碼，可以使用decodeURIComponent()方法來快速實現：
+var s = "http://www.css8.cn/navi/search.asp?keyword=URI";
+b = encodeURIComponent(s);
+b = decodeURIComponent(b)
+document.write(b);
+
+
+</script>

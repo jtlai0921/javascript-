@@ -1,0 +1,24 @@
+<script language="javascript" type="text/javascript">
+
+//獲得本機系統的目前時間。
+var now = new Date();
+alert(now);	//傳回目前時間對象，如"Wed Apr 29 15 :37: 55 UTC +0800 2009 "
+
+//透過多選參數來建立指定的時間對象。此時，建構函數Date()的參數格式如下：
+new Date(year, month, day, hours, minutes, seconds, ms)
+
+//除了前兩個參數外（年和月）外，其他所有參數都是可選的，其中月數參數從0開始，如0表示第1個月，11表示第12個月。
+var d1 = new Date(2009,4,1);
+alert(d1); 	//傳回時間對象，如"Fri May 1 00: 00:00 UTC+ 0800 2009"
+var d2 = new Date(2009,4,1,5,30,30);
+alert(d2); 	//傳回時間對象，如"Fri May 1 00: 00:00 UTC+ 0800 2009"
+
+//透過一個時間格式的字串來建立指定的時間對象。此時，月份是從1開始，而不是從0開始。
+var d1 = new Date("2009/4/1 5:30:30");
+alert(d1); 	//傳回時間對象，如"Wed Apr 1 05 :30: 30 UTC +0800 2009"
+
+//透過傳遞一個毫秒數來建立指定的時間對象。這個毫秒數是距離1970年1月1日午夜(GMT時間)的毫秒數。
+var d1 = new Date(1000000000000);
+alert(d1); 	//傳回時間對象，如"Sun Sep 9 09 :46 :40 UTC +0800 2001"
+
+</script>

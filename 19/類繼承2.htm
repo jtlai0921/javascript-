@@ -1,0 +1,66 @@
+<html>
+
+<head>
+
+<title></title>
+<script language="javascript" type="text/javascript">
+
+
+function A( x ){
+    this.getl = function(){
+        return x;
+    }
+}
+A.prototype.has = function(){
+    return ! ( this.getl() == 0 );
+}
+
+function B(){
+    var a = [];
+    a = Array.apply( a, arguments );
+    A.call( this, a.length );
+    this.add = function(){
+        return a.push.apply( a, arguments );
+    }
+    this.geta = function(){
+        return a;
+    }
+}
+B.prototype = new A();
+B.prototype.constructor = B;
+B.prototype.str = function(){
+    return this.geta().toString();
+}
+
+function C(){
+    B.apply( this, arguments );
+    this.sort = function(){
+        var a = this.geta();
+        a.sort.apply( a, arguments );
+    }
+}
+C.prototype = new B();
+C.prototype.constructor = C;
+
+var b  = new B( 1, 2, 3, 4 );
+alert( b.getl() );
+alert( b.has() );
+
+var c  = new C( 30, 10, 20, 40 );
+c.add( 6, 5 );
+alert( c.geta() )
+c.sort()
+alert( c.geta() )
+alert( c.getl() )
+alert( c.has() );
+alert( c.str() );
+
+
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

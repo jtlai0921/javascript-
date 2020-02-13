@@ -1,0 +1,75 @@
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+<style type="text/css">
+.block {width:20px; height:20px; position:absolute; left:200px; top:200px; background-color:red; }
+</style>
+
+<div class="block" id="block1"></div>
+
+<script language="javascript" type="text/javascript">
+
+temp1 = document.getElementById('block1');
+slide(temp1, 400, 400,60);
+
+//簡單的滑動函數
+//參數：e表示元素，x和y表示要移動的最後坐標位置（相對包含快），t表示元素移動的步數
+function slide(e, x, y, t){
+    var t = t || 100;	//初始化步數，步數越大，速度越慢，移動的過程越逼真，但是中間移動的誤差就越明顯
+    var o = getB(e); 	//目前元素的絕對定位坐標值
+    var x0 = o.x;
+    var y0 = o.y;
+    var stepx = Math.round((x - x0) / t); 	//計算x軸每次移動的步長，由於像素點不可用小數，所以會存在一定的誤差
+    var stepy = Math.round((y - y0) / t); 	//計算y軸每次移動的步長
+    var out =  setInterval(function(){	//設計定時器
+        var o = getB(e); 	//獲得每次移動後的絕對定位坐標值
+        var x0 = o.x;
+        var y0 = o.y;
+        e.style["left"] = (x0 + stepx) + 'px'; 	//定位每次移動的位置
+        e.style["top"] = (y0 + stepy) + 'px'; 	//定位每次移動的位置
+        if (Math.abs(x - x0) <= Math.abs(stepx) || Math.abs(y - y0) <= Math.abs(stepy)) {	//如果距離終點坐標的距離小於步長，則停止循環執行，並校正元素的最終坐標位置
+            e.style["left"] = x + 'px';
+            e.style["top"] = y + 'px';
+            clearTimeout(out);
+        };
+    }, 2)
+};
+
+function getB(e)
+{
+    return {
+        "x" : (parseInt(getStyle(e, "left")) || 0) ,
+        "y" : (parseInt(getStyle(e, "top")) || 0)
+    };
+}
+function getStyle(e, n)
+{
+    if(e.style[n])
+    {
+        return e.style[n];
+    }
+    else if(e.currentStyle)
+    {
+        return e.currentStyle[n];
+    }
+    else if(document.defaultView && document.defaultView.getComputedStyle)
+    {
+        n = n.replace(/([A-Z])/g, "-$1");
+        n = n.toLowerCase();
+        var s = document.defaultView.getComputedStyle(e, null);
+        if(s)
+        return s.getPropertyValue(n);
+    }
+    else
+    return null;
+}
+
+</script>
+</body>
+</html>

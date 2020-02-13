@@ -1,0 +1,38 @@
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+<script language="javascript" type="text/javascript">
+
+
+var o = "(function(){ return 8;})()";
+alert(eval(o));
+
+
+var o = "(function(){ return 8;}())";
+alert(eval(o));
+
+
+var o = "function(){ return 8;}";
+alert(eval("(" + o + ")()"));
+
+var o = "function(){ return 8;}";
+alert(eval("(" + o + "())"));
+
+
+var o = "function(){ return 8;}()";
+alert(eval( o ));
+
+var o = "function(){ return 8;}";
+alert(eval( o + "()"));
+
+
+</script>
+</body>
+
+</html>

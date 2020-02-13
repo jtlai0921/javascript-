@@ -1,0 +1,61 @@
+<html>
+
+<head>
+
+<title></title>
+<script language="javascript" type="text/javascript">
+
+
+function extend(Sub,Sup){
+    for(m in Sup.prototype){
+        if(!Sub.prototype[m]){
+            Sub.prototype[m] = Sup.prototype[m];
+        }
+    }
+}
+
+
+var F = function(x,y){
+    this.x =x;
+    this.y = y;
+}
+F.prototype = {
+    getx : function(){
+        return this.x;
+    },
+    gety : function(y){
+        return this.y;
+    }
+}
+
+
+A = function(x,y){
+    F.call(this,x,y)
+};
+B = function(x,y){
+    F.call(this,x,y)
+};
+
+extend(A,F);
+extend(B,F);
+
+var a = new A(1,2);
+var b = new B(10,20);
+
+alert(a.getx());
+alert(a.gety());
+alert(b.getx());
+alert(b.gety());
+
+
+
+
+
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

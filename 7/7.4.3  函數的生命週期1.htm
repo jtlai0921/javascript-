@@ -1,0 +1,11 @@
+<script language="javascript" type="text/javascript">
+
+var a = [];
+for(var i = 0; i<10;i++){
+    (function(j){
+        a[j] = j*j;
+    })(i); 	//函數以閉包的形式儲存循環變量，呼叫後不會被註銷
+}
+alert(a); 	//傳回值字串0,1,4 ,9,16 ,25,36 ,49, 64,81
+
+</script>

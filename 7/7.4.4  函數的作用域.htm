@@ -1,0 +1,18 @@
+<script language="javascript" type="text/javascript">
+
+function f(){	//函數體
+    function e(){	//子函數
+        function g(){	//孫函數
+            return 3;
+        }
+    }
+    var b = true; 	//函數的變量成員
+    var c = function(){	//函數的變量成員
+        return "c";
+    }
+}
+alert(f.e.g());	//拋出錯誤
+alert(f.c());	//拋出錯誤
+alert(f.b); 	//拋出錯誤
+
+</script>

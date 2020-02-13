@@ -1,0 +1,37 @@
+<html>
+
+<head>
+
+<title></title>
+<script language="javascript" type="text/javascript">
+
+
+function F(x,y){
+    this.x = x;
+    this.y = y;
+    this.add = function(){
+        return this.x + this.y;
+    }
+}
+F.prototype.mul = function(){
+    return this.x * this.y;
+}
+
+var f = new F(2,3)
+var o = {}
+for(var i in f){
+    o[i] = f[i]; 
+}
+alert(o.x);
+alert(o.y);
+alert(o.add());
+alert(o.mul());
+
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

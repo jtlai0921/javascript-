@@ -1,0 +1,25 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+
+
+<textarea id="key"></textarea>
+<script language="javascript" type="text/javascript">
+var key = document.getElementById("key");
+key.onkeydown = f; 	//註冊keydown事件處理函數
+key.onkeyup = f; 	//註冊keyup事件處理函數
+key.onkeypress = f; 	//註冊keypress事件處理函數
+function f(e){
+    var e = e || window.event; 	//標準化事件物件
+    var s = e.type + "  " + e.keyCode; 	//獲得鍵碟事件類別型和按下的鍵碼
+    key.value = s;
+}
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<script language="javascript" type="text/javascript">
+
+//重複字串
+var s = "javascript";
+var b = s.replace( /.*/, "$&$&");	//傳回字串" javascriptjavascript "
+
+//對比對純文字左側的純文字完全參考
+var s = "javascript";
+var b = s.replace( /script/, "$& != $`");	//傳回字串"javascript != java"
+
+//對比對純文字右側的純文字完全參考
+var s = "javascript";
+var b = s.replace( /java/, "$&$' is ");	//傳回字串"javascript is script"
+
+
+</script>

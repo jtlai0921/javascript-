@@ -1,0 +1,42 @@
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+<script language="javascript" type="text/javascript">
+
+
+function D(){
+}
+D.prototype = {
+    d : function(){
+        for( var i in this ){
+            if( this[i] instanceof D ){
+                this[i].d();                
+            }
+            this[i] = null;
+        }
+    }
+}
+
+function F(){
+    this.x = 1;
+    this.y = function(){
+        alert( 2 );
+    }
+}
+F.prototype =new D();
+var f = new F();
+f.d();
+alert(f.x);
+f.y()
+
+
+</script>
+</body>
+
+</html>

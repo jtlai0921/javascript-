@@ -1,0 +1,20 @@
+<script language="javascript" type="text/javascript">
+
+function pre(e){
+    var e = e.previousSibling;
+    while (e && e.nodeType != 1){
+        e = e.previousSibling;
+    }
+    return e;
+}
+
+
+function next(e){
+    var e = e.nextSibling;
+    while (e && e.nodeType != 1){
+        e = e.nextSibling;
+    }
+    return e;
+}
+
+</script>

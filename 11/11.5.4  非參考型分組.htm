@@ -1,0 +1,13 @@
+<script language="javascript" type="text/javascript">
+
+var s1 = "abc";
+var s2 = "123";
+var r = /(?:\w*?)|(?:\d*?)/;	//非參考型分組
+var a = r.test(s1); 	//傳回true
+var b = r.test(s2); 	//傳回true
+
+
+alert(RegExp.$1); 	//傳回""
+
+
+</script>

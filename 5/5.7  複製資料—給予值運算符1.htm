@@ -1,0 +1,23 @@
+<script language="javascript" type="text/javascript">
+
+var a = b = c = d = e = f = 100; 	// 連接給予值
+
+
+for(var a = 1, b = 10; a < b; a ++ ){ 	// 在條件表達式中進行給予值操作
+   alert(a);
+}
+
+var a; 		// 定義變量a
+alert(a = 6 && (b = function(){	// 邏輯與運算表達式
+   return a; 	// 傳回變量a的值
+})()
+); 		// 結果傳回undefined
+
+var a = 6; 	// 定義並初始化變量a
+b = function(){	// 定義函數物件b
+   return a;
+}
+alert(a && b());	// 利用邏輯與運算，根據a的邏輯值，決定是否呼叫函數b
+
+
+</script>

@@ -1,0 +1,14 @@
+<script language="javascript" type="text/javascript">
+
+function F(name){ 	//定義類別
+    this.name = name; 	//定義屬性
+}
+var a = new F("a");	//建立一個物件實例，名稱為"a"
+//然後再為類別F增加一個方法
+F.prototype.rename = function(name){
+    this.name = name; 	//修改它的屬性name
+}
+a.rename("A");	//呼叫rename()，修改屬性name的值
+alert(a.name); 	//傳回修改的值"A "，而不是"a"
+
+</script>

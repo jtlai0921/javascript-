@@ -1,0 +1,30 @@
+<html>
+<head>
+<script language="javascript" type="text/javascript">
+
+window.onload = function(){
+    clean(e)
+    var e = document.documentElement.lastChild.firstChild.nodeName;
+}
+
+//清除指定元素及其所有子元素之間的空格
+//參數：指定要清除空格的起始節點
+function clean(e){
+    var e = e || document;	//如果沒有指定參數，則表示從根節點開始清除
+    var f = e.firstChild; 	//獲得第一個子節點
+    while(f != null){ 	//如果第一個子節點存在，則開始檢查
+        if(f.nodeType == 3 && /\s/.test(f.nodeValue)){ 	//如果節點為純文字節點，且純文字內容僅包含空格，則表示它為元素之間的空格
+            e.removeChild(f); 	//刪除這些子節點
+        }
+        else if(f.nodeType == 1){ 	//如果子節點為元素
+            arguments.callee(f); 	//則遞歸呼叫該函數檢查該元素下面的所有子節點
+        }
+        f = f.nextSibling; 	//最後嘗試獲得相鄰節點的參考
+    }
+}
+
+</script>
+</head>
+<body> 
+    <span class="red">body</span>元素</body>
+</html>

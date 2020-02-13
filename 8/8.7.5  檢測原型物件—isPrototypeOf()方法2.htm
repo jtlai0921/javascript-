@@ -1,0 +1,18 @@
+<script language="javascript" type="text/javascript">
+
+//函數的原型對象可以是Object.prototype，或者Function.prototype。
+var f = function(){}
+alert(Object.prototype.isPrototypeOf(f)); 	//傳回true
+alert(Function.prototype.isPrototypeOf(f)); 	//傳回true
+
+//Object和Function對象的原型物件比較特殊。
+alert(Function.prototype.isPrototypeOf(Object)); 	//傳回true
+alert(Object.prototype.isPrototypeOf(Function)); 	//傳回true
+
+//Object.prototype和Function.prototype的原型對象都是Object.prototype，而Function.prototype的原型物件還可以是Function.prototype，但是Object.prototype的原型物件絕對不是Function.prototype。
+alert(Object.prototype.isPrototypeOf(Object.prototype)); 	//傳回true
+alert(Object.prototype.isPrototypeOf(Function.prototype)); 	//傳回true
+alert(Function.prototype.isPrototypeOf(Function.prototype)); 	//傳回true
+alert(Function.prototype.isPrototypeOf(Object.prototype)); 	//傳回false
+
+</script>

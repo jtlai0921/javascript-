@@ -1,0 +1,60 @@
+<html>
+
+<head>
+
+<title></title>
+<script language="javascript" type="text/javascript">
+
+Function.prototype.extend = function(o){
+    for(var i in o){
+        this.prototype[i] = o[i];
+    }
+}
+
+function A(x){
+    this.x = x;
+}
+A.prototype.getx = function(){
+    return this.x;
+}
+
+function B(y){
+    this.y = y;
+}
+B.prototype.gety = function(){
+    return this.y;
+}
+
+
+function C(x,y){
+    A.call(this,x);
+    B.call(this,y);
+}
+
+
+C.prototype = A.prototype;
+C.prototype = B.prototype;
+
+C.extend(A.prototype);
+C.extend(B.prototype);
+
+
+
+var c = new  C(10,20);
+
+
+
+
+alert(c.x);
+alert(c.y);
+alert(c.gety());
+
+
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

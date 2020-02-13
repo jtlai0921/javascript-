@@ -1,0 +1,36 @@
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+<script language="javascript" type="text/javascript">
+
+
+
+var o = getCookie();
+
+for(i in o){
+    alert(i + "=" + o[i]);
+}
+
+
+function getCookie(){
+    var a = document.cookie.split(";");
+    var o = {};
+    for(var i=0;i<a.length;i++){
+        var v = a[i].split("=");
+        o[v[0]] = v[1];
+    }
+    return o;
+
+}
+
+
+</script>
+</body>
+
+</html>

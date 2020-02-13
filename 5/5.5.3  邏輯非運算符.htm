@@ -1,0 +1,19 @@
+<script language="javascript" type="text/javascript">
+
+alert(!5); 	// 傳回false。把數值5轉換為布爾值，並取反
+alert(!!5); 	// 傳回true。把數值5轉換為布爾值
+alert(!0); 	// 傳回true。把數值0轉換為布爾值，並取反
+alert(!!0); 	// 傳回false。把數值5轉換為布爾值
+
+//下面列舉一些特殊的運算數的邏輯非運算傳回值：
+alert( ! {}); 	// 傳回false。如果運算數是對象，則傳回false
+alert( ! 0); 	// 傳回true。如果運算數是0，則傳回true
+alert( ! (n = 5)); 	// 傳回false。如果運算數是非0的任何數字，則傳回false
+alert( ! null); 	// 傳回true。如果運算數是null，則傳回true
+alert( ! NaN); 	// 傳回false。如果運算數是NaN，則傳回true
+alert( ! Infinity); 	// 傳回false。如果運算數是Infinity，則傳回false
+alert( ! ( - Infinity)); 	// 傳回false。如果運算數是-Infinity，則傳回false
+alert( ! undefined); 	// 傳回false。如果運算數是undefined，則傳回true，或發生錯誤
+
+
+</script>

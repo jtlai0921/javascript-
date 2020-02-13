@@ -1,0 +1,16 @@
+<script language="javascript" type="text/javascript">
+
+function who(){	//定義一個抽像化方法
+    alert(this.name);
+}
+var o = new Object();	//實例化物件o
+o.name = "o";	//命名為o
+o.who = who; 	//參考抽像化方法who
+var f = new Object();	//實例化物件f
+f.name = "f";	//命名為f
+f.who = who; 	//參考抽像化方法who
+o.who();	//呼叫物件o的方法who，傳回字符o
+f.who();	//呼叫物件f的方法who，傳回字符f
+
+
+</script>

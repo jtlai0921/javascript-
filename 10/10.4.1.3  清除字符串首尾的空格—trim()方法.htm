@@ -1,0 +1,16 @@
+<script language="javascript" type="text/javascript">
+
+
+var trim = String.prototype.trim = function(){	//定義trim()方法的靜態方法和物件方法
+   return ( arguments[0] ? arguments[0] : this ).toString().replace( /(^\s*)|(\s*$)/gm, "" );
+}
+
+
+var s = "  javascript  ";
+alert(s.length); 	//傳回字串長度為14
+var s1 = s.trim();	//清除兩側空格
+alert( s1 ); 	//傳回字串"javascript"
+alert(s1.length); 	//傳回字串長度為10
+
+
+</script>

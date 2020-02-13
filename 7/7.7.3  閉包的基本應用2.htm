@@ -1,0 +1,21 @@
+<script language="javascript" type="text/javascript">
+
+function f( x ){//定義功能函數，把參數陣列的元素以閉包體分別封裝在陣列中並傳回
+    var a = [];	//定義臨時陣列
+    for ( var i = 0; i < x.length; i ++ ){ 	//檢查參數陣列
+        var temp = x[i]; 	//臨時每個儲存陣列元素的值
+        a.push( function(){	//把陣列元素值封裝在閉包中投入到臨時陣列a中
+            alert( temp + ' ' + x[i] ) 	//閉包中被封裝的參數陣列元素值
+        });
+    }
+    return a; 	//傳回臨時陣列a
+}
+function e(){	//定義普通函數
+    var a = f( ["a", "b", "c"] ); 	//呼叫函數f，並向其傳遞一個陣列
+    for ( var i = 0; i < a.length; i ++ ){ 	//檢查函數f傳回的陣列
+        a[i](); 	//呼叫閉包，檢視內部封裝的陣列元素的值
+    }
+}
+e();	//呼叫函數e
+
+</script>

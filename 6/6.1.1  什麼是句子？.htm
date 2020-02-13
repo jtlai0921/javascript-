@@ -1,0 +1,29 @@
+<script language="javascript" type="text/javascript">
+
+
+1;	// 世界上最簡單的句子
+
+//當然句子也會很複雜
+//建立XMLHttpRequest物件實例，實現Ajax異步通訊的工具
+if(window.XMLHttpRequest){
+   request = new XMLHttpRequest();
+}
+else if (window.ActiveXObject){
+   try{
+      request = new ActiveXObject("Msxml2.XMLHTTP");
+   }
+   catch (e){
+      try{
+         request = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      catch (e){
+         alert("初始化XMLHttpRequest物件失敗，請檢查瀏覽器是否支援XMLHttpRequest元件。");
+      }
+   }
+};
+
+//甚至句子可以沒有內容
+;	// 空敘述
+
+
+</script>

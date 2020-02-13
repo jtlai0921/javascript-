@@ -1,0 +1,27 @@
+<script language="javascript" type="text/javascript">
+
+//特殊運算數的怪異運算結果
+var n = 5; 	// 定義並初始化任意一個數值
+alert(NaN + n);	// 傳回NaN。NaN與任意運算數相加，結果都是NaN
+alert(Infinity + n); 	// 傳回Infinity。Infinity與任意運算數相加，結果都是Infinity
+alert(Infinity + Infinity); 	// 傳回Infinity。Infinity與Infinity相加，結果是Infinity
+alert(( - Infinity) + ( - Infinity)); 	// 傳回-Infinity。負Infinity相加，結果是負Infinity
+alert(( - Infinity) + Infinity); 	// 傳回NaN。正負Infinity相加，結果是NaN
+
+//有趣的0蛋
+alert( 0 + 0); 	// 傳回0
+alert( - 0 + 0); 	// 傳回0
+alert( ( - 0) + ( - 0)); 	// 傳回-0
+
+//靈活的資料類別型轉換
+alert( 1 + 1); 	// 傳回2。如果運算數都是數值，則進行相加運算
+alert( 1 + "1");	// 傳回"11"。如果運算數中有一個是字串，則把數值轉換位字串，然後進行相連運算
+alert( "1" + "1");	// 傳回"11"。如果運算數都是字串，則進行相連運算
+
+//加運算符能夠根據運算數的資料類別型，盡可能的把物件轉換成可以執行相加或相連運算的數值或字串。這裡主要呼叫對象的valueOf()或toString()方法來實現。例如，下面兩個表達式中，由於空字串的位置不同，所引發的結果也是不同。
+alert(3.0 + 4.3 + "")	// 傳回"7.3"
+alert(3.0 + "" + 4.3) 	// 傳回"34.3"
+
+
+
+</script>

@@ -1,0 +1,18 @@
+<script language="javascript" type="text/javascript">
+
+
+function f(){
+    a = 1; 	//全局變量a給予值為1
+    var b = 2; 	//局部變量b給予值為2
+}
+try{
+    alert(a); 	//嘗試讀取全局變量a
+}
+catch(e){
+    alert(e.message); 	//顯示錯誤資訊：變量a未定義
+}
+f();	//呼叫函數
+alert(a); 	//讀取全局變量a，傳回值為1
+
+
+</script>

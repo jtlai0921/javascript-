@@ -1,0 +1,47 @@
+<html>
+
+<head>
+
+<title></title>
+<script language="javascript" type="text/javascript">
+
+
+
+function A(x){
+    this.x = function(){
+        alert(x);
+    }
+}
+function B(y){
+    this.y = function(){
+        alert(y);
+    }
+}
+
+function C(x,y){
+    this.m = A;
+    this.m(x);
+    this.m = B;
+    this.m(y);
+}
+
+var c = new C(2,3);
+c.x();
+c.y();
+
+
+
+
+
+
+
+
+
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

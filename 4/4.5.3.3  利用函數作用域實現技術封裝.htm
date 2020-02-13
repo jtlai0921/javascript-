@@ -1,0 +1,17 @@
+<script language="javascript" type="text/javascript">
+
+
+(function(){	//定義封裝的獨立作用域
+    var jQuery = window.jQuery = window.$ = function( selector, context ){
+        return new jQuery.fn.init( selector, context );
+    };
+    jQuery.fn = jQuery.prototype ={
+        //詳細程式碼
+    }
+    jQuery.fn.init.prototype = jQuery.fn;
+    jQuery.extend = jQuery.fn.extend = function(){
+        //詳細程式碼
+    }
+})()	//直接呼叫函數
+
+</script>

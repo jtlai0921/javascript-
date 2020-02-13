@@ -1,0 +1,89 @@
+<html>
+<head>
+<title></title>
+<script language="javascript" type="text/javascript">
+window.onload = function()
+{
+    var e = document.getElementsByTagName("div")[0];
+    e = e.next();
+    alert(e.nodeName);
+}
+
+HTMLElement.prototype.pre = function()
+{
+    var e = this.previousSibling;
+    while (e && e.nodeType != 1)
+    {
+        e = e.previousSibling;
+    }
+    return e;
+}
+
+HTMLElement.prototype.next = function()
+{
+    var e = this.nextSibling;
+    while (e && e.nodeType != 1)
+    {
+        e = e.nextSibling;
+    }
+    return e;
+}
+
+HTMLElement.prototype.first = function()
+{
+    var e = this.firstChild;
+    while (e && e.nodeType != 1)
+    {
+        e = e.nextSibling;
+    }
+    return e;
+}
+
+HTMLElement.prototype.last = function()
+{
+    var e = this.lastChild;
+    while (e && e.nodeType != 1)
+    {
+        e = e.previousSibling;
+    }
+    return e;
+}
+
+HTMLElement.prototype.parent = function(n)
+{
+    var n = n || 1;
+    var e = this;
+    for(var i = 0; i < n; i ++ )
+    {
+        if(e.nodeType == 9) break;
+        if(e != null) e = e.parentNode;
+    }
+    return e;
+}
+
+function clean(e){
+    var e = e || document;
+    var f = e.firstChild;
+    while(f != null){
+        if(f.nodeType == 3 && /\s/.test(f.nodeValue)){
+            e.removeChild(f);
+        }
+        else if(f.nodeType == 1){
+            arguments.callee(f);
+        }
+        f = f.nextSibling;
+    }
+}
+
+</script>
+</head>
+<body>
+    <p>p</p>
+    <div>¤¸¯À
+        <span>span</span>
+        <i>i</i>
+        <strong>strong</strong>
+    </div>
+    <b>b</b>
+</body>
+</html>

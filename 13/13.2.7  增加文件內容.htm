@@ -1,0 +1,28 @@
+<style type="text/css">
+li { cursor:pointer; }	/* 為列記錄定義鼠標經過時顯示為手形 */
+</style>
+<script language="javascript" type="text/javascript">
+window.onload = function(){	//文件載入初始化事件處理函數
+    var ul = document.getElementsByTagName("ul")[0]; 	//獲得列表結構
+    var lis = ul.childNodes; 	//獲得列表結構的所有子節點
+    lis[0].onclick = function(){	//為第一個列記錄綁定事件處理函數
+        this.innerText = "謝謝";	//替換純文字
+    }
+    lis[1].onclick = function(){	//為第二個列記錄綁定事件處理函數
+        this.innerHTML = "<h2>我是一名初學者</h2>";	//替換HTML純文字
+    }
+    lis[2].onclick = function(){	//為第三個列記錄綁定事件處理函數
+        this.outerText = "我是學生";	//覆蓋列記錄標籤及其包含內容
+    }
+    lis[3].onclick = function(){	//為第四個列記錄綁定事件處理函數
+        this.outerHTML = "<h2>當然喜歡</h2>";//用HTML純文字覆蓋列記錄標籤及其包含內容
+    }
+}
+</script>
+<h1>單擊回答問題</h1>
+<ul>
+    <li>你好</li>
+    <li>你叫什麼？</li>
+    <li>你幹什麼？ </li>
+    <li>你喜歡JS嗎？ </li>
+</ul>

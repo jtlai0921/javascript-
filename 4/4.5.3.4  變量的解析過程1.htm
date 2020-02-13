@@ -1,0 +1,12 @@
+<script language="javascript" type="text/javascript">
+
+
+var a = 1; 	//聲明並初始化全局變量
+(function f(){
+    alert(a); 	//傳回undefined
+    var a = 2; 	//聲明並初始化局部變量
+    alert(a); 	//傳回2
+})()
+
+
+</script>

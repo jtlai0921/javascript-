@@ -1,0 +1,31 @@
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+<script language="javascript" type="text/javascript">
+
+
+
+function f(){
+    alert(this.value);
+}
+var o1 = {value: "物件o1"}
+var o2 = new Object();
+o2.value = "物件o2";
+
+f.apply(o1);
+f.apply(o2);
+
+
+
+
+
+</script>
+</body>
+
+</html>

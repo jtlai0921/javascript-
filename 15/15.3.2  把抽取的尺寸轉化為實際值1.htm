@@ -1,0 +1,81 @@
+<html>
+<head>
+</head>
+<body>
+
+<script language="javascript" type="text/javascript">
+//把fromStyle ()函數傳回值轉換為實際的值
+//參數：e表示實際的元素，w表示元素的樣式屬性值，透過getStyle()函數獲得，p表示目前元素百分比轉換為小數的值，以便在上級元素中計算目前元素的尺寸
+//傳回值：傳回實際的數字值
+function fromStyle(e, w, p){
+    var p = arguments[2]; 	//獲得百分比轉換後的小數值
+    if( ! p) p = 1; 	//如果不存在，則預設其為1
+    if(/px/.test(w) && parseInt(w) ) return parseInt(parseInt(w) * p); 	//如果元素尺寸的值為實際的像素值，則直接轉換為數字，並乘以百分比值，並傳回該值
+    else if(/\%/.test(w) && parseInt(w)){ 	//如果元素寬度值為百分比值
+        var b = parseInt(w) / 100; 	//則把該值轉換為小數值
+        if((p != 1) && p) b *= p; 	//如果子元素的尺寸也是百分比，則乘以轉換後的小數值
+        e = e.parentNode; 	//獲得父元素的參考指標
+        if(e.tagName == "BODY") throw new Error("整個文件結構都沒有定義固定尺寸，沒法計算了，請使用其他方法獲得尺寸."); 	//如果父元素是body元素，則拋出例外
+        w = getStyle(e, "width"); 	//呼叫getStyle()方法，獲得父元素的寬度值
+        return arguments.callee(e, w, b); 	//回調函數，把上面的值作為參數進行傳遞，實現迭代計算
+    }
+    else if(/auto/.test(w)){ 	//如果元素寬度值為預設值
+        var b = 1; 	//定義百分比值為1
+        if((p != 1) && p) b *= p; 	//如果子元素的尺寸是百分比，則乘以轉換後的小數值
+        e = e.parentNode; 	//獲得父元素的參考指標
+        if(e.tagName == "BODY") throw new Error("整個文件結構都沒有定義固定尺寸，沒法計算了，請使用其他方法獲得尺寸."); 	//如果父元素是body元素，則拋出例外
+        w = getStyle(e, "width");	//呼叫getStyle()方法，獲得父元素的寬度值
+        return arguments.callee(e, w , b); 	//回調函數，實現迭代計算
+    }
+    else	//如果getStyle()函數傳回值包含其他單位，則拋出例外，不再計算。當然，如果感興趣，讀者可以在此基礎上進一步的擴充，分別針對不同的單位進行計算，如em、ex等，由於它們不經常使用，故本節不再深入擴充
+        throw new Error("元素或其父元素的尺寸定義有特殊的單位.");
+}
+
+//獲得指定元素的樣式屬性值
+//參數：e表示實際的元素，n表示要獲得元素的腳本樣式的屬性名，如"width"、"borderColor"
+//傳回值：傳回該元素e的樣式屬性n的值
+function getStyle(e,n){
+    if(e.style[n]){ 	//如果在style物件中存在，說明已顯式定義，則傳回這個值
+        return e.style[n];
+    }
+    else if(e.currentStyle){ 	//否則，如果是IE瀏覽器，則利用它的私有方法讀取目前值
+        return e.currentStyle[n];
+    }
+    //如果是支援DOM標準的瀏覽器，則利用DOM定義的方法讀取樣式屬性值
+    else if(document.defaultView && document.defaultView.getComputedStyle){
+        n = n.replace(/([A-Z])/g,"-$1");	//轉換參數的屬性名
+        n = n.toLowerCase();
+        var s = document.defaultView.getComputedStyle(e,null); 	//獲得目前元素的樣式屬性物件
+        if(s) 	//如果目前元素的樣式屬性物件存在
+            return s.getPropertyValue(n); 	//則獲得屬性值
+    }
+    else	//如果都不支援，則傳回null
+        return null;
+}
+
+</script>
+
+<div style="width:200px;">
+    <div style="width:50%;">
+        <div style="width:50%;">
+            <div style="width:50%;">
+                <div id="div" style="border-style:solid;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script language="javascript" type="text/javascript">
+
+var div = document.getElementById("div");	//獲得元素的參考指標
+var w = getStyle(div, "width");	//獲得元素的樣式屬性值
+w = fromStyle(div, w); 	//把樣式屬性值轉換為實際的值，即傳回數值25
+
+alert(w);
+
+</script>
+
+
+</body>
+</html>

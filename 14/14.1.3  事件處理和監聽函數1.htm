@@ -1,0 +1,18 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<div id="div1" onclick = "f()">事件處理和監聽函數</div>
+<script language="javascript" type="text/javascript">
+var div = document.getElementById("div1");	//獲得要處理的對象參考
+div.onclick = f; 	//綁定事件處理函數
+function f(){	//事件回調函數
+    alert("ok");
+}
+
+</script>
+
+</body>
+</html>

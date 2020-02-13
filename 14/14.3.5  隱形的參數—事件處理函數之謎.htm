@@ -1,0 +1,16 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<button id="btn">按    鈕</button>
+<script language="javascript" type="text/javascript">
+document.getElementById("btn").onclick = function(event){
+    event = event || window.event;	//標準化事件物件
+    alert(event.srcElement ? event.srcElement : event.target);	//兼容FF和IE的event參數屬性
+}
+</script>
+
+</body>
+</html>

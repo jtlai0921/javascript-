@@ -1,0 +1,25 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<script language="javascript" type="text/javascript">
+
+var event = event || window.event;
+if(event.offsetX || event.offsetY ){ 	//適用非Mozilla瀏覽器
+    x = event.offsetX；
+    y = event.offsetY;
+}
+else if(event.layerX || event.layerY ){ 	//兼容Mozilla瀏覽器
+    x = event.layerX；
+    y = event.layerY;
+}
+
+
+</script>
+
+
+
+</body>
+</html>

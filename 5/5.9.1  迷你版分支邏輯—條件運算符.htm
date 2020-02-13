@@ -1,0 +1,24 @@
+<script language="javascript" type="text/javascript">
+
+
+
+
+var a; 	// 定義變量a
+a ? (a = a) : (a = "Default Value");	// 檢測變量a是否給予值
+alert(a); 	// 顯示變量a的值
+
+//條件運算符可以轉換為條件敘述：
+var a;
+if(a) 		// 給予值
+    a=a;
+else		// 沒有給予值
+    a = "default value";
+alert(a);
+
+//還可以使用邏輯表達式來描述這種條件關係：
+var a;
+a && (a=a) || (a = "default value");	// 邏輯表達式
+alert(a);
+
+
+</script>

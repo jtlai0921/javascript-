@@ -1,0 +1,19 @@
+<script language="javascript" type="text/javascript">
+
+//模運算通俗說就是求餘數。例如：
+alert(3 % 2);	// 傳回餘數1
+
+//模運算主要針對整數執行操作，但是它也適用浮點數，例如：
+alert(3.1 % 2.3); 	// 傳回餘數0.8000000000000003
+
+//特殊運算數的怪異運算結果
+var n = 5; 	// 定義並初始化任意一個數值
+alert(Infinity % n); 	// 傳回NaN
+alert(Infinity % Infinity); 	// 傳回NaN
+alert(n % Infinity); 	// 傳回5
+alert(0 % n); 	// 傳回0
+alert(0 % Infinity); 	// 傳回0
+alert(n % 0); 	// 傳回NaN
+alert(Infinity % 0); 	// 傳回NaN
+
+</script>

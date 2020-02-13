@@ -1,0 +1,23 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<script language="javascript" type="text/javascript">
+
+function getFFVer(){
+    var ua = navigator.userAgent;
+    var b = ua.indexOf("Firefox/");
+    if(b < 0){
+        return 0;
+    }
+    return  parseFloat(ua.substring(b + 8,ua.lastIndexOf("\.")));
+}
+alert(getFFVer());
+
+
+</script>
+
+</body>
+</html>

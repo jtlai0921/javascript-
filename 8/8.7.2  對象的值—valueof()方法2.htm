@@ -1,0 +1,17 @@
+<script language="javascript" type="text/javascript">
+
+function Point(x,y){ 	//自定義資料類別型
+    this.x = x;
+    this.y = y;
+}
+Point.prototype.valueOf = function(){	//自定義Point資料類別型的valueOf()方法
+    return "(" + this.x + "," + this.y + ")";
+}
+Point.prototype.toString = function(){	//自定義Point資料類別型的toString()方法
+    return "[object Point]";
+}
+var p = new Point(26,68); 	//實例化物件
+alert("typeof p = " + p); 	//預設呼叫valueOf()方法進行類別型轉換
+alert("typeof p = " + p.toString());	//直接呼叫toString()方法進行類別型轉換
+
+</script>

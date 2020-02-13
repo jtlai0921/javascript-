@@ -1,0 +1,23 @@
+<script language="javascript" type="text/javascript">
+
+
+var a = true;
+for(var b = 1; b < 10; b ++ ) 	// 循環結構
+{
+    if(a == true) 	// 條件判斷
+    {
+        alert(b);
+    }
+}
+
+//很明顯，在這個循環結構中if敘述會被反覆執行。如果這個if敘述是一個固定的條件檢測表達式，也就是說如果if敘述的條件不會受循環結構的影響，則不妨採用如下的結構來設計：
+if(a == true) 	// 條件判斷
+{
+    for(var b = 1; b < 10; b ++ ) 	// 循環結構
+    {
+        alert(b);
+    }
+}
+
+
+</script>

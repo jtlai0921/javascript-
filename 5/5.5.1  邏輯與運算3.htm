@@ -1,0 +1,25 @@
+<script language="javascript" type="text/javascript">
+
+//物件被轉換為布爾值時為true。例如，一個空對象與一個布爾值進行邏輯與運算，比較如下：
+alert(typeof({} && true)) 	// 傳回第二個運算數true的類別型，即傳回boolean
+alert(typeof({} && false)) 	// 傳回第二個運算數false的類別型，即傳回boolean
+alert(typeof(true && {}))	// 傳回第二個運算數{}的類別型，即傳回object
+alert(typeof(false && {}))	// 傳回第一個運算數false的類別型，即傳回boolean
+
+//如果運算數中包含null，則傳回值總是null。例如，字串"null"與null類別型值進行邏輯與運算，不管位置如何，始終都傳回null的類別型object。
+alert(typeof("null" && null)) 	// 傳回null的類別型，即傳回object
+alert(typeof(null && "null"))	// 傳回null的類別型，即傳回object
+
+//如果運算數中包含NaN，則傳回值總是NaN。例如，字串"NaN"與NaN類別型值進行邏輯與運算，不管位置如何，始終都傳回NaN的類別型number。
+alert(typeof("NaN" && NaN)) 	// 傳回NaN的類別型，即傳回number
+alert(typeof(NaN && "NaN"))	// 傳回NaN的類別型，即傳回number
+
+//對於Infinity特殊值來說，將被轉換為true，與普通數值一樣參與邏輯與運算。例如，
+alert(typeof("Infinity" && Infinity)) 	// 傳回第二個運算數Infinity的類別型，即傳回number
+alert(typeof(Infinity && "Infinity"))	// 傳回第二個運算數"Infinity"的類別型，即傳回string
+
+//如果運算數中包含undefined，則傳回錯誤。例如，字串"undefined"與undefined類別型值進行邏輯與運算，不管位置如何，始終都傳回undefined的類別型undefined。
+alert(typeof("undefined" && undefined))
+alert(typeof(undefined && "undefined"))
+
+</script>

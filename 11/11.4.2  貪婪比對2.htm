@@ -1,0 +1,12 @@
+<script language="javascript" type="text/javascript">
+
+
+var s ="<html><head><title></title></head><body></body></html>";
+var r = /(<.*>)(<.*>)/
+var a = s.match(r);
+alert(a[1]); 	//左側比對"<html><head><title></title></head><body> </body>"
+alert(a[2]); 	//右側子表達式比對"</html>"
+
+
+
+</script>

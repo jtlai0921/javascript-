@@ -1,0 +1,14 @@
+<script language="javascript" type="text/javascript">
+
+var a = "string";
+alert(a.valueOf());
+
+var a = "string";
+alert(valueOf(a));
+
+
+var valueOf = Object.prototype.valueOf = function(x){
+    return x.valueOf();
+}
+
+</script>

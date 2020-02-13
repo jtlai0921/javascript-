@@ -1,0 +1,21 @@
+<script language="javascript" type="text/javascript">
+
+function first(e){
+    var e = e.firstChild;	//獲得元素的第一個子節點
+    while (e && e.nodeType != 1){	//如果存在該子節點，且類別型不等於元素，則搜索下一個節點，直到節點類別型為元素
+        e = e.nextSibling;
+    }
+    return e;
+}
+
+
+function last(e){
+    var e = e.lastChild; 	//獲得元素的最後一個子節點
+    while (e && e.nodeType != 1) {	//如果存在該子節點，且類別型不等於元素，則搜索上一個節點，直到節點類別型為元素
+        e = e.previousSibling;
+    }
+    return e;
+}
+
+
+</script>

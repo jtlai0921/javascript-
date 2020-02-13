@@ -1,0 +1,21 @@
+<script language="javascript" type="text/javascript">
+
+var s = "JavaScript,not Javascript";
+var r = /Scrip(t)/gi; 	//第1次定義的比對模式
+var a = r.exec(s); 	//執行第1次比對
+alert(RegExp.$_); 	//傳回字串"JavaScript,not Javascript"
+alert(RegExp["$`"]);	//傳回字串"Java"
+alert(RegExp["$'"]);	//傳回字串",not Javascript"
+alert(RegExp["$&"]);	//傳回字串"Script"
+alert(RegExp["$+"]);	//傳回字串"t"
+var r = /Jav(a)/gi; 	//第2次定義的比對模式
+var a = r.exec(s); 	//執行第2次比對
+alert(RegExp.$_); 	//傳回字串"JavaScript,not Javascript"
+alert(RegExp["$`"]);	//傳回空字串
+alert(RegExp["$'"]); 	//傳回字串"Script,not Javascript"
+alert(RegExp["$&"]);	//傳回字串"Java"
+alert(RegExp["$+"]);	//傳回字串"a"
+
+
+
+</script>

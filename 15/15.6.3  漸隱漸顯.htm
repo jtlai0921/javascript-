@@ -1,0 +1,101 @@
+<html>
+<head>
+</head>
+<body>
+
+<script language="javascript" type="text/javascript">
+//漸隱漸顯動畫顯示函數
+//參數：e表示漸隱漸顯元素，t表示漸隱漸顯的速度，值越大漸隱漸顯速度越慢，io表示漸隱或漸顯方式，取值true表示漸顯，取值false表示漸隱
+function fade(e, t, io){
+    var t = t || 10;	//初始化漸隱漸顯速度
+    if(io){	//初始化漸隱漸顯方式
+        var i = 0;
+    }else{
+        var i = 100;
+    }
+    var out = setInterval(function(){	//設計定時器
+        setOpacity(e, i);	//呼叫setOpacity()函數
+        if(io) {	//根據漸隱或漸顯方式決定執行效果
+            i ++ ;
+            if(i >= 100)  clearTimeout(out);
+        }
+        else{
+            i-- ;
+            if(i <= 0)  clearTimeout(out);
+        }
+    }, t);
+}
+
+// 獲得元素的透明度
+// 參數：e表示要預設置的元素
+// 傳回值：元素的透明度值，範圍在1 ~ 100之間
+function getOpacity(e)
+{
+    var r;
+    if ( ! e.filters)
+    {
+        if (e.style.opacity) return parseFloat(e.style.opacity) * 100;
+    }
+    try
+    {
+        return e.filters.item('alpha').opacity
+    }
+    catch(o)
+    {
+        return 100;
+    }
+}
+function getStyle(e, n)
+{
+    if(e.style[n])
+    {
+        return e.style[n];
+    }
+    else if(e.currentStyle)
+    {
+        return e.currentStyle[n];
+    }
+    else if(document.defaultView && document.defaultView.getComputedStyle)
+    {
+        n = n.replace(/([A-Z])/g, "-$1");
+        n = n.toLowerCase();
+        var s = document.defaultView.getComputedStyle(e, null);
+        if(s)
+        return s.getPropertyValue(n);
+    }
+    else
+    return null;
+}
+
+function setOpacity(e, n)
+{
+    var n = parseFloat(n);
+    // 把第2個參數轉換為浮點數
+    if(n && (n > 100) || ! n) n = 100;
+    // 如果第2個參數存在且值大於100，或者不存在該參數，則設置其為100
+    if(n && (n < 0))  n = 0;
+    // 如果第2個參數存在且值小於0，則設置其為0
+    if (e.filters)
+    {
+        // 兼容IE瀏覽器
+        e.style.filter = "alpha(opacity=" + n + ")";
+    }
+    else
+    {
+        // 兼容DOM標準
+        e.style.opacity = n / 100;
+    }
+}
+</script>
+
+<style type="text/css">
+.block {width:200px; height:200px; background-color:red; }
+</style>
+<div class="block" id="block1"></div>
+<script language="javascript" type="text/javascript">
+e = document.getElementById('block1');
+fade(e,50,true);	//應用漸隱漸顯動畫效果
+</script>
+
+</body>
+</html>

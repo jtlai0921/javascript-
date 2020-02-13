@@ -1,0 +1,34 @@
+<html>
+
+<head>
+
+<title></title>
+<script language="javascript" type="text/javascript">
+
+
+
+function D(){
+    var d = new Date();
+    d.get = function(){
+        alert(d.toLocaleString());
+    }
+    return d;
+}
+var d = new D();
+
+d.get();
+
+
+alert(d instanceof Date);
+alert(d instanceof D);
+
+
+
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

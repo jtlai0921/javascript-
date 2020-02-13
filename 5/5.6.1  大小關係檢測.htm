@@ -1,0 +1,20 @@
+<script language="javascript" type="text/javascript">
+
+//如果運算數都是數字，或者都可以被轉換成數字，則將根據數字大小進行比較。
+alert(4>3); 	// 傳回true，直接利用數值大小進行比較
+alert("4">Infinity); 	// 傳回false，無窮大比任何數字都大
+
+alert("4">"3");	// 傳回true，以字串進行比較，而不是數字大小進行比較
+
+alert("a">"b");	// 傳回false，字符a解碼為61，字符b解碼為62
+alert("ab">"cb");	// 傳回false，c的解碼為63。從左到右對字串中對應字符一個一個進行比較
+alert("abd">"abc");	// 傳回true，d的解碼為64。前面字符相同，則比較下一個字符
+
+
+alert("a">"3");	// 傳回true，字符a解碼為61，字符3解碼為33
+alert("a">3); 	// 傳回false，字符a被強制轉換為NaN
+
+
+
+
+</script>

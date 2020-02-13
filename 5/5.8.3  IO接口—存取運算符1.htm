@@ -1,0 +1,37 @@
+<script language="javascript" type="text/javascript">
+
+//讀取陣列元素的值
+var a =[1,"x",true,{}]; 	// 定義陣列a
+alert(a[1]); 	// 傳回"x"。讀取陣列中第2個元素的值
+alert(a[3]); 	// 傳回[object Object]。讀取陣列中第4個元素的值
+
+//寫入陣列元素的值
+var a =[1,"x",true,{}]; 	// 定義陣列a
+a[3] = false; 	// 在陣列第4個元素中寫入false布爾值
+alert(a[3]); 	// 傳回false。元素原來儲存的對象被覆蓋
+
+//讀取或呼叫物件成員
+var a ={	// 定義物件a
+   x : 1, 	// 定義物件屬性x
+   y : function(){	// 定義物件方法y
+     return 2; 	// 傳回值2
+   }
+};
+alert(a["x"]);	// 傳回1。讀取屬性x的值
+alert(a["y"]());	// 傳回2。呼叫方法y
+
+//重置物件成員的值或方法
+var a ={	// 定義物件a
+   x : 1, 	// 定義物件屬性x
+   y : function(){	// 定義物件方法y
+     return 2; 	// 傳回值2
+   }
+};
+a["x"] = 3; 	// 重置屬性x的值
+alert(a["x"]);	// 傳回3。讀取屬性x的值
+a["y"] = function(){	// 更新方法y
+    return 4;
+}
+alert(a["y"]());	// 傳回4。呼叫方法y
+
+</script>

@@ -1,0 +1,10 @@
+<script language="javascript" type="text/javascript">
+
+function Point(){}	//建構函數
+Point.prototype = null; 	//刪除建構函數Point()的原型物件
+var p =new Point();	//實例化物件
+var o = p.constructor; 	//獲得實例的建構器
+alert(o == Point); 	//傳回false，說明物件p的建構器不是Point
+alert(o == Object); 	//傳回true，說明物件p的建構器不是Object
+
+</script>

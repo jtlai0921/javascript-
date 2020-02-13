@@ -1,0 +1,13 @@
+<script language="javascript" type="text/javascript">
+
+var r = /\b\w/gi; 	//定義正則表達式直接量
+
+var s = "javascript JAVA";
+var a = s.match(r); 	//直接呼叫正則表達式直接量
+alert(a); 	//傳回陣列["j", "J"]
+
+var r = new RegExp("a"+ s + "b","g");	//動態建立正則表達式
+var r = /"a"+ s + "b"/g; 	//錯誤的用法
+
+
+</script>

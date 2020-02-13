@@ -1,0 +1,31 @@
+<html>
+
+<head>
+
+<title></title>
+<script language="javascript" type="text/javascript">
+
+
+
+function Book(title,pages){
+    this.title = title;
+    this.pages = pages;
+    this.what = function(){
+        alert(this.title +this.pages);
+    };
+}
+var book1 =new Book("小李的JavaScript設計大法",160);
+var book2 =new Book("老趙的JavaScript設計大法",240);
+
+alert(book1.title);
+book1.what();
+
+alert( book1 instanceof Book);
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

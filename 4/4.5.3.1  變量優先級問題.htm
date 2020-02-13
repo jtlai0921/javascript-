@@ -1,0 +1,25 @@
+<script language="javascript" type="text/javascript">
+
+
+var a = 1; 	//全局變量
+(function f(){
+    var a = 2; 	//局部變量
+    alert(a); 	//傳回2
+})();	//直接在函數體上呼叫函數
+
+
+var a = 1; 	//全局變量
+(function f(a){ 	//參數變量
+    alert(a); 	//傳回3
+})(3); 	//直接呼叫函數，並傳遞參數值為3
+
+
+var a = 1; 	//全局變量
+(function f(a){ 	//參數變量
+    var a = 2; 	//局部變量
+    alert(a); 	//傳回2
+})(3); 	//直接呼叫函數，並傳遞參數值為3
+
+
+
+</script>

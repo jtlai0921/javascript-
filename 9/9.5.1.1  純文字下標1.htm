@@ -1,0 +1,19 @@
+<script language="javascript" type="text/javascript">
+
+a["1"] = 1;
+alert(a[1]); 	//傳回值為1
+
+var a = [["張三",1],["李四",2],["王五",3]]; 	//二維陣列
+for(var i in a){ 	//檢查二維陣列
+    if(a[i][0] == "李四") alert(a[i][1]) ; 	//檢索指定元素
+}
+
+
+var a = [];	//定義空陣列
+a["張三"] = 1; 	//以純文字下標來儲存元素的值
+a["李四"] = 2;
+a["王五"] = 3;
+alert(a["李四"] ); 	//快速定位檢索
+
+
+</script>

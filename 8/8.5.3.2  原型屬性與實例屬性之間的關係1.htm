@@ -1,0 +1,14 @@
+<script language="javascript" type="text/javascript">
+
+var p1 = new Point(1, 2);
+p1.x = true;
+p1.y = function(){
+    return false;
+}
+delete p1.x;	//刪除屬性x
+delete p1.y; 	//刪除屬性y
+alert(p1.x);	//傳回原型屬性值
+alert(p1.y());	//呼叫原型方法
+
+
+</script>

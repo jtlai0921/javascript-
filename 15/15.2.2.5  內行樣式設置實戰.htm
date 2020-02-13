@@ -1,0 +1,26 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<div id="box" style="width:100px; height:100px; background-color:red; border:solid 50px blue;"></div>
+<script language="javascript" type="text/javascript">
+var box = document.getElementById("box");				//獲得盒子的參考指標
+box.onmouseover = function(){						//定義鼠標經過時的事件處理函數
+   box.style.setProperty("background-color", "blue", "");	//設置背景色為藍色
+   box.style.setProperty("border", "solid 50px red", "");	//設置邊框為50像素的紅色實線
+}
+box.onclick = function(){								//定義鼠標單擊時的事件處理函數
+   alert(box.style.item(0) + ":" + box.style.getPropertyValue("width"));//顯示盒子的寬度
+   alert(box.style.item(1) + ":" + box.style.getPropertyValue("height"));//顯示盒子的高度
+}
+box.onmouseout = function(){							//定義鼠標移出時的事件處理函數
+   box.style.setProperty("background-color", "red", "");	//設置背景色為紅色
+   box.style.setProperty("border", "solid 50px blue", "");	//設置邊框為50像素的藍色實線
+}
+</script>
+
+
+</body>
+</html>

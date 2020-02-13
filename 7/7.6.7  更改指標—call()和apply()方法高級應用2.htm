@@ -1,0 +1,26 @@
+<script language="javascript" type="text/javascript">
+
+function r( x ){ 	//定義一個簡單的函數
+    return ( x );
+}
+//定義一個稍複雜的函數，該函數將修改第一個參數值，並傳回參數集合
+function f( x ){
+    x[0] = x[0] + ">";
+    return x;
+}
+function o(){	//循環更改函數r中傳回值
+    var temp = r;
+    r = function(){
+        return temp.apply( this, f( arguments ) );
+    }
+}
+function a(){	//定義函數a
+    o();	//呼叫函數o，修改函數r的結構，即傳回值
+    alert( r( "=" ) ); 	//顯示函數r的傳回值
+}
+for( var i = 0 ; i < 10; i ++ ){ 	//循環呼叫函數a
+    a();
+}
+
+
+</script>

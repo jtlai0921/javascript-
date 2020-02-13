@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+
+<div id="box" style="width:200px;height:200px;border:solid 50px red;float:right;"></div>
+<textarea id="t" cols="15" rows="4" ></textarea>
+
+<script language="javascript" type="text/javascript">
+
+var t = document.getElementById("t");
+var b = document.getElementById("box");
+
+b.onmousemove = function(e)
+{
+    var m = getME(e, b);
+    t.value = "mouseX = " + m.x  + "\n" + "mouseY = " + m.y
+}
+
+//完善獲得鼠標指標在元素內的位置
+//參數：e表示目前事件對象，o表示目前元素
+//傳回值：傳回鼠標相對元素的坐標對象，其中屬性x表示x軸偏移距離，屬性y表示y軸偏移距離
+function getME(e, o){
+    var e = e || window.event;
+    //獲得元素左側邊框的寬度
+    //呼叫getStyle()擴充函數獲得邊框樣式值，並嘗試轉換為數值，如果轉換成功，則給予值。
+    //否則判斷是否定義了邊框樣式，如果定義邊框樣式，且值不為none，則說明邊框寬度為預設值，即為3像素。
+    //如果沒有定義邊框樣式，且寬度值為auto，則說明邊框寬度為0
+    var bl = parseInt(getStyle(o, "borderLeftWidth")) || 
+            ((o.style.borderLeftStyle && o.style.borderLeftStyle != "none" )? 
+            3 : 0);
+    //獲得元素頂部邊框的寬度，設計想法與獲得左側邊框方法相同
+    var bt = parseInt(getStyle(o, "borderTopWidth")) || 
+            ((o.style.borderTopStyle && o.style.borderTopStyle != "none" ) ? 
+            3 : 0);
+    var x = e.offsetX ||	//一般瀏覽器下鼠標偏移值
+            (e.layerX - o.offsetLeft - bl); 	//兼容Mozilla類別型瀏覽器，減去邊框寬度
+    var y = e.offsetY ||	//一般瀏覽器下鼠標偏移值
+            (e.layerY - o.offsetTop - bt); 	//兼容Mozilla類別型瀏覽器，減去邊框寬度
+    var u = navigator.userAgent; 	//獲得瀏覽器的使用者資料
+    if( (u.indexOf("KHTML") > - 1) ||
+        (u.indexOf("Konqueror") > - 1) ||
+        (u.indexOf("AppleWebKit") > - 1)
+    ){ 	//如果是Safari瀏覽器，則減去邊框的影響
+        x -= bl; 
+        y -= bt; 
+    }
+    return {	//傳回兼容不同瀏覽器的鼠標位置對象，以元素邊框內壁左上角為定位原點
+        x : x,
+        y : y
+    }
+}
+
+
+
+function getStyle(e, n)
+{
+    if(e.style[n])
+    {
+        return e.style[n];
+    }
+    else if(e.currentStyle)
+    {
+        return e.currentStyle[n];
+    }
+    else if(document.defaultView && document.defaultView.getComputedStyle)
+    {
+        n = n.replace(/([A-Z])/g, "-$1");
+        n = n.toLowerCase();
+        var s = document.defaultView.getComputedStyle(e, null);
+        if(s) return s.getPropertyValue(n);
+    }
+    else
+    return null;
+}
+
+</script>
+
+</body>
+
+</html>

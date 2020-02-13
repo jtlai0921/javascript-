@@ -1,0 +1,24 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+
+
+<script language="javascript" type="text/javascript">
+
+document.onclick = function(e){
+    var e = e || window.event; 	//標準化事件物件
+    if(e.button == 2){
+        e.preventDefault();	//禁止事件預設行為
+        return false;
+    }
+}
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<script language="javascript" type="text/javascript">
+
+if(window.addEventListener){ 	//兼容DOM標準
+    window.addEventListener("load",f1,false); 	//為load增加事件處理函數
+    window.addEventListener("load",f2,false); 	//為load增加事件處理函數
+}
+else{	//兼容IE瀏覽器
+    window.attachEvent("onload",f1);
+    window.attachEvent("onload",f2);
+}
+
+</script>
+
+</body>
+</html>

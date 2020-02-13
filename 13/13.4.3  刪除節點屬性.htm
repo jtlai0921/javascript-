@@ -1,0 +1,19 @@
+<script language="javascript" type="text/javascript">
+window.onload = function() {	//綁定頁面載入完畢時的事件處理函數
+    var table = document.getElementsByTagName("table")[0];//獲得表格外框的參考指標
+    var del = document.getElementById("del");	//獲得刪除按鈕的參考指標
+    var reset = document.getElementById("reset");//獲得恢復按鈕的參考指標
+    del.onclick = function(){	//為刪除按鈕綁定事件處理函數
+        table.removeAttribute("border");	//移出邊框屬性
+    }
+    reset.onclick = function(){	//為恢復按鈕綁定事件處理函數
+        table.setAttribute("border", "2");	//設置表格的邊框屬性
+    }
+}
+</script>
+<table width="100%" border="2">
+    <tr>
+        <td>資料表格</td>
+    </tr>
+</table>
+<button id="del">刪除</button><button id="reset">恢復</button>

@@ -1,0 +1,13 @@
+<script language="javascript" type="text/javascript">
+
+function f(x,y){ 	//定義一個簡單的函數
+    return x+y;
+}
+function o(a,b){ 	//定義一個函數結構的偽物件
+    return a*b;
+}
+o.m =f; 	//為物件o定義一個方法m，該方法將呼叫函數f
+alert(o.m(3,4)); 	//傳回7。呼叫物件o的方法m
+delete o.m; 	//刪除物件o的方法m
+
+</script>

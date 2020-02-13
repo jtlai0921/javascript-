@@ -1,0 +1,42 @@
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+
+
+
+<script language="javascript" type="text/javascript">
+
+
+function instanceFrom(f)
+{
+    var a = [].slice.call(arguments, 1);
+    f.prototype.constructor = f;
+    f.apply(f.prototype, a);
+    return f.prototype;
+}
+
+function F(){
+    this.name = "F";
+}
+var f = instanceFrom(F);
+alert(f.name);
+
+
+
+
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

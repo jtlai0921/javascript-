@@ -1,0 +1,24 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<div>div元素</div>
+<script language="javascript" type="text/javascript">
+var div = document.getElementsByTagName("div")[0];
+div.onmouseover = function(e){
+    var e = e || window.event;
+    var o = e.relatedTarget || e.fromElement; 	//標準化事件屬性，獲得與目前事件相關的節點
+    alert(o.tagName);
+}
+div.onmouseout = function(e){
+    var e = e || window.event;
+    var o = e.relatedTarget || e.toElement; 	//標準化事件屬性，獲得與目前事件相關的節
+    alert(o.tagName);
+}
+</script>
+
+
+</body>
+</html>

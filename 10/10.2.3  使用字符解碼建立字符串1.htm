@@ -1,0 +1,11 @@
+<script language="javascript" type="text/javascript">
+
+var b = String.fromCharCode( 35835, 32773, 24744, 22909 ) ; 	//傳遞多個參數，傳回字串"讀者您好"
+
+
+var a = [35835, 32773, 24744, 22909], b = [];
+var b = String.fromCharCode.apply( null, a ); //使用apply()方法呼叫fromCharCode()方法，並傳遞陣列參數
+alert( b ); 	//傳回字串"讀者您好"
+
+
+</script>

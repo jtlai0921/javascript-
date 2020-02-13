@@ -1,0 +1,24 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+
+
+<textarea id="key"></textarea>
+<script language="javascript" type="text/javascript">
+
+document.onclick = function(e){
+    var e = e || window.event; 	//標準化事件物件
+    var t = e.target || e.srcElement; 	//獲得發生事件的元素，兼容IE和DOM
+    if(e.ctrlKey && e.shiftKey) 	//如果同時按下Ctrl和Shift鍵
+        t.parentNode.removeChild(t); 	//移出目前元素
+}
+
+</script>
+
+
+
+</body>
+</html>

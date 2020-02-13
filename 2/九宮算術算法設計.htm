@@ -1,0 +1,57 @@
+<html>
+
+<head>
+
+<title></title>
+<style type="text/css">
+<!--
+table {
+	float:left;
+	margin:12px;
+	border:double 3px #666;
+	width:100px;
+}
+td{
+    padding:4px 6px;
+    font-size:20px;
+    font-weight: bold; 
+    color: #FF0000;
+    text-align:center;
+}
+.o {
+    color: #000000;
+}
+-->
+</style>
+</head>
+
+<body>
+<script language=javascript>
+var a, b, c, d, e, f, g, h;
+for (a = 1; a <= 9; a ++ )
+{
+    for (b = 1; b <= 9; b ++ )
+    {
+        c = 15 - a - b;
+        if(c < 1 || c > 8 || c == a || c == b) continue;
+        h = 10 - a;
+        if(h == a || h == b || h == c) continue;
+        e = 15 - c - h;
+        if(e < 1 || e > 9 || e == a || e == b || e == c || e == h) continue;
+        d = 10 - e;
+        if(d == a || d == b || d == c || d == h || d == e) continue;
+        f = 10 - c;
+        if(f == a || f == b || f == c || f == h || f == e || f == d) continue;
+        g = 10 - b;
+        if(g == a || g == b || g == c || g == h || g == e || g == d || g == f) continue;
+        document.writeln("<table>");
+        document.writeln("<tr><td>" + a + "</td><td>" + b + "</td><td>" + c + "</td></tr>");
+        document.writeln("<tr><td>" + d + "</td><td class='o'>" + 5 + "</td><td>" + e + "</td></tr>");
+        document.writeln("<tr><td>" + f + "</td><td>" + g + "</td><td>" + h + "</td></tr>");       
+        document.writeln("</table>");
+    }
+}
+</script>
+</body>
+
+</html>

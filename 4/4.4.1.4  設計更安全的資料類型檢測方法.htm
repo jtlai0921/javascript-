@@ -1,0 +1,29 @@
+<script language="javascript" type="text/javascript">
+
+//安全檢測JavaScript基本資料類別型和內建物件
+//參數：o表示檢測的值
+//傳回值：傳回字串"undefined"、"number"、"boolean"、"string"、"function"、"regexp"、"array"、"date"、"error"、"object"或"null"
+function typeOf(o){
+    var _toString = Object.prototype.toString; 	//獲得對象的toString()方法參考
+    //列舉基本資料類別型和內建物件類別型，你還可以進一步補充該陣列的檢測資料類別型範圍
+    var _type ={
+        "undefined" : "undefined",
+        "number" : "number",
+        "boolean" : "boolean",
+        "string" : "string",
+        "[object Function]" : "function",
+        "[object RegExp]" : "regexp",
+        "[object Array]" : "array",
+        "[object Date]" : "date",
+        "[object Error]" : "error"
+    }
+    return _type[typeof o] || _type[_toString.call(o)] || (o ? "object" : "null");	//透過把值轉換為字串，然後比對傳回字串中是否包含特定字符進行檢測
+}
+
+//應用範例：
+var a = Math.abs;
+alert(typeOf(a)); 	//傳回字串"function"
+
+
+
+</script>

@@ -1,0 +1,18 @@
+<script language="javascript" type="text/javascript">
+
+function f(){
+    this.x=function(x){ 	//使用this關鍵字為函數定義一個方法x()
+        return x
+    }
+}
+f();	//呼叫函數
+alert(f.x(4)); 	//使用函數f名呼叫方法x()，則傳回編譯錯誤
+
+
+alert(window.x(4)); 	//使用window物件呼叫方法x()，則傳回4
+
+
+alert(this.x(4)); 	//使用this呼叫方法x()，則傳回4
+
+
+</script>

@@ -1,0 +1,22 @@
+<style type="text/css">
+div { margin:1em; }	/* 為div元素定義外邊界 */
+#red { border:solid 1px red; }	/* 為紅盒子定義邊框樣式 */
+#blue { border:solid 1px blue; }	/* 為藍盒子定義邊框樣式 */
+</style>
+<script language="javascript" type="text/javascript">
+
+window.onload = function() {	//定義當頁面完成初始化後執行的腳本函數
+    var ok = document.getElementById("ok");	//獲得按鈕元素的參考指標
+    ok.onclick = function(){	//為按鈕註冊一個鼠標單擊事件處理函數
+        var red = document.getElementById("red");	//獲得紅色盒子的參考指標
+        var blue = document.getElementById("blue");//獲得藍色盒子的參考指標
+        blue.appendChild(red); 	//最後移動紅色盒子到藍色盒子中
+    }
+}
+
+</script>
+<div id="red">
+    <h1>紅盒子</h1>
+</div>
+<div id="blue">藍盒子</div>
+<button id="ok">移動</button>

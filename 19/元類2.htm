@@ -1,0 +1,51 @@
+<html>
+
+<head>
+
+<title></title>
+<script language="javascript" type="text/javascript">
+
+
+
+function F( x, y ){
+    this.x = x;
+    this.y = y;
+}
+F.prototype.add = function(){
+    alert( this.x + this.y );
+}
+
+
+function O( o, x, y ){
+    this.say = function(){
+        alert( "元類別" );
+    }
+    return function(){
+        this.say = function(){
+            alert( "傳回類別" );
+        }
+        var a = new o( x, y );
+        for( var i in a ){
+            this[i] = a[i];
+        }
+    }
+}
+
+//A.say();
+var A = new O( F, 1, 2 );
+var B = new A();
+
+
+B.say();
+B.add();
+alert( B.x );
+alert( B.y );
+
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

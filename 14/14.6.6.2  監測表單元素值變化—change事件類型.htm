@@ -1,0 +1,20 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<input type="text" id="a" />
+<input type="text" id="b" />
+<script language="javascript" type="text/javascript">
+var a = document.getElementsByTagName("input")[0];
+var b = document.getElementsByTagName("input")[1];
+a.onchange = function(){	//為第一個純文字框綁定change事件處理函數
+   b.value = this.value; 	//把第一個純文字框中的值傳遞給第二個純文字框
+}
+</script>
+
+
+
+</body>
+</html>

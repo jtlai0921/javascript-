@@ -1,0 +1,17 @@
+<script language="javascript" type="text/javascript">
+
+function F(){	//自定義資料類別型
+    this.name = "私有屬性";
+}
+F.prototype.name = "繼承屬性";
+
+var f = new F();	//實例化物件
+alert(f.hasOwnProperty("name"));	//傳回true，說明目前呼叫的name是私有屬性
+alert(f.name); 	//傳回字串"私有屬性"
+
+var d = Date;
+alert(d.hasOwnProperty("toString"));	//傳回false，說明toString()方法不是Date對象的私有屬性
+var d = Date.prototype;
+alert(d.hasOwnProperty("toString"));	//傳回true，說明toString()方法是Date. prototype對象的私有屬性
+
+</script>

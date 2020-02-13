@@ -1,0 +1,37 @@
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+<script language="javascript" type="text/javascript">
+
+
+
+function Base(){}
+
+var a = new Base();
+
+Base.prototype.x = 1;
+
+var b = new Base();
+
+Base.prototype = {
+    x : 2
+}
+
+var c = new Base();
+
+
+
+alert(a instanceof Base);
+alert(b instanceof Base);
+alert(c instanceof Base);
+
+</script>
+</body>
+
+</html>

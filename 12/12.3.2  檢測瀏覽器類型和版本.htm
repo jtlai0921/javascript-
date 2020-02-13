@@ -1,0 +1,28 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<script language="javascript" type="text/javascript">
+
+var ua = navigator.userAgent.toLowerCase();	//獲得使用者端資訊
+var info ={
+    ie : /msie/.test(ua) && !/opera/.test(ua),		//比對IE瀏覽器
+    op : /opera/.test(ua), 	//比對Opera瀏覽器
+    sa : /version.*safari/.test(ua), 	//比對Safari瀏覽器
+    ch : /chrome/.test(ua), 	//比對Chrome瀏覽器
+    ff : /gecko/.test(ua) && !/webkit/.test(ua) 	//比對Firefox瀏覽器
+};
+
+(info.ie) && alert("IE瀏覽器");
+(info.op) && alert("Opera瀏覽器");
+(info.sa) && alert("Safari瀏覽器");
+(info.ff) && alert("Firefox瀏覽器");
+(info.ch) && alert("Chrome瀏覽器");
+
+
+</script>
+
+</body>
+</html>

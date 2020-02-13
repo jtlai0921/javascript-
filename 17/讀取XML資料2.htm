@@ -1,0 +1,228 @@
+<html>
+
+<head>
+
+<title>載入XML資料</title>
+
+</head>
+
+<body>
+<script language="javascript" type="text/javascript">
+
+function xmlDom()
+{
+    var a = [
+    "MSXML2.DOMDocument.5.0",
+    "MSXML2.DOMDocument.4.0",
+    "MSXML2.DOMDocument.3.0",
+    "MSXML2.DOMDocument",
+    "Microsoft.XmlDom"
+    ]
+    for(var i = 0 ; i < a.length; i ++ )
+    {
+        try
+        {
+            var o = new ActiveXObject(a[i]);
+            return o;
+        }
+        catch(e)
+        {
+        }
+    }
+    throw new Error("瀏覽器不支援MSXML元件");
+}
+
+function callback(o)
+{
+    return function()
+    {
+        if(o.readyState == 4)
+        {
+            document.write(o);
+        }
+    }
+}
+
+
+var o = xmlDom();
+o.async = true;
+// o.load("產品.xml");
+
+
+
+
+
+/*
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * 程式碼：Qr http : // Qr.blogger.org.cn                                      *
+ * 時間：2006 / 07 / 15 21 : 36 : 00                                                  *
+ * 功能：檢查XML的所有節點，仿IE瀏覽XML方式輸出     *
+ * 類別型：支援TEXT、CDATA、COMMENT、ELEMENT節點 *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ */
+var xml = null , format = "" , fo = "&nbsp;&nbsp;&nbsp;&nbsp;" ;
+
+function main()
+{
+    createXmlDom("產品.xml");
+    Recursion(xml.documentElement);
+}
+
+function createXmlDom(xmlUrl)
+{
+    // 這裡大家可以自己處理一下，以適應不同瀏覽器
+    xml = xmlDom();
+    xml.async = false;
+    xml.load(xmlUrl);
+}
+
+function Recursion(o)
+{
+    if(typeof(o) == "number")return;
+    if(o.nodeType == 3 || o.nodeType == 4 || o.nodeType == 8)
+    {
+        switch(o.nodeType)
+        {
+            case 3 :
+                // [TEXT型節點]
+                if(o.nextSibling || o.previousSibling)document.write("<br>" + format);
+                document.write(o.nodeValue);
+                // 針對混合節點的末節點為純文字節點的情況
+                if( ! o.nextSibling && o.previousSibling)
+                {
+                    document.write("<br>" + format.substr(0, format.length - 24));
+                }
+                break;
+
+            case 4 :
+                // [CDATA型節點]
+                document.write("<br>" + format + "&lt;![CDATA[" + o.nodeValue + "]]&gt;");
+                // .replace("<", "&lt;")
+                break;
+
+            case 8 :
+                // [COMMENT型節點]
+                document.write("<br>" + format + "&lt;!--" + o.nodeValue + "--&gt;");
+                // .replace("<", "&lt;")
+                break;
+        }
+        if(o.nextSibling)
+        {
+            // #有同級兄弟元素節點#//
+            return arguments.callee(o.nextSibling);
+        }
+        else
+        {
+            // #傳回上級相鄰未解析節點#//
+            return arguments.callee(N2NP(o.parentNode));
+
+            // 開始因為N2NP這個函數有問題，所以用try{}catch(e){}
+            // try{return arguments.callee(N2NP(o.parentNode)); }catch(e){document.write
+
+            ("<b><i>err:" + e + "</i></b>")
+        }
+        ;
+    }
+    if( ! o.hasChildNodes())
+    {
+        // [空無素（ELEMENT）或僅含屬性（ATTRIBUTE）]
+        if(o != xml.documentElement)document.write("<br>");
+        if(o.nodeType == 1)document.write(format + "&lt;" + o.nodeName);
+        if(o.attributes.length > 0)
+        {
+            attrparser(o);
+            document.write("/&gt;");
+        }
+        if(o.nextSibling)
+        {
+            // #有同級兄弟元素節點#//
+            return arguments.callee(o.nextSibling);
+        }
+        else
+        {
+            // 針對混合節點的末節點為空元素的情況
+            if(o.previousSibling)document.write("<br>" + format.substr(0, format.length - 24));
+
+            // #傳回上級相鄰未解析節點#//
+            return arguments.callee(N2NP(o.parentNode));
+
+            // 開始因為N2NP這個函數有問題，所以用try{}catch(e){}
+            // try{return arguments.callee(N2NP(o.parentNode)); }catch(e){document.write("<b>err:" + e + "</b>")};
+        }
+    }
+    if(o.hasChildNodes())
+    {
+        // 有子節點，包括：TEXT、CDATA、COMMENT、ELEMENT
+        if(o.nodeName != xml.documentElement.nodeName)document.write("<br>");
+        if(o.nodeType == 1)document.write(format + "&lt;" + o.nodeName);
+        if(o.attributes.length > 0)attrparser(o);
+        document.write("&gt;");
+
+        if(o.hasChildNodes())
+        {
+            // #有下級元素節點#//
+            format += fo;
+            return arguments.callee(o.firstChild);
+        }
+        else
+        {
+            if(o.nextSibling)
+            {
+                // #有同級兄弟元素節點#//
+                return arguments.callee(o.nextSibling);
+            }
+        }
+    }
+}
+
+function N2NP(p)
+{
+    // alert(p.nodeName + ":" + p.nodeValue)
+
+    if(p.nextSibling)
+    {
+        format = format.substr(0, format.length - 24);
+        // 輸出關閉標記
+        if(p.nodeType == 1 && p.firstChild.nodeType == 3)document.write("&lt;/" + p.nodeName + "&gt;");
+        if(p.nodeType == 1 && p.firstChild.nodeType != 3)document.write("<br>" + format + "&lt;/" + p.nodeName + "&gt;");
+        return p.nextSibling;
+        // 傳回相鄰節點
+    }
+    else
+    {
+
+        format = format.substr(0, format.length - 24);
+        // 輸出關閉標記
+        if(p.parentNode && p.firstChild.nodeType == 3)document.write("&lt;/" + p.nodeName + "&gt;");
+        if(p.parentNode && p.firstChild.nodeType != 3)document.write("<br>" + format + "&lt;/" + p.nodeName + "&gt;");
+        if(p == xml.documentElement)
+        {
+            return 0;
+        }
+        else
+        {
+            // 如果不進行判斷，函數將傳回#document，導致錯情
+            return arguments.callee(p.parentNode);
+            // #傳回上級相鄰未解析元素節點#//
+        }
+    }
+}
+
+function attrparser(o)
+{
+    // 檢查節點元素
+    if(o.attributes)
+    {
+        var attr = o.attributes;
+        for(i = 0; i < attr.length; i ++ )
+        {
+            document.write(" " + attr[i].nodeName + '="'+attr[i].firstChild.nodeValue+'"');
+        }
+    }
+}
+main();
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<button id="btn1">按 鈕 1</button>
+<button id="btn2">按 鈕 2</button>
+<script language="javascript" type="text/javascript">
+var btn = document.getElementsByTagName("button");//捕捉按鈕元素句柄（集合）
+for(var i = 0;i< btn.length; i++)	//檢查按鈕集合
+    btn[i].addEventListener("click", function(){
+        alert(this.innerHTML);
+    }, true);  	//為每個按鈕元素註冊一個事件處理函數
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+<script language="javascript" type="text/javascript">
+
+
+Object.prototype.toString = function(){
+    if(!(this.name)) (this.name ="未命名物件");
+    return this.name;
+}
+
+var o = {
+    name : "物件O"
+}
+alert(o.toString());
+alert(o.hasOwnProperty("toString"));
+
+alert(Object.prototype.toString === o.toString);
+
+</script>
+</body>
+
+</html>

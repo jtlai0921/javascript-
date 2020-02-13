@@ -1,0 +1,30 @@
+<script language="javascript" type="text/javascript">
+
+
+//量再大，哪怕有十幾個詞，甚至是幾十個詞，可能還是表達式
+o =new ((o == "String")?String:(o == "Array")?Array:(o == "Number")?Number:(o == "Math")?Math:(o == "Date")?Date:(o == "Boolean")?Boolean:(o == "RegExp")?RegExp:Object)
+
+//上面表達式單行書寫，可能不好閱讀，如果按如下格式進行排版，你會發現它原來就是一個複雜的多重選擇結構的連續運算。
+o =new ((o == "String")?String	:
+(o == "Array")?Array	:
+(o == "Number")?Number	:
+(o == "Math")?Math	:
+(o == "Date")?Date	:
+(o == "Boolean")?Boolean	:
+(o == "RegExp")?RegExp	:
+Object)
+
+
+var a = 1	// 聲明變量敘述，可以省略分號
+
+
+a += 1	// 變量遞增表達式
+void a	// 忽略變量傳回值表達式
+delete a	// 刪除變量表達式
+
+
+alert("Heelo,World");
+
+
+
+</script>

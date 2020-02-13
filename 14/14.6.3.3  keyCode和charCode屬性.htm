@@ -1,0 +1,40 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+
+
+<div id="box"></div>
+<script language="javascript" type="text/javascript">
+var box = document.getElementById("box");	//獲得頁面元素的參考指標
+box.style.position = "absolute";	//色塊絕對定位
+box.style.width = "20px";	//色塊寬度
+box.style.height = "20px";	//色塊高度
+box.style.backgroundColor = "red";	//色塊背景
+document.onkeydown = keyDown; 	//在Document物件中註冊keyDown事件處理函數
+function keyDown(event){ 	//方向鍵控制元素移動函數
+    var event = event || window.event; 	//標準化事件物件
+    switch(event.keyCode){ 	//獲得目前按下鍵碟鍵的解碼
+        case 37 : 	//按下左箭頭鍵，向左移動5個像素
+            box.style.left = box.offsetLeft - 5  + "px";
+            break;
+        case 39 : 	//按下右箭頭鍵，向右移動5個像素
+            box.style.left = box.offsetLeft + 5 + "px";
+            break;
+        case 38 : 	//按下上箭頭鍵，向上移動5個像素
+            box.style.top = box.offsetTop  - 5 + "px";
+            break;
+        case 40 : 	//按下下箭頭鍵，向下移動5個像素
+            box.style.top = box.offsetTop  + 5 + "px";
+            break;
+    }
+    return false
+}
+
+</script>
+
+
+</body>
+</html>

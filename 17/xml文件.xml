@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="gb2312"?>
+<blog>
+    <item>
+        <id>1</id>
+        <title>夹肈1</title>
+        <time>祇丁</time>
+        <content>ら粁ず甧</content>
+        <word>
+            <user>际嘿</user>
+            <time>痙ē丁</time>
+            <text>痙ēず甧</text>
+        </word>
+    </item>
+    <item>
+        <id>2</id>
+        <title>夹肈2</title>
+        <time>祇丁</time>
+        <content>ら粁ず甧</content>
+        <word>
+            <user>际嘿</user>
+            <time>痙ē丁</time>
+            <text>痙ēず甧</text>
+        </word>
+    </item>
+</blog>

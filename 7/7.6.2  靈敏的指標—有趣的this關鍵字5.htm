@@ -1,0 +1,25 @@
+<script language="javascript" type="text/javascript">
+
+function f(){
+    this.a = " a ";	//屬於window物件所有
+    alert( this.a + this.b + this.c + this.d ); 	//傳回a undefined undefined undefined
+    e();	//f函數域內呼叫，屬於window物件所有
+    function e(){
+        this.b = " b ";
+        alert( this.a + this.b + this.c + this.d ); 	//傳回a b undefined undefined
+        g();	//e函數域內呼叫，屬於window物件所有
+        function g(){
+            this.c = " c ";
+            alert( this.a + this.b + this.c + this.d ); //傳回a b c undefined
+            h();	//g函數域內呼叫，屬於window物件所有
+            function h(){
+                this.d = " d ";
+                alert( this.a + this.b + this.c + this.d ); //傳回a b c d
+            }
+        }
+    }
+}
+f();	//在全局作用域內呼叫函數f，，屬於window物件所有
+
+
+</script>

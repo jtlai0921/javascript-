@@ -1,0 +1,30 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<form id="form1" name="form1" method="post" action="">
+    <input type="text" name="t" id="t" />
+</form>
+<script language="javascript" type="text/javascript">
+var t = document.getElementsByTagName("input")[0]; 	//獲得純文字框的參考指標
+var f = document.getElementsByTagName("form")[0]; 	//獲得表單的參考指標
+f.onsubmit = function(e){
+    alert(t.value);
+    return false; 	//禁止傳送資料到服務器
+}
+
+var t = document.getElementsByTagName("input")[0]; 	//獲得純文字框參考指標
+t.onkeypress = function(e){ 	//為純文字框綁定鍵碟keypress事件處理函數
+    var e = e || window.event; 	//標準化事件物件
+    return e.keyCode != 13; 	//當按下確認鍵時，設置傳回值為false，禁止預設鍵碟行為
+}
+
+
+</script>
+
+
+
+</body>
+</html>

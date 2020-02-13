@@ -1,0 +1,26 @@
+<script language="javascript" type="text/javascript">
+
+var a = String(true); 	//傳回字串"true"
+var a = String(0); 	//傳回字串"0"
+var b = Number("1");	//傳回數值1
+var c = Number(true); 	//傳回數值1
+var d = Number("a");	//傳回NaN
+var e = Boolean(1); 	//傳回true
+var f = Boolean("");	//傳回false
+
+var a = parseInt(true); 	//傳回NaN
+var b = parseInt(false); 	//傳回NaN
+
+
+var a = Number("123abc");	//傳回NaN
+var b = parseInt("123abc");	//傳回數值123
+
+
+var a = String(null); 	//傳回字串"nul"
+var b = String(undefined); 	//傳回字串"undefined"
+
+
+var a = null.toString();
+var b = undefined.toString();
+
+</script>

@@ -1,0 +1,40 @@
+<script language="javascript" type="text/javascript">
+
+//如果參數為空字串
+var s = "javascript";
+var a = s.split("");	//按字符空隙分割
+alert( s.length ); 	//傳回值為10
+alert( a.length ); 	//傳回值為10
+
+//如果參數為空
+var s = "javascript";
+var a = s.split();	//空分割
+alert( a.constructor == Array ); 	//傳回true，說明是Array實例
+alert( a.length ); 	//傳回值為1，說明沒有對字串進行分割
+
+//如果參數為正則表達式
+var s = "a2b3c4d5e678f12g";
+var a = s.split(/\d+/);	//把比對的數字為分隔符來切分字串
+alert( a ); 	//傳回陣列[a,b,c ,d,e, f,g]
+alert( a.length ); 	//傳回陣列長度為7
+
+//如果正則表達式比對的純文字位於字串的邊沿
+var s = "122a2b3c4d5e678f12g";	//雖然字串左側也有比對的數字
+var a = s.split(/\d+/);	//把比對的數字為分隔符來切分字串
+alert( a ); 	//傳回陣列[a,b,c ,d,e, f,g]
+alert( a.length ); 	//傳回陣列長度為7
+
+//如果在字串中指定的分隔符沒有找到
+var s = "javascript";
+var a = s.split("",4); 	//按順序從左到有，僅分切4個元素的陣列
+alert( a ); 	//傳回陣列[a,b,c ,d]
+alert( a.length ); 	//傳回值為4
+
+//如果想使傳回的陣列包括分隔符或分隔符的一個或多個部分，可以使用帶子表達式的正則表達式來實現。例如：
+var s = "aa2bb3cc4dd5e678f12g";
+var a = s.split(/(\d)/); 	//使用小括號包含數字分隔符
+alert(a); 	//傳回陣列[aa,2,bb,3,cc,4,dd,5,e,6,,7,,8,f,1,,2,g]
+
+
+
+</script>

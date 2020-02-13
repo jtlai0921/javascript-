@@ -1,0 +1,15 @@
+<script language="javascript" type="text/javascript">
+
+function f(){	//建構函數
+    this.a =1;
+    this.b = function(){
+        return this.a + this.a;
+    };
+}
+
+var f1 = new f();
+var a = f1.a; 	//傳回1，即函數包含的資料
+
+alert(typeof f1);	//傳回object 
+
+</script>

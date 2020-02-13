@@ -1,0 +1,50 @@
+<html>
+
+<head>
+
+<title></title>
+<script language="javascript" type="text/javascript">
+
+
+function extend(Sub,Sup){
+    for(m in Sup.prototype){
+        if(!Sub.prototype[m]){
+            Sub.prototype[m] = Sup.prototype[m];
+        }
+    }
+}
+
+
+var A = function(){}
+A.prototype = {
+    x : function(){
+        return "x";
+    }
+}
+var B = function(){}
+B.prototype = {
+    y : function(){
+        return "y";
+    }
+}
+
+
+C = function(){};
+extend(C,A);
+extend(C,B);
+
+var c = new C();
+alert(c.x())
+alert(c.y())
+
+
+
+
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

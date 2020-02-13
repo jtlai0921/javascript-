@@ -1,0 +1,18 @@
+<script language="javascript" type="text/javascript">
+
+Array.prototype._sum = Array.prototype.sum ||	//檢測是否存在同名方法
+( Array.prototype.sum = function(){	//定義該方法
+    var _n = 0; 	//臨時匯總變量
+    for(var i in this){ 	//檢查目前陣列物件
+        if( this[i] = parseFloat( this[i] ) ) _n +=  this[i]; 	//如果陣列元素是數字，則進行累加
+    };
+    return _n; 	//傳回累加的和
+});
+Object.prototype.sum = Array.prototype._sum	//把陣列臨時原型方法給予值給對象的原型方法sum()
+
+
+var a = [1, 2, 3, 4, 5, 6, 7, 8, "9"];	//定義陣列直接量
+alert( a.sum() ); 	//傳回45
+
+
+</script>

@@ -1,0 +1,16 @@
+<script language="javascript" type="text/javascript">
+
+function Point(x, y){	//建構函數
+    this.x = x;
+    this.y = y;
+}
+Point.prototype.name = "原型對象的屬性";	//定義原型對象的屬性
+Point.prototype.sum = function(){	//定義原型對象的方法
+    return this.x + this.y; 	//計算實例屬性x和y的和，並傳回
+}
+var p1 =new Point(1,2); 	//實例物件
+alert(p1.sum());	//呼叫實例對象的原型方法sum()，傳回值為3
+alert(p1.name); 	//讀取實例對象的原型屬性
+
+
+</script>

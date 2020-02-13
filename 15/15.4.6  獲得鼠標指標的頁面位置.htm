@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body style="width:2000px;height:2000px;">
+
+<textarea id="t" cols="15" rows="4" style="position:fixed;left:50px;top:50px;"></textarea>
+<script language="javascript" type="text/javascript">
+
+var t = document.getElementById("t");
+
+document.onmousemove = function(e){
+    var m = getMP(e);
+    t.value ="mouseX = " + m.x  + "\n" + "mouseY = " + m.y
+}
+
+//獲得鼠標指標的頁面位置
+//參數：e表示目前事件對象，由系統自動捕捉
+//傳回值：傳回鼠標相對頁面的坐標對象，其中屬性x表示x軸偏移距離，屬性y表示y軸偏移距離
+function getMP(e){
+    var e = e || window.event; 	//標準化事件物件
+    return {
+        x : e.pageX || 
+          e.clientX + (document.documentElement.scrollLeft || document.body.scrollLeft),
+        y : e.pageY || 
+           e.clientY + (document.documentElement.scrollTop || document.body.scrollTop)
+    }
+}
+
+
+</script>
+
+</body>
+
+</html>

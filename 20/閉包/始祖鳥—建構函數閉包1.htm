@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5" />
+<title></title>
+</head>
+<body>
+<script language="javascript" type="text/javascript">
+
+var a = [1,2,3];
+for(i in a){
+    a[i] = new Function("return "+i*i);
+}
+
+alert(a[0]());
+alert(a[1]());
+alert(a[2]());
+
+alert(a[0]===a[1])
+alert(a[1]===a[2])
+alert(a[0]===a[2])
+
+</script>
+</body>
+</html>

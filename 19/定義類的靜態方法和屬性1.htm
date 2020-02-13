@@ -1,0 +1,57 @@
+<html>
+
+<head>
+
+<title></title>
+<script language="javascript" type="text/javascript">
+
+var F = (function(){
+    var _a = 1;
+    function set5(x){
+        _a = x;
+    }
+    function get5(){
+        return _a;
+    }     
+    this.a = _a;
+    this.get1 =function(){
+        return _a;
+    };
+    this.set1 = function(x){
+        _a = x;
+    };
+    return function(){
+       this.get2 =function(){
+           return _a;
+       };
+       this.set2 = function(x){
+           _a = x;
+        };
+    } 
+})();
+F.get3 =function(){
+    return get1();
+};
+F.set3 = function(x){
+     set1(x);
+}
+F.a = a;
+
+
+
+var a = new F()
+alert(a.get2());
+a.set2(2);
+alert(a.get2());
+
+
+
+
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

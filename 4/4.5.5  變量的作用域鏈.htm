@@ -1,0 +1,15 @@
+<script language="javascript" type="text/javascript">
+
+var a = 1; 	//全局變量
+(function(){
+    var b = 2; 	//第1層局部變量
+    (function(){
+        var c = 3; 	//第2層局部變量
+        (function(){
+            var d = 4; 	//第3層局部變量
+            alert(a+b+c+d); 	//傳回10
+        })()	//直接呼叫函數
+    })()	//直接呼叫函數
+})()	//直接呼叫函數
+
+</script>

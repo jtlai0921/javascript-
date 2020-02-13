@@ -1,0 +1,17 @@
+<script language="javascript" type="text/javascript">
+function firstChildElement(tag){
+    var tag = tag.firstChild; 	//獲得第一個子節點物件
+    while(tag.nodeType != 1){ 	//使用while敘述判斷第一個子節點類別型
+        tag = tag.nextSibling; 	//如果第一個子節點不是元素，則檢測下一個子節點
+    }
+    return tag; 	//傳回第一個子節點元素
+}
+window.onload = function(){	//定義文件載入完畢後事件處理函數
+    var tag = document.getElementsByTagName("body")[0]; 	//獲得指定節點元素
+    alert(firstChildElement(tag).nodeName); //呼叫自定義函數獲得第一個子元素
+}
+</script>
+<body>
+<h1>標準DOM</h1>
+<p>這是一份簡單的<strong>文件物件模型</strong></p>
+</body>

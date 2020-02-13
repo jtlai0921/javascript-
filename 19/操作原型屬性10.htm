@@ -1,0 +1,30 @@
+<html>
+
+<head>
+
+<title></title>
+<script language="javascript" type="text/javascript">
+
+
+function f( x ){
+    this.x = x;
+}
+var a = [];
+function temp(){}
+temp.prototype = new f( 10 );
+for( var i = 0; i < 100; i ++ ){
+    a[i] = new temp();
+}
+
+
+
+
+
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<html>
+
+<head>
+
+<title></title>
+<script language="javascript" type="text/javascript">
+
+
+function p(x,y){
+    if(x) this.x =x;
+    if(y) this.y = y;
+    p.prototype.x =0;
+    p.prototype.y = 0;
+}
+
+function l(a,b){
+    var a = a;
+    var b = b;
+    var w = function(){
+        return Math.abs(a.x - b.x);
+    }
+    var h = function(){
+        return Math.abs(a.y - b.y);
+    }
+    this.length = function(){
+        return Math.sqrt(w()*w() + h()*h());
+    }
+    this.b = function(){
+        //return a;
+        function temp(){};
+        temp.prototype = a;
+        return new temp();
+        
+    }
+    this.e = function(){
+        //return b;
+        function temp(){};
+        temp.prototype = a;
+        return new temp();        
+    }
+}
+
+var p1 = new p(1,2);
+var p2 = new p(10,20);
+
+var l1 = new l(p1,p2);
+alert(l1.length())
+var b = l1.b();
+b.x = 50;
+alert(l1.length())
+
+
+
+
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

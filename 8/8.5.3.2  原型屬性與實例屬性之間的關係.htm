@@ -1,0 +1,22 @@
+<script language="javascript" type="text/javascript">
+
+function Point(x, y){	//建構函數
+    this.x = x;	//物件屬性
+    this.y = function(){	//物件方法
+        return y;
+    }
+}
+Point.prototype.x = "a";	//原型屬性
+Point.prototype.y = function(){	//原型方法
+    return "b";
+}
+var p1 = new Point(1, 2);
+p1.x = true; 	//自定義實例屬性
+p1.y = function(){	//自定義實例方法
+    return false;
+}
+alert(p1.x);
+alert(p1.y());
+
+
+</script>

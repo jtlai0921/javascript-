@@ -1,0 +1,9 @@
+<script language="javascript" type="text/javascript">
+window.onload = function() {
+    var p = document.createElement("p");	//建立節點
+    var p1 = p.cloneNode(false);	//複製節點
+    var info = "nodeName：" + p1.nodeName;	//獲得複製節點的名稱
+    info += "，nodeType：" + p1.nodeType;	//獲得複製節點的類別型
+    alert(info);	//出現複製節點的名稱和類別型資訊
+}
+</script>

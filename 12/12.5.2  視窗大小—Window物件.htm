@@ -1,0 +1,23 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<script language="javascript" type="text/javascript">
+
+window.onload = function(){
+    timer = window.setInterval("jump()", 1000);
+}
+function jump(){
+    window.resizeTo(200, 200)
+    x = Math.ceil(Math.random() * 1024)
+    y = Math.ceil(Math.random() * 760)
+    window.moveTo(x, y)
+}
+
+
+</script>
+
+</body>
+</html>

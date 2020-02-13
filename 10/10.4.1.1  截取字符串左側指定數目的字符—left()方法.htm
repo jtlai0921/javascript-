@@ -1,0 +1,39 @@
+<script language="javascript" type="text/javascript">
+
+
+result = left(string,length)
+
+
+var left = String.prototype.left = function(){	//﹚竡繰篈よ猭left()のString癸禜よ猭left()
+    var l = arguments.length; 	//莉眔ㄧ计把计
+    if( l == 0 ){ 	//狦⊿Τ把计
+        throw new Error( "ぶ把计" ); 	//玥┻ㄒ
+    } else if( l == 1 ){ 	//狦度Τ把计玥跌String癸禜よ猭
+        var n = arguments[0] 	//赣把计ボ篒才
+        if( n > 0 ){ 	//狦篒才0
+            return this.substring( 0, n ); 	//玥肚眖﹃オ凹秨﹍篒﹃
+        }else if( n < 1  ){ 	//狦1玥弧篒才ぃ镑
+            return "";	//玥肚﹃
+        }else {	//玥
+            throw new Error( "把计摸岿粇" ); 	//┻ㄒ矗ボ把计摸ぃ琌计戈
+        }
+    }else{	//狦把计1玥弧琌繰篈よ猭
+        if( ( typeof arguments[0]  == "string" ) &&  ( arguments[1]  > 0 ) ){ 	//狦材把计摸﹃材把计0玥硓筁㊣把计﹃ㄓ秈︽篒
+            return arguments[0].substring( 0, arguments[1] ); 	//肚篒﹃
+        }else{
+            throw new Error( "把计摸岿粇" ); 	//玥┻ㄒ矗ボ把计摸岿粇
+        }
+    }
+}
+
+var s = "javascript";
+var s1 = left( s , 4 ); 	//繰篈よ猭㊣
+alert( s1 ); 	//肚﹃"java"
+
+
+var s = "javascript";
+var s1 = s.left( 4 ); 	//ンよ猭㊣
+alert( s1 ); 	//肚﹃"java"
+
+
+</script>

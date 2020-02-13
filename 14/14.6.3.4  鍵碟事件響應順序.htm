@@ -1,0 +1,23 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<textarea id="text" cols="26" rows="16"></textarea>
+<script language="javascript" type="text/javascript">
+var n = 1; 	//定義編號變量
+var text = document.getElementById("text");	//獲得純文字區域的參考指標
+text.onkeydown = f; 	//註冊keydown事件處理函數
+text.onkeyup = f; 	//註冊keyup事件處理函數
+text.onkeypress = f; 	//註冊keypress事件處理函數
+function f(e){ 	//事件呼叫函數
+    var e = e || window.event; 	//標準化事件物件
+    text.value += (n++) + "=" + e.type +"  (keyCode=" + e.keyCode + ")\n";	//捕捉事件響應資訊
+}
+</script>
+
+
+
+</body>
+</html>

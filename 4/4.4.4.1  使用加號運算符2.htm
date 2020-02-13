@@ -1,0 +1,21 @@
+<script language="javascript" type="text/javascript">
+
+//物件直接量，則傳回字串為"[object object]"。
+var a = {
+    x :1
+}
+a = a + "";
+alert(a); 	//傳回字串"[object object]"
+
+//如果是自定義類別的對象實例，則傳回字串為"[object object]"。
+var a =new function(){}();
+a = a + "";
+alert(a); 	//傳回字串"[object object]"
+
+//如果是預定義物件實例，實際傳回字串必須根據傳遞的參數而定，這個比較複雜。
+a = new RegExp(/^\w$/) + "";
+alert(a); 	//傳回字串"/^\w$/"
+
+
+
+</script>

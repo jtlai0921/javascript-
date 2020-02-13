@@ -1,0 +1,13 @@
+<script language="javascript" type="text/javascript">
+
+
+var s = "abcdef-abcdef-abcdef-abcdef-abcdef";
+
+var r = /abcdef-abcdef-abcdef-abcdef-abcdef/;
+var a = s.match(r); 	//傳回單元素陣列["abcdef-abcdef-abcdef-abcdef-abcdef"]
+
+var r = /(abcdef-?)*/;	//分組模式進行比對
+var a = s.match(r); 	//傳回陣列["abcdef-abcdef-abcdef-abcdef-abcdef", "abcdef"]
+
+
+</script>

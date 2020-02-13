@@ -1,0 +1,29 @@
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+
+<script language="javascript" type="text/javascript">
+
+function f()
+{
+    if(this.constructor == arguments.callee) alert("this = 實例物件");
+    else if (this == window)  alert("this = window物件");
+    else alert("this == 其他物件 \nthis.constructor = " + this.constructor );
+}
+
+f();
+new f();
+f.call(1);
+
+
+
+</script>
+</body>
+
+</html>

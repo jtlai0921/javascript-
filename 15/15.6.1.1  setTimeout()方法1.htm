@@ -1,0 +1,32 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+
+<h2>標題</h2>
+<p>段落純文字</p>
+<script language="javascript" type="text/javascript">
+
+var o = document.getElementsByTagName("body")[0].childNodes; 	//獲得body元素下所有子元素
+for(var i = 0; i < o.length; i ++ ){ 	//檢查元素集合
+    o[i].onmouseover = function(i){ 	//註冊鼠標經過事件處理函數
+        return function(){	//傳回閉包涵數
+            f(o[i]); 	//呼叫函數f，並傳遞目前物件參考
+        }
+    }(i);	//呼叫函數並傳遞循環序號，實現在閉包中儲存物件序號值
+}
+function f(o){ 	//延遲處理函數
+    //定義延遲半秒鐘後執行程式碼
+    var out = setTimeout( function(){
+        alert(o.tagName); 	//顯示目前元素的名稱
+    }, 500);
+}
+
+
+</script>
+
+
+</body>
+</html>

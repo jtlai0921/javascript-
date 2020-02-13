@@ -1,0 +1,36 @@
+<html>
+
+<head>
+
+<title></title>
+<script language="javascript" type="text/javascript">
+
+
+
+function A(x,y){
+    this.x = x;
+    this.y = y;
+}
+A.prototype.add = function(){
+    return this.x + this.y;
+}
+function B(x,y){
+    A.call(this,x,y);
+}
+B.prototype = new A();
+
+var b = new  B(10,20);
+
+alert(b.x);
+alert(b.y);
+alert(b.add());
+
+
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

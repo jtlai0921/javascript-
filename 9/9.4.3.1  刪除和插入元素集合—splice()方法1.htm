@@ -1,0 +1,13 @@
+<script language="javascript" type="text/javascript">
+
+var a = [1,2,3,4,5]; 	//定義陣列
+a.splice(2); 	//從第3個元素開始執行刪除
+alert(a); 	//傳回[1, 2]
+
+a.splice(2,2); 	//從第3個元素開始刪除2個元素
+alert(a); 	//傳回[1, 2, 5]
+
+a.splice(2,0,0,0,0); 	//執行插入多個元素操作
+alert(a); 	//傳回[1, 2, 0, 0, 0, 3, 4, 5]
+
+</script>

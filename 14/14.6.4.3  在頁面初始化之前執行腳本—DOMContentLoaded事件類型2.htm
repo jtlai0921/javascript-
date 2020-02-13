@@ -1,0 +1,38 @@
+<html>
+<head>
+<script language="javascript" type="text/javascript">
+
+
+if(window.ActiveXObject)
+{
+    // 兼容IE瀏覽器
+    document.write("<script id=ie_onload defer src=javascript:void(0)><\/script>");
+    // 寫入腳本標籤
+    document.getElementById("ie_onload").onreadystatechange = function()
+    {
+        // 判斷腳本標籤的狀態
+        if(this.readyState == "complete")
+        {
+            // 如果狀態為完成，則說明文件結構載入已完畢
+            this.onreadystatechange = null;
+            // 清空目前方法
+            f();
+            // 呼叫預先執行的回調函數
+        }
+    }
+}
+
+function f()
+{
+alert("我提前執行了");
+}
+function f1()
+{
+alert("頁面初始化完畢");
+}
+</script>
+</head>
+<body>
+<img src="Winter.jpg">
+</body>
+</html>

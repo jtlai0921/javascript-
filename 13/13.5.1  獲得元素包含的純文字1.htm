@@ -1,0 +1,17 @@
+<script language="javascript" type="text/javascript">
+
+
+//獲得指定元素包含的純文字
+//參數：e表示指定元素
+//傳回值：傳回包含的所有純文字，包括子元素中包含的純文字
+function text(e){
+    var s = "";
+    var e = e.childNodes || e;	//判斷元素是否包含子節點
+    for( var i = 0; i < e.length; i++){	//檢查所有子節點
+        s += e[i].nodeType != 1 ? e[i].nodeValue : text(e[i].childNodes);	//透過遞歸檢查所有元素的子節點
+    }
+    return s;
+}
+
+
+</script>

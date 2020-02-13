@@ -1,0 +1,9 @@
+<script language="javascript" type="text/javascript">
+window.onload = function() {
+    var hello = document.createTextNode("Hello World！");//建立一個純文字節點
+    var h1 = document.createElement("h1");	//建立一個一級標題
+    h1.setAttribute("title", "您好，歡迎光臨！");//為一級標題定義title屬性
+    h1.appendChild(hello); 	//把純文字節點增加到一級標題中
+    document.body.appendChild(h1); 	//把一級標題增加到文件中
+}
+</script>

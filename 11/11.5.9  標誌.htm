@@ -1,0 +1,13 @@
+<script language="javascript" type="text/javascript">
+
+var s = "a\nb\nc";
+var r = /\w+$/g; 	//預設為單行比對
+var a = s.match(r); 	//傳回陣列["c"]
+
+
+var s = "a\nb\nc";
+var r = /\w+$/gm; 	//啟動多行比對
+var a = s.match(r); 	//傳回陣列["a", "b", "c"]
+
+
+</script>

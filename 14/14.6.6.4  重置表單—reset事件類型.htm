@@ -1,0 +1,23 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<form id="form1" name="form1" method="post" action="">
+    <input type="text" name="t" id="t" />
+    <input name="" type="reset" />
+</form>
+<script language="javascript" type="text/javascript">
+var t = document.getElementsByTagName("input")[0]; 	//獲得純文字框的參考指標
+var f = document.getElementsByTagName("form")[0]; 	//獲得表單的參考指標
+f.onreset = function(e){ 	//在表單元素上註冊reset事件處理函數
+    alert(t.value);
+}
+</script>
+
+
+
+
+</body>
+</html>

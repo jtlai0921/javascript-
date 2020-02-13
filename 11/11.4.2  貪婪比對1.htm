@@ -1,0 +1,17 @@
+<script language="javascript" type="text/javascript">
+
+
+//?、{n}和{n, m}重複類別都具有弱貪婪性，這種貪婪性主要表現為貪婪的有限性。例如：
+var s ="<html><head><title></title></head><body></body></html>";
+var r = /<.?/;
+var a = s.match(r); 	//傳回單元素陣列["<h"]
+
+var r = /<.{4,10}>/
+var a = s.match(r); 	//傳回單元素陣列["<html><head>"]
+
+
+var r = /<.{4,9}>/
+var a = s.match(r); 	//傳回單元素陣列["<html>"]
+
+
+</script>

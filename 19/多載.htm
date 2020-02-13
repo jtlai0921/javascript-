@@ -1,0 +1,33 @@
+<html>
+
+<head>
+
+<title></title>
+<script language="javascript" type="text/javascript">
+
+function f( x, y ){
+    return x + y;
+}
+
+
+function f(){
+    var sum = 0;
+    for( var i = 0; i < arguments.length; i ++ ){
+        if(typeof arguments[i] == "number")
+            sum += arguments[i];
+    }
+    return sum;
+}
+
+alert( f( 3, 4, 6, 7, 8, 9 ) );
+alert( f( 3, 4 ) );
+
+
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<button id="btn" onclick="this.style.background='red';">按    鈕</button>
+<script language="javascript" type="text/javascript">
+function btn1(){
+    this.style.background = "red";	//並非指向目前事件的目標物件
+}
+function btn2(event){
+    event = event || window.event;
+    var src = event.srcElement ? event.srcElement : event.target;
+    src.style.background = "red";	//指向目前事件的目標物件
+}
+</script>
+<button onclick="btn1();">按 鈕 1</button>
+<button onclick="btn2(event);">按 鈕 2</button>
+
+
+</body>
+</html>

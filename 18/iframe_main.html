@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>與客戶互動頁面</title>
+<script language="javascript" type="text/javascript">
+
+function request()
+{
+    var user = document.getElementById("user");
+    var pass = document.getElementById("pass");
+    var s = "iframe_serve.html?user=" + user.value + "&pass=" + pass.value;
+    
+    hideIframe(s);
+    
+}
+function callback(b, n)
+{
+    if(b && n)
+    {
+        var e = document.getElementsByTagName("body")[0];
+        e.innerHTML = "<h1>" + n + "</h1><p>您好，歡迎登入站點</p>";
+    }
+    else
+    {
+        alert("你輸入的使用者名稱或密碼有誤，請重新輸入");
+        var user = parent.document.getElementById("user");
+        var pass = parent.document.getElementById("pass");
+        user.value = "";
+        pass.value = "";
+    }
+}
+window.onload = function()
+{
+    var hideFrame;
+    var b = document.getElementById("submit");
+    b.onclick = request;
+
+}
+
+function hideIframe(url)
+{
+    var hideFrame = null;
+    hideFrame = document.createElement("iframe");
+    hideFrame.name = "hideFrame";
+    hideFrame.id = "hideFrame";
+    hideFrame.style.height = "0px";
+    hideFrame.style.width = "0px";
+    hideFrame.style.position = "absolute";
+    hideFrame.style.visibility = "hidden";
+    document.body.appendChild(hideFrame);
+    setTimeout(function()
+    {
+        frames["hideFrame"].location.href = url;
+    }, 10)
+}
+
+
+</script>
+</head>
+<body>
+<h1>使用者登入</h1>
+使用者名稱：<input name="" id="user" type="text"><br />
+密　碼：<input name="" id="pass"  type="password"><br />
+<input name="submit" type="button" id="submit" value="傳送" />
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+<script language="javascript" type="text/javascript">
+
+var monk = "老和尚";
+document.write(monk+"说："+o());
+
+var n=0;
+
+function o()
+{
+    try
+    {
+        var content = "从前有座山，山里有座庙，庙里有个老和尚，老和尚在给小和尚讲故事，讲的故事是："
+        return content + arguments.callee();
+		n++;
+		if(n>50) throw new Error("累死了，暂停一下！")
+		
+    }
+    catch( e )
+    {
+    }
+}
+
+
+
+
+
+</script>
+</body>
+</html>

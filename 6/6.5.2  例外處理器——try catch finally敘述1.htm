@@ -1,0 +1,29 @@
+<script language="javascript" type="text/javascript">
+
+try{	//外層例外處理結構
+    try{	//內層例外處理結構
+        alret("Hi");	//錯誤參考方法
+    }
+    catch(exception){
+        var e;
+        if ( ! exception.description){ 	//兼容非IE瀏覽器
+            e = exception.name; 	//獲得錯誤名稱
+        }
+        else{	//兼容IE瀏覽器
+            e = exception.description; 	//獲得錯誤描述資訊
+        }
+        if (e == "Object expected" || e == "ReferenceError"){	//如果是此類別錯誤資訊，則提示這樣資訊
+            alert("內層try/catch能夠處理這個錯誤");
+        }
+        else{	//否則再一次拋出一個例外
+            throw exception;
+        }
+    }
+}
+catch(exception){ 	//獲得內層例外處理結構中拋出的例外
+    alert("內層try/catch不能夠處理這個錯誤");
+}
+
+
+
+</script>

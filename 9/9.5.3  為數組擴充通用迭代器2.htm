@@ -1,0 +1,32 @@
+<script language="javascript" type="text/javascript">
+
+Array.prototype.each = function( f ){ 	//陣列迭代器，擴充Array原型方法
+    try{	//例外處理，避免因為不可預測錯誤導致系統崩潰
+        this.i || ( this.i = 0 ); 	//定義臨時變量，用來作為迭代計數器
+        if( this.length > 0 && f.constructor == Function ){ 	//如果陣列長度大於0，參數為函數
+            while( this.i < this.length ){ 	//檢查陣列
+                var e = this[this.i]; 	//獲得目前元素
+                if( e && e.constructor == Array ){ 	//如果元素存在，且為陣列
+                    e.each( f ); 	//遞歸呼叫迭代器
+                }else{	//否則，在元素上呼叫參數函數，並把元素值傳遞給函數
+                    f.apply( e, [e] );
+                }
+                this.i ++ ; 	//遞加計數器
+            }
+            this.i = null; 	//如果檢查完畢，則清空計數器
+        }
+    }
+    catch( w ){ 	//捕捉以後
+    }
+    return this	//傳回目前陣列
+}
+
+
+var a = [1, [2, [3, 4]]]
+var f = function( x ){
+    alert( x );
+}
+a.each( f ); 	//呼叫迭代器，為每個元素執行一次函數傳遞
+
+
+</script>

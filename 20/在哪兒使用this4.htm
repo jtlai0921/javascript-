@@ -1,0 +1,40 @@
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+
+<script language="javascript" type="text/javascript">
+
+function Base(){
+    var _m = function(){
+        return "Base";
+    };
+    this.a = _m;
+    this.b = _m();
+}
+
+function F(){
+    this.m = function(){
+        return "F"
+    }
+}
+
+F.prototype = new Base();
+
+var f = new F();
+
+
+alert(f.a());
+alert(f.b);
+alert(f.c());
+
+
+</script>
+</body>
+
+</html>

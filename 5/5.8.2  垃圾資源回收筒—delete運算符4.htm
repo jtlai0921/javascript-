@@ -1,0 +1,13 @@
+<script language="javascript" type="text/javascript">
+
+var a =[];	// 定義空陣列a
+if("x" in a) 	// 如果陣列a中存在元素x
+    delete a["x"];	// 則刪除元素x
+else	// 如果不存在元素x
+    a["x"] = true; 	// 則插入陣列元素x，並為其給予值true
+alert(a.x); 	// 傳回true。檢視陣列元素x的值
+if(delete a["x"])	// 如果刪除陣列元素x成功
+    a["x"] = false; 	// 更新陣列元素x的值為false
+alert(a.x); 	// 傳回false。檢視陣列元素x的值
+
+</script>

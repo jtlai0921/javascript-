@@ -1,0 +1,34 @@
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+
+
+<script language="javascript" type="text/javascript">
+
+
+var name = "this == window";
+function f(){
+    return this;
+}
+
+alert(f().name);
+var o = {
+    name : "this == o",
+    who: f
+};
+
+alert(o.who().name);
+
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+<script language="javascript" type="text/javascript">
+
+function Me(){}	//自定義類別
+Me.prototype = new Number();	//修改該類別的原型物件為數字物件
+var m = new Me();	//實例化物件
+if(typeof m == "object" && m.constructor == Me){
+    alert("該對象是一個自定義類別Me的對象");
+}
+
+</script>

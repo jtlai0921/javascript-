@@ -1,0 +1,25 @@
+<script language="javascript" type="text/javascript">
+
+
+var s = "javascript";
+var a = s.toString();	//傳回字串"javascript"
+
+
+var s = "javascript";
+var a = s.valueOf();	//傳回字串"javascript"
+
+var s = "abcdef";
+document.writeln(s); 	//顯示字串"abcdef"
+document.writeln(s.toString());	//呼叫字串的方法toString()，把字串物件轉換為字串顯示
+//重新定義String對象的原型方法toString()
+//參數color表示顯示字串的顏色
+String.prototype.toString = function(color){
+    var color = color || "red";	//如果省略參數，則顯示為紅色
+    return '<font color="' + color + '">' + this.valueOf() + '</font>'; 	//傳回格式化顯示帶有顏色的字串
+}
+document.writeln(s.toString());	//顯示紅色字串"abcdef"
+document.writeln(s.toString("blue"));	//顯示藍色字串"abcdef"
+
+
+
+</script>

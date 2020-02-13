@@ -1,0 +1,39 @@
+<html>
+
+<head>
+
+<title></title>
+<script language="javascript" type="text/javascript">
+
+
+
+
+function f(x){
+    this.m = function(){
+        return x.sort();
+    };
+}
+function o(x){
+    f.call(this,x);
+}
+var a =[2,3,5,1,6,8,7,4]
+var o1 = new o(a);
+alert(o1.m());
+
+
+
+
+
+
+
+
+
+
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

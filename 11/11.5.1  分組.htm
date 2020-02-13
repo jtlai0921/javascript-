@@ -1,0 +1,19 @@
+<script language="javascript" type="text/javascript">
+
+
+var s ="<html><head><title></title></head><body></body></html>";
+
+var r = /<.*>/
+var a = s.match(r); 	//傳回單元素陣列["<html><head><title></title></head> <body> </body></html>"]
+
+var r = /<.*?>/
+var a = s.match(r); 	//傳回單元素陣列["<html>"]
+
+var r = /(<.*?>)/g; ; 	//分組模式
+var a = s.match(r); 	//全局比對標籤，並儲存到陣列a中
+for(var i = 0 ; i < a.length; i ++ ){ 	//檢查陣列a，獲得每個標籤的名稱
+    alert(a[i]);
+}
+
+
+</script>

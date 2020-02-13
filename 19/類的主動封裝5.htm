@@ -1,0 +1,34 @@
+<html>
+
+<head>
+
+<title></title>
+<script language="javascript" type="text/javascript">
+
+
+var Card = function(){
+    var _name = 1;
+    function _checkName(){
+        return _name
+    }
+    this.checkName = function(){
+        return _name
+    }
+}
+
+function F(){
+    Card.call(this);
+}
+
+
+var a = new F()
+alert(a.checkName());
+
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+<script language="javascript" type="text/javascript">
+
+var s = "a\nb\nc";
+var r = /\w+$/g; 	//定義比對模式
+var a = s.match(r); 	//執行預設比對，傳回陣列["c"]
+RegExp.multiline = true; 	//動態設置模式為多行比對
+var a = s.match(r); 	//傳回陣列["a", "b", "c"] 
+
+
+
+
+</script>

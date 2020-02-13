@@ -1,0 +1,32 @@
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+<script language="javascript" type="text/javascript">
+
+
+Object.prototype.a = 1;
+Function.prototype.a= 2;
+alert(Object.a);
+alert(Function.a);
+
+var o = {}
+alert(o.a);
+var  f = Object;
+alert(f.a);
+
+var f1 = new Function();
+alert(f1.a);
+var o1 = new Object();
+alert(o1.a);
+
+
+</script>
+</body>
+
+</html>

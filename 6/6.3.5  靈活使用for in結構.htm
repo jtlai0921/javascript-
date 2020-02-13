@@ -1,0 +1,41 @@
+<script language="javascript" type="text/javascript">
+
+
+var o ={	// 定義包含3個屬性的物件
+    x : 1,
+    y : true,
+    z : "true"
+};
+var a = [];	// 定義空陣列
+var n = 0; 	// 定義臨時循環變量，並給予值為0
+for(a[n ++ ] in o); 	// 檢查物件o，然後把所有屬性都給予值到陣列中
+
+
+for(a[n ++ ] in o) 	// 檢查物件o
+{
+    ; 	// 空敘述
+}
+
+
+for(var i = 0 in a) 	// 檢查陣列a，在該結構中直接聲明並初始化臨時變量i
+{
+    alert(i); 	// 讀取臨時變量i的值
+    alert(a[i]); 	// 讀取陣列元素的值
+}
+
+
+for(var i = 0 in Object)
+{
+    alert(i);
+    alert(a[i]);
+}
+
+
+for(var i = 0 in document)
+{
+    document.write("document."+i+"="+document[i]);
+     document.write("<br />");
+}
+
+
+</script>

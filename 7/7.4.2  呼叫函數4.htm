@@ -1,0 +1,22 @@
+<script language="javascript" type="text/javascript">
+
+function f(){	//郴ㄧ计f
+    return 1;
+}
+function o(){	//ㄧ计ノ办
+    return o()	//㊣ず场ㄧ计o
+    function o(){	//ㄧ计ず场ノ办
+        return f();	//碠甅ㄧ计ず场ㄧ计f
+        function f(){	//碠甅ㄧ计ず场ㄧ计f
+            return 3;
+        }
+    }
+    function f(){	//碠甅ㄧ计f
+        return 2;
+    }
+}
+alert( f() ); 	//肚计1
+alert( o() ); 	//肚计3
+
+
+</script>

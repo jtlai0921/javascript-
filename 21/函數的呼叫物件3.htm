@@ -1,0 +1,31 @@
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+
+
+<input type="button" value="Button 1" id="b1"  />
+<input type="button" value="Button 2" id="b2"  />
+<input type="button" value="Button 3" id="b3"  onclick="f();"/>
+<script language="javascript" type="text/javascript">
+function f(){
+    (this == window) && (alert("window"),true) || alert("button");
+}
+var b1 = document.getElementById('b1');
+var b2 = document.getElementById('b2');
+b1.onclick = f;
+b2.onclick = function(){
+    f();
+};
+</script>
+
+
+
+</body>
+
+</html>

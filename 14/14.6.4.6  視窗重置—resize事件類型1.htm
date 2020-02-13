@@ -1,0 +1,25 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<div id="box"></div>
+<script language="javascript" type="text/javascript">
+var box = document.getElementById("box");
+box.style.position = "absolute";
+box.style.backgroundColor = "red";
+box.style.width = "200px";
+box.style.height = "160px";
+window.onload = f; 	//頁面初始化時固定其位置
+window.onscroll = f; 	//當文件位置發生變化時重新固定其位置
+function f(){	//元素位置固定函數
+    box.style.left = 100 + parseInt(document.body.scrollLeft) + "px"; 
+    box.style.top = 100 + parseInt(document.body.scrollTop) + "px";
+}
+</script>
+<div style="height:2000px;width:2000px;"></div>
+
+
+</body>
+</html>

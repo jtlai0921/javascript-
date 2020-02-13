@@ -1,0 +1,17 @@
+<script language="javascript" type="text/javascript">
+
+var o = {
+    splice:1,
+    join:2
+}
+alert(isArray(o)); 	//傳回true
+
+alert([].toString());	//傳回""
+
+function isArray(o) {
+    return Object.prototype.toString.call(o) ==="[object Array]";
+}
+alert(isArray(a)); 	//傳回true
+
+
+</script>

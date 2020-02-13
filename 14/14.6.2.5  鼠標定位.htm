@@ -1,0 +1,25 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<script language="javascript" type="text/javascript">
+
+var posX = 0, posY = 0; 	//定義坐標變量初始值
+var event = event || window.event; 	//標準化事件物件
+if(event.pageX || event.pageY){ 	//如果瀏覽器支援該屬性，則採用它們
+    posX = event.pageX;
+    posY = event.pageY;
+}
+else if(event.clientX || event.clientY){ 	//否則，如果瀏覽器支援該屬性，則採用它們
+    posX = event.clientX + document.documentElement.scrollLeft + document.body.scrollLeft;
+    posY = event.clientY + document.documentElement.scrollTop + document.body.scrollTop;
+}
+
+
+</script>
+
+
+</body>
+</html>

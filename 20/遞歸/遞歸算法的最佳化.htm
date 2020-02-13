@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5" />
+<title></title>
+</head>
+<body>
+<script language="javascript" type="text/javascript">
+
+
+function f( n )
+{
+    if( n == 1 || n == 2 )
+    return 1;
+    else
+    return f( n - 1 ) + f( n - 2 );
+}
+
+
+
+function memoizer( fundamental, cache )
+{
+    cache = cache ||
+    {
+    }
+    var shell = function( arg )
+    {
+        if ( ! ( arg in cache ) )
+        {
+            cache[arg] = fundamental( shell, arg );
+
+        }
+        return cache[arg];
+
+    }
+    ;
+    return shell;
+}
+
+
+var fibonacci = memoizer( function( f, n )
+{
+    return f( n - 1 ) + f( n - 2 );
+}
+,
+{
+    "0" : 0, "1" : 1
+}
+ );
+
+
+alert(fibonacci(6))
+
+</script>
+</body>
+</html>

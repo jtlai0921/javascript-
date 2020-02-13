@@ -1,0 +1,29 @@
+<html>
+
+<head>
+
+<title></title>
+
+</head>
+
+<body>
+<script language="javascript" type="text/javascript">
+
+
+
+function f(){
+    alert(this.value);
+}
+var o1 = {value: "ª«¥óo1"}
+o1.f = function(){
+    return f.apply(this);
+}
+o1.f();
+
+
+
+
+</script>
+</body>
+
+</html>

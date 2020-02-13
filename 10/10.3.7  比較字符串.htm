@@ -1,0 +1,16 @@
+<script language="javascript" type="text/javascript">
+
+alert( "a" > "A" ); 	//傳回true
+
+var s = "javascript";	//定義字串直接量
+var a = s.split( "" ); 	//把字串轉換為陣列
+var s1 = a.sort( function( a, b ) {	//對陣列進行排序
+    return a.localeCompare( b ) 	//將根據前後字符在本機的約定進行排序
+});
+a = s1.join( "" ); 	//然後再把陣列還原為字串
+alert( a ); 	//傳回字串"aacijprstv"
+
+
+
+
+</script>

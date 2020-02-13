@@ -1,0 +1,13 @@
+<script language="javascript" type="text/javascript">
+
+
+var s = "javascript", str = "";	//定義一個字串
+var d = new Date(),a = d.getMilliseconds();	//獲得目前毫秒數
+for(var i = 0; i < 10000; i ++ ) 	//循環連接字串10000次
+    str += s;
+var d = new Date(), b = d.getMilliseconds();	//獲得目前毫秒數
+alert(b - a); 	//傳回203毫秒，實際值會根據系統而略有不同
+
+
+
+</script>

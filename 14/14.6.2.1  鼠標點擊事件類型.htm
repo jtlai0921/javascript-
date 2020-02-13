@@ -1,0 +1,21 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<a name="tag" id="tag" href="#">a</a>
+<script language="javascript" type="text/javascript">
+var a = document.getElementsByTagName("a");	//獲得頁面中所有超鏈接元素
+for(var i = 0; i < a.length; i ++ ){ 	//檢查所有a元素
+    if((new RegExp(window.location.href)).test(a[i].href)){ 	//如果目前超鏈接href屬性中包含本頁面的URL資訊
+        a[i].onclick = function(){	//則為超鏈接註冊鼠標單擊事件
+            return false; 	//將禁止超鏈接的預設行為
+        }
+    }
+}
+</script>
+
+
+</body>
+</html>

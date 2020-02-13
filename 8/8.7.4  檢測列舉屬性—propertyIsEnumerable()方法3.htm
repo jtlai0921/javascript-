@@ -1,0 +1,22 @@
+<script language="javascript" type="text/javascript">
+
+function F(){
+    this.a =1;
+    this.b =2;
+}
+F.prototype.c =3;
+F.d = 4;
+var o = new F();
+for(var i in o){
+    document.write(i + "<br />");
+}
+
+alert(o.propertyIsEnumerable("a"));	//傳回值為true，說明可以列舉
+alert(o.propertyIsEnumerable("b"));	//傳回值為true，說明可以列舉
+alert(o.propertyIsEnumerable("c"));	//傳回值為false，說明不可以列舉
+alert(o.propertyIsEnumerable("d"));	//傳回值為false，說明不可以列舉
+var o = F;
+alert(o.propertyIsEnumerable("d"));	//傳回值為true，說明可以列舉
+
+
+</script>

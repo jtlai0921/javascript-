@@ -1,0 +1,22 @@
+<script language="javascript" type="text/javascript">
+
+String.prototype.lengthB = function( ){ 	//獲得並傳回指定字串的字節數，擴充String物件方法
+    var b = 0, l = this.length; 	//初始化字節數遞加變量，並獲得字串參數的字符個數
+    if( l ){ 	//如果存在字串，則執行計算
+        for( var i = 0; i < l; i ++ ){ 	//檢查字串，列舉每個字符
+            if(this.charCodeAt( i ) > 255 ){ //如果目前字符的解碼大於255，說明它是雙字節字符
+                b += 2; 	//則累加2個
+            }else{
+                b ++ ; 	//否則遞加一次
+            }
+        }
+        return b; 	//傳回位元組數    }else{
+        return 0; 	//如果參數為空，則傳回0個
+    }
+}
+
+
+var s = "String物件長度";	//定義字串直接量
+alert(s.lengthB())	//傳回14
+
+</script>

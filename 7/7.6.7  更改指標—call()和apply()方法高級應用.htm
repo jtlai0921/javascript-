@@ -1,0 +1,28 @@
+<script language="javascript" type="text/javascript">
+
+var x = "o";	//﹚竡Ы跑秖x﹍て才o
+function a(){	//﹚竡ㄧ计摸挡篶a
+    this.x = "a";	//﹚竡ㄧ计ずЫ场跑秖x﹍て才a
+}
+function b(){	//﹚竡ㄧ计摸挡篶b
+    this.x = "b";	//﹚竡ㄧ计ずЫ场跑秖x﹍て才b
+}
+function c(){	//﹚竡炊硄ㄧ计矗ボ跑秖x
+    alert( x );
+}
+function f(){	//﹚竡炊硄ㄧ计矗ボヘ玡夹┮跑秖x
+    alert( this.x );
+}
+//肚才oЫ跑秖xthiswindowン
+f();
+//肚才oЫ跑秖xthiswindowン
+f.call( window );
+//肚才aㄧ计aず场Ы场跑秖xthisㄧ计a
+f.call( new a() );
+//肚才bㄧ计bず场Ы场跑秖xthisㄧ计b
+f.call( new b() );
+//肚undefinedㄧ计cず场Ы场跑秖x琌赣ㄧ计⊿Τ﹚竡x跑秖┮肚⊿Τ﹚竡thisㄧ计c
+f.call( c );
+
+
+</script>

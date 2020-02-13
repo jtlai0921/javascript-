@@ -1,0 +1,19 @@
+<script language="javascript" type="text/javascript">
+
+function f(){
+    this.x=function(x){ 	//使用this關鍵字為函數定義一個方法x()
+        return x
+    }
+}
+//使用new運算符實例化函數f，並把實例化物件給予值給變量a，則a就擁有函數f的結構。
+var a = new f();
+alert(a.x(4)); 	//使用物件a呼叫方法x()，則傳回4
+
+
+alert(window.x(4)); 	//提示編譯錯誤
+
+
+alert(this.x(4)); 	//提示編譯錯誤
+
+
+</script>

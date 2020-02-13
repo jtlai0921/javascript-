@@ -1,0 +1,19 @@
+<script language="javascript" type="text/javascript">
+//封裝刪除節點函數
+//參數：e表示預刪除的節點
+//傳回值：傳回被刪除的節點，如果不存在指定的節點，則傳回undefined值
+function remove(e){
+    if(e){
+        var _e = e.parentNode.removeChild(e);
+        return _e;
+    }
+    return undefined;
+}
+
+
+</script>
+<div id="red">
+    <h1>紅盒子</h1>
+</div>
+<div id="blue">藍盒子</div>
+<button id="ok">刪除</button>

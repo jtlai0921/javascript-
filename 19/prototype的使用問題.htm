@@ -1,0 +1,30 @@
+<html>
+
+<head>
+
+<title></title>
+<script language="javascript" type="text/javascript">
+
+
+
+
+function a(){
+    this.x = [];
+}
+function b(){
+}
+b.prototype = new a();
+
+var f1 = new b();
+var f2 = new b();
+f1.x.push(1);
+alert(f2.x);
+
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

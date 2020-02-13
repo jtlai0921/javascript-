@@ -1,0 +1,13 @@
+<script language="javascript" type="text/javascript">
+
+var s = "a'b?c&";	//待過濾的表單傳送資訊
+var r = /\'|\"|\?|\&/gi; 	//過濾敏感字符的正則表達式
+function f(){	//替換函數，把敏感字符替換為對應的網頁顯示的解碼格式
+    return "&#" + arguments[0].charCodeAt(0) + ";";
+}
+var a = s.replace(r,f); 	//執行過濾替換
+document.write(a); 	//在網頁中顯示正常的字符資訊
+alert(a); 	//傳回字串"a&#39;b&#63;c&#38;"
+
+
+</script>

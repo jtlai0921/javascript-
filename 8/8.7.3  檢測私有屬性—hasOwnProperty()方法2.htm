@@ -1,0 +1,17 @@
+<script language="javascript" type="text/javascript">
+
+var o = {	//物件直接量
+    o1 : {	//子物件直接量
+        o2 :{ 	//孫子物件直接量
+            name : 1	//孫子物件直接量的屬性
+        }
+    }
+};
+alert(o.hasOwnProperty("o1"));	//傳回true，說明o1是o的私有屬性
+alert(o.hasOwnProperty("o2"));	//傳回false，說明o2不是o的私有屬性
+alert(o.o1.hasOwnProperty("o2"));	//傳回true，說明o2是o1的私有屬性
+alert(o.o1.hasOwnProperty("name"));	//傳回false，說明name不是o1的私有屬性
+alert(o.o1.o2.hasOwnProperty("name"));	//傳回true，說明name不是o2的私有屬性
+
+
+</script>

@@ -1,0 +1,15 @@
+<script language="javascript" type="text/javascript">
+
+var a = [1, 2, 3]; 	//定義陣列直接量
+var f = function( x ){ 	//定義執行函數
+    alert(x);
+}
+
+
+for( var i in a ){ 	//檢查陣列，為每個元素呼叫該函數， 
+   f.apply(a[i], [a[i]] ); 	//並把陣列元素轉換為陣列作為參數傳遞給呼叫函數
+}
+
+
+
+</script>

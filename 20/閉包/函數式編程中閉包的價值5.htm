@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5" />
+<title></title>
+</head>
+<body>
+
+<script language="javascript" type="text/javascript">
+
+
+function f( o, m )
+{
+    return function( e )
+    {
+        e = e || window.event;
+        return o[m]( e, this );
+    }
+    ;
+}
+
+function g( name )
+{
+    return function()
+    {
+        var e = document.getElementsByTagName( name );
+        if( e )
+        {
+            for( var i in e )
+            {
+                e[i].onclick = f( g, "click" );
+                e[i].onmouseover = f( g, "over" );
+                e[i].onmouseout = f( g, "out" );
+
+            }
+        }
+    }
+}
+g.click = function( event, element )
+{
+    element.style.backgroundColor = "red";
+}
+g.over = function( event, element )
+{
+    element.style.backgroundColor = "blue";
+}
+g.out = function( event, element )
+{
+    element.style.backgroundColor = "transparent";
+}
+window.onload = g( "p" );
+
+</script>
+<p>p1</p>
+<p>p2</p>
+<p>p3</p>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<span href="http://www.baidu.com/">百度</span>
+<script language="javascript" type="text/javascript">
+var span = document.getElementsByTagName("span")[0]; 	//獲得span元素參考指標
+var href = span.getAttribute("href");	//獲得該元素的href屬性值
+span.onclick = function(){	//定義鼠標單擊事件處理函數
+    window.location = href; 	//加載URL
+}
+</script>
+
+</body>
+</html>
